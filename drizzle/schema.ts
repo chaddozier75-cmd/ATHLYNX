@@ -25,4 +25,33 @@ export const users = mysqlTable("users", {
 export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 
-// TODO: Add your tables here
+/**
+ * Sports table for athlete sport selection and email customization
+ */
+export const sports = mysqlTable("sports", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 100 }).notNull().unique(),
+  emoji: varchar("emoji", { length: 10 }).notNull(),
+  imageUrl: text("imageUrl"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type Sport = typeof sports.$inferSelect;
+export type InsertSport = typeof sports.$inferInsert;
+
+/**
+ * Early access signups table for VIP beta users
+ */
+export const earlyAccessSignups = mysqlTable("early_access_signups", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().references(() => users.id),
+  sportId: int("sportId").references(() => sports.id),
+  isVip: mysqlEnum("isVip", ["yes", "no"]).default("no").notNull(),
+  accessGranted: mysqlEnum("accessGranted", ["yes", "no"]).default("no").notNull(),
+  confirmationEmailSent: mysqlEnum("confirmationEmailSent", ["yes", "no"]).default("no").notNull(),
+  signupDate: timestamp("signupDate").defaultNow().notNull(),
+  accessGrantedDate: timestamp("accessGrantedDate"),
+});
+
+export type EarlyAccessSignup = typeof earlyAccessSignups.$inferSelect;
+export type InsertEarlyAccessSignup = typeof earlyAccessSignups.$inferInsert;
