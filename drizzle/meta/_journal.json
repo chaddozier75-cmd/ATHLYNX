@@ -15,6 +15,13 @@
       "when": 1766942249452,
       "tag": "0001_gorgeous_darwin",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1766962911375,
+      "tag": "0002_lumpy_wolverine",
+      "breakpoints": true
     }
   ]
 }

@@ -9,6 +9,15 @@ import AthletePlaybook from "./pages/AthletePlaybook";
 import TransferPortal from "./pages/TransferPortal";
 import NILMarketplace from "./pages/NILMarketplace";
 import Messages from "./pages/Messages";
+import Store from "./pages/Store";
+import Fishing from "./pages/Fishing";
+import Golf from "./pages/Golf";
+import Hunting from "./pages/Hunting";
+import CreateProfile from "./pages/CreateProfile";
+import PlayerProfile from "./pages/PlayerProfile";
+import RecruitingDatabase from "./pages/RecruitingDatabase";
+import AIBots from "./pages/AIBots";
+import CollegePage from "./pages/CollegePage";
 
 function Router() {
   return (
@@ -18,6 +27,15 @@ function Router() {
       <Route path={"/transfer-portal"} component={TransferPortal} />
       <Route path={"/nil-marketplace"} component={NILMarketplace} />
       <Route path={"/messages"} component={Messages} />
+      <Route path={"/store"} component={Store} />
+      <Route path={"/fishing"} component={Fishing} />
+      <Route path={"/golf"} component={Golf} />
+      <Route path={"/hunting"} component={Hunting} />
+      <Route path={"/create-profile"} component={CreateProfile} />
+      <Route path={"/player/:id"} component={PlayerProfile} />
+      <Route path={"/recruiting"} component={RecruitingDatabase} />
+      <Route path={"/ai-bots"} component={AIBots} />
+      <Route path={"/college/:id"} component={CollegePage} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
