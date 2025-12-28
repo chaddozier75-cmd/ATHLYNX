@@ -1,68 +1,47 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bot, Users, Zap, BarChart3, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Trophy, Users, TrendingUp, MessageCircle, Calendar, DollarSign, ArrowRight, Star, Target, Zap } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Home() {
-  const teamBots = [
+  const features = [
     {
-      name: "Executive Command Center",
-      role: "Chad A. Dozier - CEO & Founder",
-      description: "Comprehensive management hub consolidating information from all business units with real-time decision support.",
-      icon: "👔",
-      capabilities: ["Schedule Management", "Email Filtering", "Strategic Reporting", "Partnership Tracking"]
+      icon: <Trophy className="h-8 w-8 text-primary" />,
+      title: "The Athlete Playbook",
+      description: "Boost your recruiting presence and media profile with our comprehensive tools designed to elevate your athletic career."
     },
     {
-      name: "Presentation Intelligence Suite",
-      role: "Glenn Tse - Presenter & Strategic Partner",
-      description: "AI-driven content creation, research support, and audience engagement tools for professional presentations.",
-      icon: "🎯",
-      capabilities: ["Content Generation", "Research Assistance", "Audience Engagement", "Interactive Presentations"]
+      icon: <TrendingUp className="h-8 w-8 text-primary" />,
+      title: "Transfer Portal",
+      description: "Navigate your path from smaller schools to top programs. Get better, transfer up, and increase your NIL value."
     },
     {
-      name: "Operations Command Hub",
-      role: "Jimmy Boyd - Operations Manager",
-      description: "Central nervous system for managing complex multi-faceted operations across the organization.",
-      icon: "⚙️",
-      capabilities: ["Project Management", "Workflow Automation", "Resource Management", "Risk Monitoring"]
+      icon: <DollarSign className="h-8 w-8 text-primary" />,
+      title: "NIL Opportunities",
+      description: "Discover and manage endorsement deals. Connect with brands looking for athletes like you."
     },
     {
-      name: "Marketing Intelligence Engine",
-      role: "Andy Kustes - Marketing Director",
-      description: "AI-powered tools for campaign management, lead generation, content distribution, and performance analytics.",
-      icon: "📊",
-      capabilities: ["Lead Generation", "Campaign Management", "Content Creation", "Performance Analytics"]
+      icon: <MessageCircle className="h-8 w-8 text-primary" />,
+      title: "Athlete Network",
+      description: "Connect with athletes globally. Share schedules, compare recruiting efforts, and build your network."
     },
     {
-      name: "Sales Acceleration Platform",
-      role: "Lee Marshall - Sales Director",
-      description: "AI-powered tools for CRM management, sales outreach, deal tracking, and customer relationship development.",
-      icon: "💼",
-      capabilities: ["CRM Management", "Sales Outreach", "Deal Tracking", "Customer Intelligence"]
-    }
-  ];
-
-  const benefits = [
-    {
-      icon: <Zap className="h-8 w-8 text-primary" />,
-      title: "24/7 Productivity",
-      description: "AI bots work around the clock, ensuring continuous progress on critical tasks and immediate response to urgent matters."
+      icon: <Calendar className="h-8 w-8 text-primary" />,
+      title: "Events & Camps",
+      description: "Track camps, showcases, and recruiting events. Never miss an opportunity to be seen."
     },
     {
       icon: <Users className="h-8 w-8 text-primary" />,
-      title: "Seamless Collaboration",
-      description: "Integrated ecosystem where bots share information and coordinate actions across departments for unified operations."
-    },
-    {
-      icon: <BarChart3 className="h-8 w-8 text-primary" />,
-      title: "Data-Driven Insights",
-      description: "Advanced analytics and reporting capabilities provide actionable intelligence for strategic decision-making."
-    },
-    {
-      icon: <Bot className="h-8 w-8 text-primary" />,
-      title: "Intelligent Automation",
-      description: "Eliminate repetitive tasks and streamline workflows, allowing team members to focus on high-value strategic work."
+      title: "Professional Connections",
+      description: "Connect with coaches, scouts, and recruiters. Build relationships that advance your career."
     }
+  ];
+
+  const stats = [
+    { number: "10K+", label: "Active Athletes" },
+    { number: "$5M+", label: "NIL Deals Facilitated" },
+    { number: "500+", label: "Partner Schools" },
+    { number: "24/7", label: "Platform Access" }
   ];
 
   return (
@@ -71,155 +50,258 @@ export default function Home() {
       <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <Bot className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold">AI Bot Ecosystem</span>
+            <Trophy className="h-8 w-8 text-primary" />
+            <span className="text-xl font-bold">Athlynx</span>
           </div>
-          <nav className="flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-6">
             <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
               Home
             </Link>
-            <Link href="/bots" className="text-sm font-medium hover:text-primary transition-colors">
-              Team Bots
+            <Link href="/playbook" className="text-sm font-medium hover:text-primary transition-colors">
+              Athlete Playbook
             </Link>
-            <Link href="/capabilities" className="text-sm font-medium hover:text-primary transition-colors">
-              Capabilities
+            <Link href="/transfer-portal" className="text-sm font-medium hover:text-primary transition-colors">
+              Transfer Portal
             </Link>
-            <Link href="/implementation" className="text-sm font-medium hover:text-primary transition-colors">
-              Implementation
+            <Link href="/nil-marketplace" className="text-sm font-medium hover:text-primary transition-colors">
+              NIL Marketplace
+            </Link>
+            <Link href="/messages" className="text-sm font-medium hover:text-primary transition-colors">
+              Messages
             </Link>
           </nav>
+          <div className="flex items-center gap-4">
+            <Button variant="ghost" size="sm">Log In</Button>
+            <Button size="sm">Sign Up Free</Button>
+          </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="container py-24 space-y-8">
-        <div className="max-w-3xl mx-auto text-center space-y-4">
-          <h1 className="text-5xl font-bold tracking-tight">
-            Transform Your Team with{" "}
-            <span className="text-primary">AI-Powered Collaboration</span>
+      <section className="container py-24 md:py-32 space-y-8">
+        <div className="max-w-4xl mx-auto text-center space-y-6">
+          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
+            <Star className="h-4 w-4" />
+            The All-in-One Platform for Student Athletes
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+            Your Athletic Career,{" "}
+            <span className="text-primary">Amplified</span>
           </h1>
-          <p className="text-xl text-muted-foreground">
-            A comprehensive ecosystem of specialized AI assistants designed for Dozier Holdings Group, 
-            empowering each team member with intelligent automation and real-time support.
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+            From recruiting to NIL deals, from training to transfers - Athlynx is your complete platform 
+            for managing and advancing your athletic career. Connect, compete, and capitalize on your talent.
           </p>
-          <div className="flex gap-4 justify-center pt-4">
-            <Button size="lg" asChild>
-              <Link href="/bots">
-                Explore Team Bots <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+            <Button size="lg" className="text-lg px-8">
+              Get Started Free <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link href="/implementation">View Implementation Plan</Link>
+            <Button size="lg" variant="outline" className="text-lg px-8">
+              Watch Demo
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="container py-16">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl font-bold">Why AI Bot Ecosystem?</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Designed to complement human creativity with AI-powered automation, data processing, and real-time support.
+      {/* Stats Section */}
+      <section className="border-y bg-muted/30 py-12">
+        <div className="container">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {stats.map((stat, index) => (
+              <div key={index} className="space-y-2">
+                <div className="text-4xl md:text-5xl font-bold text-primary">{stat.number}</div>
+                <div className="text-sm md:text-base text-muted-foreground">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="container py-24 space-y-12">
+        <div className="text-center space-y-4 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold">Everything You Need to Succeed</h2>
+          <p className="text-xl text-muted-foreground">
+            Athlynx brings together all the tools, connections, and opportunities you need 
+            in one powerful platform.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {benefits.map((benefit, index) => (
-            <Card key={index} className="border-2 hover:border-primary transition-colors">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <Card key={index} className="border-2 hover:border-primary hover:shadow-lg transition-all">
               <CardHeader>
-                <div className="mb-4">{benefit.icon}</div>
-                <CardTitle className="text-xl">{benefit.title}</CardTitle>
+                <div className="mb-4">{feature.icon}</div>
+                <CardTitle className="text-2xl">{feature.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">{benefit.description}</p>
+                <p className="text-muted-foreground">{feature.description}</p>
               </CardContent>
             </Card>
           ))}
         </div>
       </section>
 
-      {/* Team Bots Overview */}
-      <section className="container py-16 bg-muted/30 -mx-[50vw] px-[50vw] left-[50%] right-[50%] relative">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl font-bold">Meet Your AI Team</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Five specialized AI assistants, each designed to support a specific team member and role.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {teamBots.map((bot, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="text-4xl mb-2">{bot.icon}</div>
-                <CardTitle className="text-xl">{bot.name}</CardTitle>
-                <CardDescription className="font-medium text-foreground/80">{bot.role}</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-sm text-muted-foreground">{bot.description}</p>
-                <div className="space-y-2">
-                  <p className="text-sm font-medium">Key Capabilities:</p>
-                  <ul className="space-y-1">
-                    {bot.capabilities.map((cap, idx) => (
-                      <li key={idx} className="text-sm text-muted-foreground flex items-center gap-2">
-                        <CheckCircle2 className="h-4 w-4 text-primary" />
-                        {cap}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-        <div className="text-center mt-12">
-          <Button size="lg" asChild>
-            <Link href="/bots">
-              View Detailed Bot Profiles <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
-      </section>
-
-      {/* CTA Section */}
+      {/* The Athlete Playbook CTA */}
       <section className="container py-24">
-        <Card className="border-2 border-primary bg-primary/5">
+        <Card className="border-2 border-primary bg-gradient-to-br from-primary/5 to-primary/10">
           <CardHeader className="text-center space-y-4 pb-8">
-            <CardTitle className="text-3xl">Ready to Transform Your Workflow?</CardTitle>
-            <CardDescription className="text-lg">
-              Discover how the AI Bot Ecosystem can revolutionize productivity and collaboration 
-              across Dozier Holdings Group.
+            <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium mx-auto">
+              <Target className="h-4 w-4" />
+              Featured Resource
+            </div>
+            <CardTitle className="text-4xl">The Athlete Playbook</CardTitle>
+            <CardDescription className="text-lg max-w-2xl mx-auto">
+              Your complete guide to maximizing recruiting visibility, building your media presence, 
+              and connecting with athletes worldwide. Learn the strategies that top recruits use to stand out.
             </CardDescription>
           </CardHeader>
-          <CardContent className="flex flex-col sm:flex-row gap-4 justify-center">
+          <CardContent className="flex flex-col sm:flex-row gap-4 justify-center pb-8">
             <Button size="lg" asChild>
-              <Link href="/implementation">Get Started</Link>
+              <Link href="/playbook">
+                Explore the Playbook <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link href="/capabilities">Explore Capabilities</Link>
+            <Button size="lg" variant="outline">
+              Download PDF Guide
             </Button>
           </CardContent>
         </Card>
       </section>
 
+      {/* Transfer Portal Section */}
+      <section className="bg-muted/30 py-24">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
+                <Zap className="h-4 w-4" />
+                Level Up Your Career
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold">Navigate the Transfer Portal with Confidence</h2>
+              <p className="text-lg text-muted-foreground">
+                Whether you're at a smaller school looking to move up or exploring better opportunities, 
+                Athlynx guides you through every step of the transfer process. Get better, transfer smarter, 
+                and increase your NIL value along the way.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <div className="bg-primary text-primary-foreground rounded-full p-1 mt-1">
+                    <ArrowRight className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <strong>Track Your Progress:</strong> Monitor your athletic development and academic standing
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="bg-primary text-primary-foreground rounded-full p-1 mt-1">
+                    <ArrowRight className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <strong>Find Better Fits:</strong> Discover schools that match your talent and ambitions
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="bg-primary text-primary-foreground rounded-full p-1 mt-1">
+                    <ArrowRight className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <strong>Maximize NIL Value:</strong> Higher visibility = better endorsement opportunities
+                  </div>
+                </li>
+              </ul>
+              <Button size="lg" asChild>
+                <Link href="/transfer-portal">
+                  Explore Transfer Portal <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+            <div className="relative">
+              <Card className="border-2">
+                <CardContent className="p-8 space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-primary/10 p-3 rounded-full">
+                      <TrendingUp className="h-8 w-8 text-primary" />
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold">3.2x</div>
+                      <div className="text-sm text-muted-foreground">Avg. NIL Value Increase</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="bg-primary/10 p-3 rounded-full">
+                      <Users className="h-8 w-8 text-primary" />
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold">2,500+</div>
+                      <div className="text-sm text-muted-foreground">Successful Transfers</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="bg-primary/10 p-3 rounded-full">
+                      <Target className="h-8 w-8 text-primary" />
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold">87%</div>
+                      <div className="text-sm text-muted-foreground">Find Better Fit</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="container py-24">
+        <div className="bg-primary text-primary-foreground rounded-2xl p-12 text-center space-y-6">
+          <h2 className="text-4xl md:text-5xl font-bold">Ready to Take Control of Your Athletic Future?</h2>
+          <p className="text-xl opacity-90 max-w-2xl mx-auto">
+            Join thousands of athletes who are already using Athlynx to manage their careers, 
+            connect with opportunities, and maximize their potential.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <Button size="lg" variant="secondary" className="text-lg px-8">
+              Create Free Account <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button size="lg" variant="outline" className="text-lg px-8 bg-transparent text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10">
+              Schedule Demo
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="border-t bg-muted/30 py-12">
         <div className="container">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
-                <Bot className="h-6 w-6 text-primary" />
-                <span className="font-bold">AI Bot Ecosystem</span>
+                <Trophy className="h-6 w-6 text-primary" />
+                <span className="font-bold text-lg">Athlynx</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Empowering Dozier Holdings Group with intelligent AI collaboration.
+                The all-in-one platform for student athletes to manage their careers and maximize their potential.
+              </p>
+              <p className="text-xs text-muted-foreground">
+                nilportals.com | nilportal.ai
               </p>
             </div>
             <div className="space-y-4">
-              <h3 className="font-semibold">Quick Links</h3>
+              <h3 className="font-semibold">Platform</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link href="/bots" className="hover:text-primary transition-colors">Team Bots</Link></li>
-                <li><Link href="/capabilities" className="hover:text-primary transition-colors">Capabilities</Link></li>
-                <li><Link href="/implementation" className="hover:text-primary transition-colors">Implementation</Link></li>
+                <li><Link href="/playbook" className="hover:text-primary transition-colors">Athlete Playbook</Link></li>
+                <li><Link href="/transfer-portal" className="hover:text-primary transition-colors">Transfer Portal</Link></li>
+                <li><Link href="/nil-marketplace" className="hover:text-primary transition-colors">NIL Marketplace</Link></li>
+                <li><Link href="/messages" className="hover:text-primary transition-colors">Messages</Link></li>
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <h3 className="font-semibold">Company</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+                <li><Link href="/team" className="hover:text-primary transition-colors">Our Team</Link></li>
+                <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
               </ul>
             </div>
             <div className="space-y-4">
@@ -229,10 +311,13 @@ export default function Home() {
                 19039 CLOYANNA LN<br />
                 HUMBLE, TX 77346-2746
               </p>
+              <p className="text-sm text-muted-foreground">
+                cdozier@dozierholdingsgroup.com
+              </p>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 Dozier Holdings Group. All rights reserved.</p>
+            <p>&copy; 2024 Dozier Holdings Group. All rights reserved. | Founded by Chad A. Dozier & Glenn Tse</p>
           </div>
         </div>
       </footer>

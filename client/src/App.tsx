@@ -5,17 +5,19 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import TeamBots from "./pages/TeamBots";
-import Capabilities from "./pages/Capabilities";
-import Implementation from "./pages/Implementation";
+import AthletePlaybook from "./pages/AthletePlaybook";
+import TransferPortal from "./pages/TransferPortal";
+import NILMarketplace from "./pages/NILMarketplace";
+import Messages from "./pages/Messages";
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
-      <Route path={"/bots"} component={TeamBots} />
-      <Route path={"/capabilities"} component={Capabilities} />
-      <Route path={"/implementation"} component={Implementation} />
+      <Route path={"/playbook"} component={AthletePlaybook} />
+      <Route path={"/transfer-portal"} component={TransferPortal} />
+      <Route path={"/nil-marketplace"} component={NILMarketplace} />
+      <Route path={"/messages"} component={Messages} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
