@@ -1,0 +1,13 @@
+{
+  "query": "SELECT COUNT(*) as count FROM vip_members;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute SELECT COUNT(*) as count FROM vip_members;",
+  "rows": [
+    {
+      "count": "21"
+    }
+  ],
+  "messages": [],
+  "stdout": "count\n21\n",
+  "stderr": "",
+  "execution_time_ms": 57
+}

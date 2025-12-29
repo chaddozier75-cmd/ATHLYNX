@@ -1,0 +1,124 @@
+{
+  "query": "SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE();",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE();",
+  "rows": [
+    {
+      "TABLE_NAME": "__drizzle_migrations"
+    },
+    {
+      "TABLE_NAME": "users"
+    },
+    {
+      "TABLE_NAME": "early_access_signups"
+    },
+    {
+      "TABLE_NAME": "sports"
+    },
+    {
+      "TABLE_NAME": "bot_conversations"
+    },
+    {
+      "TABLE_NAME": "bot_messages"
+    },
+    {
+      "TABLE_NAME": "colleges"
+    },
+    {
+      "TABLE_NAME": "credit_transactions"
+    },
+    {
+      "TABLE_NAME": "messages"
+    },
+    {
+      "TABLE_NAME": "notifications"
+    },
+    {
+      "TABLE_NAME": "subscriptions"
+    },
+    {
+      "TABLE_NAME": "vip_members"
+    },
+    {
+      "TABLE_NAME": "credit_usage"
+    },
+    {
+      "TABLE_NAME": "transfer_portal_athletes"
+    },
+    {
+      "TABLE_NAME": "fca_devotionals"
+    },
+    {
+      "TABLE_NAME": "fca_daily_verses"
+    },
+    {
+      "TABLE_NAME": "fca_podcasts"
+    },
+    {
+      "TABLE_NAME": "fca_blog_posts"
+    },
+    {
+      "TABLE_NAME": "fca_testimonies"
+    },
+    {
+      "TABLE_NAME": "fca_prayer_requests"
+    },
+    {
+      "TABLE_NAME": "products"
+    },
+    {
+      "TABLE_NAME": "cart_items"
+    },
+    {
+      "TABLE_NAME": "orders"
+    },
+    {
+      "TABLE_NAME": "order_items"
+    },
+    {
+      "TABLE_NAME": "workouts"
+    },
+    {
+      "TABLE_NAME": "exercises"
+    },
+    {
+      "TABLE_NAME": "gyms"
+    },
+    {
+      "TABLE_NAME": "playlists"
+    },
+    {
+      "TABLE_NAME": "tracks"
+    },
+    {
+      "TABLE_NAME": "playlist_tracks"
+    },
+    {
+      "TABLE_NAME": "veteran_resources"
+    },
+    {
+      "TABLE_NAME": "jobs"
+    },
+    {
+      "TABLE_NAME": "medical_providers"
+    },
+    {
+      "TABLE_NAME": "injury_logs"
+    },
+    {
+      "TABLE_NAME": "baseball_players"
+    },
+    {
+      "TABLE_NAME": "baseball_stats"
+    },
+    {
+      "TABLE_NAME": "showcase_events"
+    },
+    {
+      "TABLE_NAME": "verification_codes"
+    }
+  ],
+  "messages": [],
+  "stdout": "TABLE_NAME\n__drizzle_migrations\nusers\nearly_access_signups\nsports\nbot_conversations\nbot_messages\ncolleges\ncredit_transactions\nmessages\nnotifications\nsubscriptions\nvip_members\ncredit_usage\ntransfer_portal_athletes\nfca_devotionals\nfca_daily_verses\nfca_podcasts\nfca_blog_posts\nfca_testimonies\nfca_prayer_requests\nproducts\ncart_items\norders\norder_items\nworkouts\nexercises\ngyms\nplaylists\ntracks\nplaylist_tracks\nveteran_resources\njobs\nmedical_providers\ninjury_logs\nbaseball_players\nbaseball_stats\nshowcase_events\nverification_codes\n",
+  "stderr": "",
+  "execution_time_ms": 67
+}

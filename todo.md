@@ -1383,3 +1383,86 @@
 - [x] Add Military Division to quick links on EarlyAccess page
 - [x] Save military-division-content.md with full playbook content
 
+
+
+---
+
+## DNS & THEME CONSISTENCY - December 29, 2025
+
+### DNS Setup for athlynx.ai
+- [ ] Delete remaining NETLIFYv6 record for www.athlynx.ai
+- [ ] Add CNAME record pointing to aibotecosys-abuvkiqa.manus.space
+- [ ] Verify athlynx.ai loads the Manus site
+
+### Fix Site Errors
+- [ ] Investigate and fix the "1 error" showing on the site
+
+### Apply Blue Sports Theme to ALL Pages
+- [ ] Match all pages to VIP landing page design
+- [ ] Consistent dark blue gradient background
+- [ ] Consistent cyan/blue accent colors
+- [ ] Consistent button styles
+- [ ] Consistent typography
+- [ ] Test all pages for visual consistency
+
+
+---
+
+## AI BOT ECOSYSTEM - December 29, 2025
+
+### Core Features
+- [ ] Database schema for bots, creators, categories, transactions
+- [ ] Bot marketplace homepage with featured bots
+- [ ] Bot search and filtering by category, price, rating
+- [ ] Individual bot detail pages with demo capability
+- [ ] Creator registration and profile management
+- [ ] Creator dashboard for bot management (CRUD)
+- [ ] Bot upload/creation workflow
+- [ ] User authentication with Manus OAuth
+- [ ] Stripe payment integration for bot purchases
+- [ ] Purchase history and owned bots section
+- [ ] Bot ratings and reviews system
+
+### UI/UX
+- [ ] Modern dark theme design (matching ATHLYNX branding)
+- [ ] Responsive layout for mobile/tablet/desktop
+- [ ] Loading states and error handling
+- [ ] Empty states for lists
+- [ ] Navigation structure (marketplace, dashboard, profile)
+
+### API/Backend
+- [ ] tRPC procedures for bot CRUD
+- [ ] tRPC procedures for purchases
+- [ ] tRPC procedures for reviews
+- [ ] Stripe webhook handling
+- [ ] Bot file storage integration
+
+### Testing
+- [ ] Vitest tests for bot procedures
+- [ ] Vitest tests for purchase flow
+- [ ] Vitest tests for authentication
+
+### Deployment
+- [x] Netlify redirect from athlynx.ai to Manus site (deployed via API)
+- [ ] Final checkpoint and publish
+
+
+---
+
+## 🔧 PHASE 1 FIX - December 29, 2025
+
+### Restore Full Schema & Fix Imports
+- [ ] Restore full database schema with all tables
+- [ ] Fix broken server imports
+- [ ] Push database and verify tables created
+- [ ] Restore VIP members data (21 signups)
+- [ ] Verify site is working
+
+### Diamond Grind Baseball App
+- [ ] Build Diamond Grind landing page
+- [ ] Build Diamond Grind dashboard
+- [ ] Add baseball player profiles
+- [ ] Add training/workout tracking
+- [ ] Add stats tracking
+- [ ] Test everything works
+- [ ] Save checkpoint

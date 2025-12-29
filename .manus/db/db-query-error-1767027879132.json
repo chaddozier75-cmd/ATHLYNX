@@ -1,0 +1,8 @@
+{
+  "query": "DROP TABLE IF EXISTS bot_conversations;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute DROP TABLE IF EXISTS bot_conversations;",
+  "returncode": 1,
+  "logs": [
+    "ERROR 3730 (HY000) at line 1: Cannot drop table 'bot_conversations' referenced by a foreign key constraint 'bot_messages_conversationId_bot_conversations_id_fk' on table 'bot_messages'."
+  ]
+}

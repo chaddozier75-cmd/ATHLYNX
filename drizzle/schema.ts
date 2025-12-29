@@ -952,3 +952,264 @@ export const verificationCodes = mysqlTable("verification_codes", {
 
 export type VerificationCode = typeof verificationCodes.$inferSelect;
 export type InsertVerificationCode = typeof verificationCodes.$inferInsert;
+
+
+/**
+ * ============================================
+ * AI BOT ECOSYSTEM TABLES
+ * ============================================
+ */
+
+/**
+ * Bot categories for marketplace organization
+ */
+export const botCategories = mysqlTable("bot_categories", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 100 }).notNull().unique(),
+  slug: varchar("slug", { length: 100 }).notNull().unique(),
+  description: text("description"),
+  icon: varchar("icon", { length: 50 }), // Emoji or icon name
+  parentId: int("parentId"), // For subcategories
+  sortOrder: int("sortOrder").default(0).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type BotCategory = typeof botCategories.$inferSelect;
+export type InsertBotCategory = typeof botCategories.$inferInsert;
+
+/**
+ * Bot creators - Users who create and sell bots
+ */
+export const botCreators = mysqlTable("bot_creators", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().references(() => users.id).unique(),
+  displayName: varchar("displayName", { length: 100 }).notNull(),
+  bio: text("bio"),
+  avatarUrl: text("avatarUrl"),
+  websiteUrl: text("websiteUrl"),
+  twitterHandle: varchar("twitterHandle", { length: 50 }),
+  githubHandle: varchar("githubHandle", { length: 50 }),
+  stripeAccountId: varchar("stripeAccountId", { length: 255 }), // For payouts
+  verified: mysqlEnum("verified", ["yes", "no"]).default("no").notNull(),
+  totalSales: int("totalSales").default(0).notNull(),
+  totalRevenue: decimal("totalRevenue", { precision: 10, scale: 2 }).default("0.00").notNull(),
+  rating: decimal("rating", { precision: 3, scale: 2 }).default("0.00").notNull(),
+  reviewCount: int("reviewCount").default(0).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type BotCreator = typeof botCreators.$inferSelect;
+export type InsertBotCreator = typeof botCreators.$inferInsert;
+
+/**
+ * Bots - The main bot listings in the marketplace
+ */
+export const bots = mysqlTable("bots", {
+  id: int("id").autoincrement().primaryKey(),
+  creatorId: int("creatorId").notNull().references(() => botCreators.id),
+  categoryId: int("categoryId").references(() => botCategories.id),
+  
+  // Basic info
+  name: varchar("name", { length: 200 }).notNull(),
+  slug: varchar("slug", { length: 200 }).notNull().unique(),
+  tagline: varchar("tagline", { length: 300 }),
+  description: text("description").notNull(),
+  
+  // Media
+  iconUrl: text("iconUrl"),
+  bannerUrl: text("bannerUrl"),
+  screenshotUrls: json("screenshotUrls"), // Array of screenshot URLs
+  demoVideoUrl: text("demoVideoUrl"),
+  
+  // Pricing
+  pricingModel: mysqlEnum("pricingModel", ["free", "one_time", "subscription", "freemium"]).default("free").notNull(),
+  price: decimal("price", { precision: 10, scale: 2 }).default("0.00").notNull(),
+  currency: varchar("currency", { length: 3 }).default("USD").notNull(),
+  
+  // Technical
+  systemPrompt: text("systemPrompt"), // The bot's system prompt
+  modelConfig: json("modelConfig"), // Model settings, temperature, etc.
+  capabilities: json("capabilities"), // Array of capability tags
+  apiEndpoint: text("apiEndpoint"), // For external bots
+  
+  // Stats
+  downloads: int("downloads").default(0).notNull(),
+  activeUsers: int("activeUsers").default(0).notNull(),
+  rating: decimal("rating", { precision: 3, scale: 2 }).default("0.00").notNull(),
+  reviewCount: int("reviewCount").default(0).notNull(),
+  
+  // Status
+  status: mysqlEnum("status", ["draft", "pending_review", "published", "rejected", "suspended"]).default("draft").notNull(),
+  featured: mysqlEnum("featured", ["yes", "no"]).default("no").notNull(),
+  rejectionReason: text("rejectionReason"),
+  
+  // Versioning
+  version: varchar("version", { length: 20 }).default("1.0.0").notNull(),
+  changelog: text("changelog"),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+  publishedAt: timestamp("publishedAt"),
+});
+
+export type Bot = typeof bots.$inferSelect;
+export type InsertBot = typeof bots.$inferInsert;
+
+/**
+ * Bot tags for searchability
+ */
+export const botTags = mysqlTable("bot_tags", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 50 }).notNull().unique(),
+  slug: varchar("slug", { length: 50 }).notNull().unique(),
+  usageCount: int("usageCount").default(0).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type BotTag = typeof botTags.$inferSelect;
+export type InsertBotTag = typeof botTags.$inferInsert;
+
+/**
+ * Bot to tag mapping
+ */
+export const botTagMappings = mysqlTable("bot_tag_mappings", {
+  id: int("id").autoincrement().primaryKey(),
+  botId: int("botId").notNull().references(() => bots.id),
+  tagId: int("tagId").notNull().references(() => botTags.id),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type BotTagMapping = typeof botTagMappings.$inferSelect;
+export type InsertBotTagMapping = typeof botTagMappings.$inferInsert;
+
+/**
+ * Bot purchases - Track who bought what
+ */
+export const botPurchases = mysqlTable("bot_purchases", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().references(() => users.id),
+  botId: int("botId").notNull().references(() => bots.id),
+  
+  // Payment info
+  amount: decimal("amount", { precision: 10, scale: 2 }).notNull(),
+  currency: varchar("currency", { length: 3 }).default("USD").notNull(),
+  stripePaymentIntentId: varchar("stripePaymentIntentId", { length: 255 }),
+  stripeChargeId: varchar("stripeChargeId", { length: 255 }),
+  
+  // Status
+  status: mysqlEnum("status", ["pending", "completed", "refunded", "failed"]).default("pending").notNull(),
+  refundedAt: timestamp("refundedAt"),
+  refundReason: text("refundReason"),
+  
+  // Subscription (if applicable)
+  subscriptionId: varchar("subscriptionId", { length: 255 }),
+  subscriptionStatus: mysqlEnum("subscriptionStatus", ["active", "cancelled", "past_due", "unpaid"]),
+  subscriptionEndsAt: timestamp("subscriptionEndsAt"),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type BotPurchase = typeof botPurchases.$inferSelect;
+export type InsertBotPurchase = typeof botPurchases.$inferInsert;
+
+/**
+ * Bot reviews and ratings
+ */
+export const botReviews = mysqlTable("bot_reviews", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().references(() => users.id),
+  botId: int("botId").notNull().references(() => bots.id),
+  purchaseId: int("purchaseId").references(() => botPurchases.id),
+  
+  // Review content
+  rating: int("rating").notNull(), // 1-5 stars
+  title: varchar("title", { length: 200 }),
+  content: text("content"),
+  
+  // Moderation
+  status: mysqlEnum("status", ["pending", "approved", "rejected"]).default("pending").notNull(),
+  
+  // Engagement
+  helpfulCount: int("helpfulCount").default(0).notNull(),
+  
+  // Creator response
+  creatorResponse: text("creatorResponse"),
+  creatorRespondedAt: timestamp("creatorRespondedAt"),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type BotReview = typeof botReviews.$inferSelect;
+export type InsertBotReview = typeof botReviews.$inferInsert;
+
+/**
+ * Bot usage sessions - Track bot interactions
+ */
+export const botUsageSessions = mysqlTable("bot_usage_sessions", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().references(() => users.id),
+  botId: int("botId").notNull().references(() => bots.id),
+  
+  // Session info
+  sessionStart: timestamp("sessionStart").defaultNow().notNull(),
+  sessionEnd: timestamp("sessionEnd"),
+  messageCount: int("messageCount").default(0).notNull(),
+  tokensUsed: int("tokensUsed").default(0).notNull(),
+  
+  // Feedback
+  userRating: int("userRating"), // Quick 1-5 rating after session
+  feedback: text("feedback"),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type BotUsageSession = typeof botUsageSessions.$inferSelect;
+export type InsertBotUsageSession = typeof botUsageSessions.$inferInsert;
+
+/**
+ * Bot favorites - Users can favorite bots
+ */
+export const botFavorites = mysqlTable("bot_favorites", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().references(() => users.id),
+  botId: int("botId").notNull().references(() => bots.id),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type BotFavorite = typeof botFavorites.$inferSelect;
+export type InsertBotFavorite = typeof botFavorites.$inferInsert;
+
+/**
+ * Creator payouts - Track payments to creators
+ */
+export const creatorPayouts = mysqlTable("creator_payouts", {
+  id: int("id").autoincrement().primaryKey(),
+  creatorId: int("creatorId").notNull().references(() => botCreators.id),
+  
+  // Amount
+  amount: decimal("amount", { precision: 10, scale: 2 }).notNull(),
+  currency: varchar("currency", { length: 3 }).default("USD").notNull(),
+  platformFee: decimal("platformFee", { precision: 10, scale: 2 }).notNull(),
+  netAmount: decimal("netAmount", { precision: 10, scale: 2 }).notNull(),
+  
+  // Stripe
+  stripeTransferId: varchar("stripeTransferId", { length: 255 }),
+  stripePayoutId: varchar("stripePayoutId", { length: 255 }),
+  
+  // Status
+  status: mysqlEnum("status", ["pending", "processing", "completed", "failed"]).default("pending").notNull(),
+  failureReason: text("failureReason"),
+  
+  // Period
+  periodStart: timestamp("periodStart").notNull(),
+  periodEnd: timestamp("periodEnd").notNull(),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  completedAt: timestamp("completedAt"),
+});
+
+export type CreatorPayout = typeof creatorPayouts.$inferSelect;
+export type InsertCreatorPayout = typeof creatorPayouts.$inferInsert;

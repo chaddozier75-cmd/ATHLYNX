@@ -1,0 +1,124 @@
+{
+  "query": "SHOW TABLES;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute SHOW TABLES;",
+  "rows": [
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "__drizzle_migrations"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "baseball_players"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "baseball_stats"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "bot_conversations"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "bot_messages"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "cart_items"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "colleges"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "credit_transactions"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "credit_usage"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "early_access_signups"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "exercises"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "fca_blog_posts"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "fca_daily_verses"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "fca_devotionals"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "fca_podcasts"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "fca_prayer_requests"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "fca_testimonies"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "gyms"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "injury_logs"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "jobs"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "medical_providers"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "messages"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "notifications"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "order_items"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "orders"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "playlist_tracks"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "playlists"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "products"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "showcase_events"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "sports"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "subscriptions"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "tracks"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "transfer_portal_athletes"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "users"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "verification_codes"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "veteran_resources"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "vip_members"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "workouts"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_AbuVKiqaa4gzZYPXheEZib\n__drizzle_migrations\nbaseball_players\nbaseball_stats\nbot_conversations\nbot_messages\ncart_items\ncolleges\ncredit_transactions\ncredit_usage\nearly_access_signups\nexercises\nfca_blog_posts\nfca_daily_verses\nfca_devotionals\nfca_podcasts\nfca_prayer_requests\nfca_testimonies\ngyms\ninjury_logs\njobs\nmedical_providers\nmessages\nnotifications\norder_items\norders\nplaylist_tracks\nplaylists\nproducts\nshowcase_events\nsports\nsubscriptions\ntracks\ntransfer_portal_athletes\nusers\nverification_codes\nveteran_resources\nvip_members\nworkouts\n",
+  "stderr": "",
+  "execution_time_ms": 110
+}

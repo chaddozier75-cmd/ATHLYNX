@@ -1,0 +1,142 @@
+{
+  "query": "SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE() ORDER BY TABLE_NAME;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE() ORDER BY TABLE_NAME;",
+  "rows": [
+    {
+      "TABLE_NAME": "__drizzle_migrations"
+    },
+    {
+      "TABLE_NAME": "access_control"
+    },
+    {
+      "TABLE_NAME": "ai_match_recommendations"
+    },
+    {
+      "TABLE_NAME": "athlete_commitments"
+    },
+    {
+      "TABLE_NAME": "athlete_views"
+    },
+    {
+      "TABLE_NAME": "audit_logs"
+    },
+    {
+      "TABLE_NAME": "bot_categories"
+    },
+    {
+      "TABLE_NAME": "bot_creators"
+    },
+    {
+      "TABLE_NAME": "bot_favorites"
+    },
+    {
+      "TABLE_NAME": "bot_purchases"
+    },
+    {
+      "TABLE_NAME": "bot_reviews"
+    },
+    {
+      "TABLE_NAME": "bot_tag_mappings"
+    },
+    {
+      "TABLE_NAME": "bot_tags"
+    },
+    {
+      "TABLE_NAME": "bot_usage_sessions"
+    },
+    {
+      "TABLE_NAME": "bots"
+    },
+    {
+      "TABLE_NAME": "college_database"
+    },
+    {
+      "TABLE_NAME": "consent_records"
+    },
+    {
+      "TABLE_NAME": "creator_payouts"
+    },
+    {
+      "TABLE_NAME": "credit_transactions"
+    },
+    {
+      "TABLE_NAME": "credit_usage"
+    },
+    {
+      "TABLE_NAME": "early_access_signups"
+    },
+    {
+      "TABLE_NAME": "employee_access_logs"
+    },
+    {
+      "TABLE_NAME": "fca_blog_posts"
+    },
+    {
+      "TABLE_NAME": "fca_comments"
+    },
+    {
+      "TABLE_NAME": "fca_daily_verses"
+    },
+    {
+      "TABLE_NAME": "fca_devotionals"
+    },
+    {
+      "TABLE_NAME": "fca_podcasts"
+    },
+    {
+      "TABLE_NAME": "fca_prayer_requests"
+    },
+    {
+      "TABLE_NAME": "fca_testimonies"
+    },
+    {
+      "TABLE_NAME": "medical_records"
+    },
+    {
+      "TABLE_NAME": "ncaa_compliance"
+    },
+    {
+      "TABLE_NAME": "nil_contracts"
+    },
+    {
+      "TABLE_NAME": "school_subscriptions"
+    },
+    {
+      "TABLE_NAME": "security_incidents"
+    },
+    {
+      "TABLE_NAME": "signing_day_events"
+    },
+    {
+      "TABLE_NAME": "signing_day_streams"
+    },
+    {
+      "TABLE_NAME": "sports"
+    },
+    {
+      "TABLE_NAME": "stream_chat"
+    },
+    {
+      "TABLE_NAME": "transfer_portal_alerts"
+    },
+    {
+      "TABLE_NAME": "transfer_portal_analytics"
+    },
+    {
+      "TABLE_NAME": "transfer_portal_athletes"
+    },
+    {
+      "TABLE_NAME": "users"
+    },
+    {
+      "TABLE_NAME": "verification_codes"
+    },
+    {
+      "TABLE_NAME": "vip_members"
+    }
+  ],
+  "messages": [],
+  "stdout": "TABLE_NAME\n__drizzle_migrations\naccess_control\nai_match_recommendations\nathlete_commitments\nathlete_views\naudit_logs\nbot_categories\nbot_creators\nbot_favorites\nbot_purchases\nbot_reviews\nbot_tag_mappings\nbot_tags\nbot_usage_sessions\nbots\ncollege_database\nconsent_records\ncreator_payouts\ncredit_transactions\ncredit_usage\nearly_access_signups\nemployee_access_logs\nfca_blog_posts\nfca_comments\nfca_daily_verses\nfca_devotionals\nfca_podcasts\nfca_prayer_requests\nfca_testimonies\nmedical_records\nncaa_compliance\nnil_contracts\nschool_subscriptions\nsecurity_incidents\nsigning_day_events\nsigning_day_streams\nsports\nstream_chat\ntransfer_portal_alerts\ntransfer_portal_analytics\ntransfer_portal_athletes\nusers\nverification_codes\nvip_members\n",
+  "stderr": "",
+  "execution_time_ms": 197
+}

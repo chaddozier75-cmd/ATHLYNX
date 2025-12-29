@@ -5,78 +5,8 @@
     {
       "idx": 0,
       "version": "5",
-      "when": 1766939047977,
-      "tag": "0000_loud_unicorn",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "5",
-      "when": 1766942249452,
-      "tag": "0001_gorgeous_darwin",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "5",
-      "when": 1766962911375,
-      "tag": "0002_lumpy_wolverine",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "5",
-      "when": 1766967395608,
-      "tag": "0003_lively_roland_deschain",
-      "breakpoints": true
-    },
-    {
-      "idx": 4,
-      "version": "5",
-      "when": 1766972566623,
-      "tag": "0004_natural_secret_warriors",
-      "breakpoints": true
-    },
-    {
-      "idx": 5,
-      "version": "5",
-      "when": 1766985067788,
-      "tag": "0005_absent_ezekiel",
-      "breakpoints": true
-    },
-    {
-      "idx": 6,
-      "version": "5",
-      "when": 1766987089956,
-      "tag": "0006_shocking_gravity",
-      "breakpoints": true
-    },
-    {
-      "idx": 7,
-      "version": "5",
-      "when": 1766987629419,
-      "tag": "0007_woozy_mantis",
-      "breakpoints": true
-    },
-    {
-      "idx": 8,
-      "version": "5",
-      "when": 1766988744390,
-      "tag": "0008_loud_rocket_racer",
-      "breakpoints": true
-    },
-    {
-      "idx": 9,
-      "version": "5",
-      "when": 1766989457715,
-      "tag": "0009_serious_silhouette",
-      "breakpoints": true
-    },
-    {
-      "idx": 10,
-      "version": "5",
-      "when": 1767020818221,
-      "tag": "0010_huge_sunset_bain",
+      "when": 1767028215162,
+      "tag": "0000_early_cammi",
       "breakpoints": true
     }
   ]

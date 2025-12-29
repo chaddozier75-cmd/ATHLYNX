@@ -1,0 +1,24 @@
+{
+  "query": "SELECT * FROM users;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute SELECT * FROM users;",
+  "rows": [
+    {
+      "id": "1",
+      "openId": "chad-dozier-founder-vip",
+      "name": "Chad A. Dozier Sr",
+      "email": "cdozier@dozierholdingsgroup.com",
+      "loginMethod": "athlynx",
+      "role": "admin",
+      "aiCredits": "0",
+      "createdAt": "2025-12-28 17:18:55",
+      "updatedAt": "2025-12-28 17:18:55",
+      "lastSignedIn": "2025-12-28 17:18:56",
+      "subscriptionTier": "free",
+      "creditsBalance": "0"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\topenId\tname\temail\tloginMethod\trole\taiCredits\tcreatedAt\tupdatedAt\tlastSignedIn\tsubscriptionTier\tcreditsBalance\n1\tchad-dozier-founder-vip\tChad A. Dozier Sr\tcdozier@dozierholdingsgroup.com\tathlynx\tadmin\t0\t2025-12-28 17:18:55\t2025-12-28 17:18:55\t2025-12-28 17:18:56\tfree\t0\n",
+  "stderr": "",
+  "execution_time_ms": 55
+}
