@@ -1523,3 +1523,5 @@
 
 
 - [ ] BUG: Faith page (/faith) crashes with "Failed to construct 'URL': Invalid URL" error
+
+- [x] Ensure hamburger menu (UnifiedNav) is present on ALL pages (already global in App.tsx)
