@@ -118,7 +118,7 @@
 
 ### White-Label Sport Apps
 1. Diamond Grind (Baseball)
-2. Hoop Empire (Basketball)
+2. Court Kings (Basketball)
 3. Gridiron Nexus (Football)
 4. Pitch Pulse (Soccer)
 5. Reel Masters (Fishing)

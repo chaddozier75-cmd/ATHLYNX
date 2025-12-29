@@ -23,7 +23,7 @@
 - [x] Faith/FCA (/faith) - EXCELLENT - Devotionals, podcasts, prayer wall, testimonies
 
 ### White-Label Sport Apps (Coming Soon Pages)
-- [x] Hoop Empire - Basketball (/hoop-empire) - DONE
+- [x] Court Kings - Basketball (/court-kings) - DONE
 - [x] Gridiron Nexus - Football (/gridiron-nexus) - DONE
 - [x] Pitch Pulse - Soccer (/pitch-pulse) - DONE
 - [x] Ice Breakers - Hockey (/ice-breakers) - ADDED & DONE

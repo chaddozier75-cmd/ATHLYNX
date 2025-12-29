@@ -607,7 +607,7 @@
   - [x] AI Baseball Coach
   - [x] Stats display (125K players, 2.5K scouts, 8.5K commitments, 500 tournaments)
   - [x] "POWERED BY ATHLYNX" branding
-- [x] Hoop Empire (Basketball) - Coming Soon page
+- [x] Court Kings (Basketball) - Coming Soon page
 - [x] Gridiron Nexus (Football) - Coming Soon page
 - [x] Pitch Pulse (Soccer) - Coming Soon page
 - [x] Reel Masters (Fishing) - Coming Soon page
@@ -640,7 +640,7 @@
 - [x] /music, /playlists - Music streaming
 - [x] /apps, /download - Mobile apps
 - [x] /diamond-grind, /baseball - Baseball platform
-- [x] /hoop-empire, /basketball - Basketball (coming soon)
+- [x] /court-kings, /basketball - Basketball (coming soon)
 - [x] /gridiron-nexus, /football - Football (coming soon)
 - [x] /pitch-pulse, /soccer - Soccer (coming soon)
 - [x] /reel-masters, /fishing - Fishing (coming soon)
@@ -726,7 +726,7 @@
 - [x] Sign-in required screen
 
 ### White-Label Coming Soon Pages ✅
-- [x] Hoop Empire (Basketball)
+- [x] Court Kings (Basketball)
 - [x] Gridiron Nexus (Football)
 - [x] Pitch Pulse (Soccer)
 - [x] Reel Masters (Fishing)
@@ -813,7 +813,7 @@
 ## 🏷️ WHITE-LABEL SPORT APPS - December 29, 2025
 
 - [x] Diamond Grind (Baseball) - Already built
-- [ ] Hoop Empire (Basketball)
+- [ ] Court Kings (Basketball)
 - [ ] Gridiron Nexus (Football)
 - [ ] Pitch Pulse (Soccer)
 - [ ] Reel Masters (Fishing)
@@ -1485,7 +1485,7 @@
 - [x] Organized navigation by category:
   - Core Apps (NIL Portal, Diamond Grind, Messenger, NIL Deals)
   - Platform (Home, Playbook, Dashboard, Store, Training, Careers)
-  - White-Label Sports (Hoop Empire, Gridiron Nexus, Pitch Pulse, Reel Masters)
+  - White-Label Sports (Court Kings, Gridiron Nexus, Pitch Pulse, Reel Masters)
   - Special (Faith, Military, Transfer Portal, Medical)
   - Management (Project Management, Media, Pricing)
 - [x] Added VIP Early Access button at top
@@ -1496,7 +1496,7 @@
 - [x] Updated EarlyAccess.tsx image paths
 - [x] Updated Home.tsx image paths
 - [x] Updated MediaShowcase.tsx image paths
-- [x] Added new sport app icons (Hoop Empire, Gridiron Nexus, Pitch Pulse, Reel Masters)
+- [x] Added new sport app icons (Court Kings, Gridiron Nexus, Pitch Pulse, Reel Masters)
 
 ### Project Management Dashboard ✅
 - [x] Created /project-management page
@@ -1505,3 +1505,21 @@
 - [x] Platform tab with ATHLYNX features and white-label apps
 - [x] Team tab with founders and advisors
 - [x] Timeline tab with launch phases
+
+
+---
+
+## ⚾ BASEBALL PLAYBOOK PROJECT STATUS PAGE - December 29, 2025
+
+### Project Checklist Page Redesign
+- [ ] Create baseball-themed project status page
+- [ ] Design as "Starting Lineup" with positions for completed features
+- [ ] Add "Bench" section for in-progress features
+- [ ] Add "Farm System" section for future features
+- [ ] Add "Scouting Report" for upcoming priorities
+- [ ] Include baseball diamond visual
+- [ ] Add player card style for each feature
+- [ ] Match ATHLYNX dark blue sports theme
+
+
+- [ ] BUG: Faith page (/faith) crashes with "Failed to construct 'URL': Invalid URL" error

@@ -25,7 +25,7 @@ const navItems = [
   {
     category: "WHITE-LABEL SPORTS",
     items: [
-      { name: "Hoop Empire", href: "/hoop-empire", icon: "/images/hoop-empire-icon.png" },
+      { name: "Court Kings", href: "/court-kings", icon: "/images/court-kings-icon.png" },
       { name: "Gridiron Nexus", href: "/gridiron-nexus", icon: "/images/gridiron-nexus-icon.png" },
       { name: "Pitch Pulse", href: "/pitch-pulse", icon: "/images/pitch-pulse-icon.png" },
       { name: "Reel Masters", href: "/reel-masters", icon: "/images/reel-masters-icon.png" },

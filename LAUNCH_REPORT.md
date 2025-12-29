@@ -32,7 +32,7 @@ The ATHLYNX platform is **READY FOR LAUNCH**. All systems have been audited, tes
 | App Name | Sport | Status |
 |----------|-------|--------|
 | Diamond Grind | Baseball | ✅ Full Launch Ready |
-| Hoop Empire | Basketball | Coming Soon |
+| Court Kings | Basketball | Coming Soon |
 | Gridiron Nexus | Football | Coming Soon |
 | Pitch Pulse | Soccer | Coming Soon |
 | Ice Breakers | Hockey | Coming Soon |

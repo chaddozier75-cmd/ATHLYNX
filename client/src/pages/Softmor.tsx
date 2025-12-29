@@ -45,7 +45,7 @@ const products = [
 ];
 
 const whiteLabelApps = [
-  { name: 'Hoop Empire', sport: 'Basketball', icon: '🏀' },
+  { name: 'Court Kings', sport: 'Basketball', icon: '🏀' },
   { name: 'Gridiron Nexus', sport: 'Football', icon: '🏈' },
   { name: 'Pitch Pulse', sport: 'Soccer', icon: '⚽' },
   { name: 'Reel Masters', sport: 'Fishing', icon: '🎣' },

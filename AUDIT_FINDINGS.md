@@ -19,7 +19,7 @@
 - Blue sports theme throughout ✅
 
 ## Coming Soon Pages - ALL WORKING ✅
-1. Hoop Empire (Basketball) ✅
+1. Court Kings (Basketball) ✅
 2. Gridiron Nexus (Football) ✅
 3. Pitch Pulse (Soccer) ✅
 4. Ice Breakers (Hockey) ✅

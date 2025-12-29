@@ -112,8 +112,8 @@ function Router() {
       <Route path={"/baseball"} component={DiamondGrind} />
       
       {/* Coming Soon - Other White-Label Apps */}
-      <Route path={"/hoop-empire"} component={() => <ComingSoon title="Hoop Empire" description="Elite basketball platform with rankings, recruiting, training, and exposure. Dominate the court." icon="🏀" />} />
-      <Route path={"/basketball"} component={() => <ComingSoon title="Hoop Empire" description="Elite basketball platform with rankings, recruiting, training, and exposure. Dominate the court." icon="🏀" />} />
+      <Route path={"/court-kings"} component={() => <ComingSoon title="Court Kings" description="Elite basketball platform with rankings, recruiting, training, and exposure. Dominate the court." icon="🏀" />} />
+      <Route path={"/basketball"} component={() => <ComingSoon title="Court Kings" description="Elite basketball platform with rankings, recruiting, training, and exposure. Dominate the court." icon="🏀" />} />
       
       <Route path={"/gridiron-nexus"} component={() => <ComingSoon title="Gridiron Nexus" description="Football recruiting, film analysis, combine prep, and NIL opportunities. Own the field." icon="🏈" />} />
       <Route path={"/football"} component={() => <ComingSoon title="Gridiron Nexus" description="Football recruiting, film analysis, combine prep, and NIL opportunities. Own the field." icon="🏈" />} />

@@ -25,7 +25,7 @@ export default function Apps() {
       status: "Coming Soon",
     },
     {
-      name: "Hoop Empire",
+      name: "Court Kings",
       tagline: "Basketball Dominance",
       icon: "🏀",
       color: "from-orange-500 to-red-500",

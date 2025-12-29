@@ -43,7 +43,7 @@ const platformFeatures = [
 
 const whiteLabelApps = [
   { name: "Diamond Grind", sport: "Baseball", status: "built", market: "15M players", url: "/diamond-grind" },
-  { name: "Hoop Empire", sport: "Basketball", status: "coming", market: "26M players", url: "/hoop-empire" },
+  { name: "Court Kings", sport: "Basketball", status: "coming", market: "26M players", url: "/court-kings" },
   { name: "Gridiron Nexus", sport: "Football", status: "coming", market: "5M players", url: "/gridiron-nexus" },
   { name: "Pitch Pulse", sport: "Soccer", status: "coming", market: "24M players", url: "/pitch-pulse" },
   { name: "Reel Masters", sport: "Fishing", status: "coming", market: "55M anglers", url: "/reel-masters" },
@@ -496,7 +496,7 @@ export default function ProjectManagement() {
                     <div className="text-purple-400">Every 2-4 weeks after Feb 1</div>
                     <div className="text-gray-400 mt-2">
                       <ul className="list-disc list-inside space-y-1">
-                        <li>Basketball (Hoop Empire)</li>
+                        <li>Basketball (Court Kings)</li>
                         <li>Football (Gridiron Nexus)</li>
                         <li>Soccer (Pitch Pulse)</li>
                         <li>Additional sports based on analytics</li>

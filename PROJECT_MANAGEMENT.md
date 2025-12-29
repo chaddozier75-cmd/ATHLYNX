@@ -78,7 +78,7 @@
 | App | Status | Sport | Market Size |
 |-----|--------|-------|-------------|
 | **Diamond Grind** | ✅ Built | Baseball | 15M players |
-| **Hoop Empire** | 📋 Coming Soon | Basketball | 26M players |
+| **Court Kings** | 📋 Coming Soon | Basketball | 26M players |
 | **Gridiron Nexus** | 📋 Coming Soon | Football | 5M players |
 | **Pitch Pulse** | 📋 Coming Soon | Soccer | 24M players |
 | **Reel Masters** | 📋 Coming Soon | Fishing | 55M anglers |
@@ -103,7 +103,7 @@
 - [ ] Customer support ready
 
 ### Phase 3: Sport Rollout (Every 2-4 weeks after Feb 1)
-- [ ] Basketball (Hoop Empire)
+- [ ] Basketball (Court Kings)
 - [ ] Football (Gridiron Nexus)
 - [ ] Soccer (Pitch Pulse)
 - [ ] Additional sports based on analytics

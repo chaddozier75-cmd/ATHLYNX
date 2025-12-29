@@ -25,7 +25,7 @@
 - [ ] Veterans (/veterans)
 
 ### White-Label Sport Apps (Coming Soon)
-- [x] Hoop Empire - Basketball (/hoop-empire) - DONE
+- [x] Court Kings - Basketball (/court-kings) - DONE
 - [x] Gridiron Nexus - Football (/gridiron-nexus) - DONE
 - [x] Pitch Pulse - Soccer (/pitch-pulse) - DONE
 - [x] Ice Breakers - Hockey (/ice-breakers) - ADDED & DONE
@@ -55,7 +55,7 @@
 
 ### Coming Soon Pages
 - [ ] Messenger (/messenger)
-- [ ] Hoop Empire - Basketball (/hoop-empire)
+- [ ] Court Kings - Basketball (/court-kings)
 - [ ] Gridiron Nexus - Football (/gridiron-nexus)
 - [ ] Pitch Pulse - Soccer (/pitch-pulse)
 - [ ] Reel Masters - Fishing (/reel-masters)
