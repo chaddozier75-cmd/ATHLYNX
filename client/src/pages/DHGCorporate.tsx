@@ -337,6 +337,42 @@ export default function DHGCorporate() {
         </div>
       </div>
 
+      {/* Corporate Videos */}
+      <div className="container py-16">
+        <h2 className="text-3xl font-bold mb-2">DHG in Action</h2>
+        <p className="text-gray-400 mb-8">See our technology and operations</p>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-emerald-500/50 transition">
+            <video controls className="w-full aspect-video">
+              <source src="/videos/softmor-ai-brain.mp4" type="video/mp4" />
+            </video>
+            <div className="p-4">
+              <h3 className="font-semibold">Global Technology Network</h3>
+              <p className="text-sm text-gray-400">Worldwide infrastructure solutions</p>
+            </div>
+          </div>
+          <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-emerald-500/50 transition">
+            <video controls className="w-full aspect-video">
+              <source src="/videos/dhg-corporate.mov" type="video/quicktime" />
+            </video>
+            <div className="p-4">
+              <h3 className="font-semibold">Corporate Overview</h3>
+              <p className="text-sm text-gray-400">Leadership and vision</p>
+            </div>
+          </div>
+          <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-emerald-500/50 transition">
+            <video controls className="w-full aspect-video">
+              <source src="/videos/athlynx-crab-stadium.mp4" type="video/mp4" />
+            </video>
+            <div className="p-4">
+              <h3 className="font-semibold">Stadium Operations</h3>
+              <p className="text-sm text-gray-400">Sports and entertainment partnerships</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* CTA */}
       <div className="container py-16">
         <div className="bg-gradient-to-r from-emerald-900/50 to-blue-900/50 border border-emerald-500/30 rounded-2xl p-8 md:p-12 text-center">

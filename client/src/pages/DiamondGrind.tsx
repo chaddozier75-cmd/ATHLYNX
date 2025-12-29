@@ -233,6 +233,34 @@ export default function DiamondGrind() {
             </div>
           </div>
 
+          {/* Video Section */}
+          <div className="mb-10">
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold text-white">See Diamond Grind in Action</h3>
+              <p className="text-gray-400">Elite baseball showcases and player highlights</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-blue-500/10 rounded-2xl border border-blue-500/30 overflow-hidden">
+                <video controls className="w-full aspect-video">
+                  <source src="/videos/nil-baseball-players.mp4" type="video/mp4" />
+                </video>
+                <div className="p-4">
+                  <h4 className="font-bold text-white">Elite Player Showcase</h4>
+                  <p className="text-sm text-gray-400">Top prospects in action</p>
+                </div>
+              </div>
+              <div className="bg-blue-500/10 rounded-2xl border border-blue-500/30 overflow-hidden">
+                <video controls className="w-full aspect-video">
+                  <source src="/videos/nil-crab-baseball.mp4" type="video/mp4" />
+                </video>
+                <div className="p-4">
+                  <h4 className="font-bold text-white">ATHLYNX Baseball Network</h4>
+                  <p className="text-sm text-gray-400">Powered by DHG</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
             {stats.map((stat, i) => (

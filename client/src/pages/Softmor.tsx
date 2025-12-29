@@ -36,11 +36,11 @@ const products = [
   },
   {
     name: 'FUEL Bots',
-    tagline: 'AI Performance Coaching',
-    description: 'AI-powered training recommendations and performance optimization',
+    tagline: 'AI Companions',
+    description: 'Revolutionary AI companions for training, medical response, and industrial operations',
     icon: '🤖',
-    status: 'Development',
-    link: '#'
+    status: 'Active',
+    link: '/fuel-bots'
   }
 ];
 
@@ -69,8 +69,8 @@ export default function Softmor() {
           </div>
 
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
-              <Code className="w-8 h-8 text-white" />
+            <div className="w-16 h-16 rounded-xl overflow-hidden">
+              <img src="/softmor-logo.png" alt="Softmor" className="w-full h-full object-contain bg-white p-1 rounded-xl" />
             </div>
             <div>
               <p className="text-cyan-400 text-sm font-medium tracking-wider">DHG TECHNOLOGY DIVISION</p>
@@ -89,6 +89,9 @@ export default function Softmor() {
             <Link href="/dhg" className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 border border-white/20 rounded-lg font-semibold hover:bg-white/20 transition">
               Back to DHG
             </Link>
+            <a href="https://dozierholdingsgroup.com/softmor.html" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-green-600/20 border border-green-500/30 rounded-lg font-semibold hover:bg-green-600/30 transition text-green-400">
+              <ExternalLink className="w-4 h-4" /> Official Website
+            </a>
           </div>
         </div>
       </div>
@@ -217,6 +220,51 @@ export default function Softmor() {
             <Link href="/playbook" className="px-8 py-3 bg-white/10 border border-white/20 rounded-lg font-semibold hover:bg-white/20 transition">
               Preview the App
             </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Videos Section */}
+      <div className="container py-16">
+        <h2 className="text-3xl font-bold mb-2">Softmor Videos</h2>
+        <p className="text-gray-400 mb-8">See our technology in action</p>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-cyan-500/50 transition">
+            <video controls className="w-full aspect-video" poster="/video_thumbs/softmor-ai.jpg">
+              <source src="/videos/softmor-ai-brain.mp4" type="video/mp4" />
+            </video>
+            <div className="p-4">
+              <h3 className="font-semibold">Innovating the Future of AI</h3>
+              <p className="text-sm text-gray-400">AI-powered brain technology</p>
+            </div>
+          </div>
+          <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-cyan-500/50 transition">
+            <video controls className="w-full aspect-video">
+              <source src="/videos/softmor-datacenter.mov" type="video/quicktime" />
+            </video>
+            <div className="p-4">
+              <h3 className="font-semibold">Data Center Infrastructure</h3>
+              <p className="text-sm text-gray-400">Enterprise-grade hosting</p>
+            </div>
+          </div>
+          <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-cyan-500/50 transition">
+            <video controls className="w-full aspect-video">
+              <source src="/videos/softmor-global.mov" type="video/quicktime" />
+            </video>
+            <div className="p-4">
+              <h3 className="font-semibold">Global Reach</h3>
+              <p className="text-sm text-gray-400">Worldwide technology solutions</p>
+            </div>
+          </div>
+          <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-cyan-500/50 transition">
+            <video controls className="w-full aspect-video">
+              <source src="/videos/softmor-ai-vertical.mov" type="video/quicktime" />
+            </video>
+            <div className="p-4">
+              <h3 className="font-semibold">AI Innovation</h3>
+              <p className="text-sm text-gray-400">Next-gen AI solutions</p>
+            </div>
           </div>
         </div>
       </div>

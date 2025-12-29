@@ -98,6 +98,58 @@ export default function NILPortal() {
           </div>
         </div>
 
+        {/* Video Section */}
+        <div className="text-center space-y-6">
+          <h3 className="text-3xl font-bold">See NIL Portal in Action</h3>
+          
+          {/* Main Video */}
+          <div className="max-w-3xl mx-auto mb-8">
+            <video controls className="w-full rounded-2xl border-2 border-cyan-400" poster="/video_thumbs/nil-portal-main.jpg">
+              <source src="/videos/nil-portal-main.mp4" type="video/mp4" />
+            </video>
+          </div>
+          
+          {/* Video Grid */}
+          <div className="grid md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            <div className="rounded-xl overflow-hidden border border-cyan-500/30">
+              <video controls muted className="w-full aspect-video object-cover">
+                <source src="/videos/nil-portal-baseball.mp4" type="video/mp4" />
+              </video>
+              <p className="text-sm text-gray-400 p-2 bg-black/40">Baseball Athletes</p>
+            </div>
+            <div className="rounded-xl overflow-hidden border border-cyan-500/30">
+              <video controls muted className="w-full aspect-video object-cover">
+                <source src="/videos/nil-portal-football.mp4" type="video/mp4" />
+              </video>
+              <p className="text-sm text-gray-400 p-2 bg-black/40">Football Athletes</p>
+            </div>
+            <div className="rounded-xl overflow-hidden border border-cyan-500/30">
+              <video controls muted className="w-full aspect-video object-cover">
+                <source src="/videos/nil-portal-multisport.mp4" type="video/mp4" />
+              </video>
+              <p className="text-sm text-gray-400 p-2 bg-black/40">Multi-Sport</p>
+            </div>
+            <div className="rounded-xl overflow-hidden border border-cyan-500/30">
+              <video controls muted className="w-full aspect-video object-cover">
+                <source src="/videos/nil-portal-youth.mp4" type="video/mp4" />
+              </video>
+              <p className="text-sm text-gray-400 p-2 bg-black/40">Youth Athletes</p>
+            </div>
+            <div className="rounded-xl overflow-hidden border border-cyan-500/30">
+              <video controls muted className="w-full aspect-video object-cover">
+                <source src="/videos/nil-portal-athletes.mp4" type="video/mp4" />
+              </video>
+              <p className="text-sm text-gray-400 p-2 bg-black/40">All Athletes</p>
+            </div>
+            <div className="rounded-xl overflow-hidden border border-cyan-500/30">
+              <video controls muted className="w-full aspect-video object-cover">
+                <source src="/videos/athlynx-crab-stadium.mp4" type="video/mp4" />
+              </video>
+              <p className="text-sm text-gray-400 p-2 bg-black/40">ATHLYNX Stadium</p>
+            </div>
+          </div>
+        </div>
+
         {/* CTA Section */}
         <div className="bg-gradient-to-r from-green-500 to-cyan-500 rounded-3xl p-12 text-center space-y-6">
           <h3 className="text-4xl md:text-5xl font-black text-white">

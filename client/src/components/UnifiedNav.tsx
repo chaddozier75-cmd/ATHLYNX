@@ -41,6 +41,15 @@ const navItems = [
     ]
   },
   {
+    category: "DHG ECOSYSTEM",
+    items: [
+      { name: "Fuel Bots", href: "/fuel-bots", icon: "🤖" },
+      { name: "DHG Corporate", href: "/dhg", icon: "🦀" },
+      { name: "Softmor Inc", href: "/softmor", icon: "🧠" },
+      { name: "Investor Hub", href: "/investor-hub", icon: "💎" },
+    ]
+  },
+  {
     category: "MANAGEMENT",
     items: [
       { name: "Project Management", href: "/project-management", icon: "📋" },

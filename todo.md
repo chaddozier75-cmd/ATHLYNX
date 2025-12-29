@@ -1526,5 +1526,59 @@
 
 - [x] Ensure hamburger menu (UnifiedNav) is present on ALL pages (already global in App.tsx)
 
-- [ ] Remove Todd Neely from all materials - no longer with company
-- [ ] Add Lee Marshall to leadership team
+- [x] Remove Todd Neely from all materials - no longer with company
+- [x] Add Lee Marshall to leadership team
+
+- [ ] Get DHG logo from dozierholdingsgroup.com
+- [ ] Get Softmor logo from dozierholdingsgroup.com
+- [ ] Add DHG video to DHG page
+- [ ] Add Softmor video to Softmor page
+
+
+---
+
+## FUEL BOTS / AI COMPANIONS DIVISION - December 29, 2025
+
+### Video Integration
+- [x] Copy 14 videos to /client/public/videos/
+- [x] Add videos to NIL Portal page
+- [x] Add videos to Diamond Grind page
+- [x] Add videos to Softmor page
+- [x] Add videos to DHG Corporate page
+- [x] Add AI Companion video to Fuel Bots page
+
+### Fuel Bots Page (/fuel-bots)
+- [x] Create comprehensive Fuel Bots page
+- [x] Hero section with AI Companion video
+- [x] Core ecosystem (NIL Portal, Fuel Candy, Fuel Bots)
+- [x] Industrial robotics specs section
+- [x] Dual roles: AI Trainer & Medical Response
+- [x] $180M revenue model breakdown
+- [x] Implementation roadmap (Q1 2026 - 2027)
+- [x] Multi-industry applications:
+  - [x] Sports & Stadium Operations
+  - [x] Data Centers
+  - [x] Fuel & Gas Industries
+  - [x] Geothermal Power Stations
+- [x] CTA section for universities, pro teams, investors, athletes
+- [x] Add to navigation
+- [x] Add Robot Dog Product Lines section (Hexapod, Wheel-Leg Hybrid, Medium Size)
+
+### Navigation Updates
+- [x] Add Fuel Bots to UnifiedNav
+- [x] Add Fuel Bots to DHG Corporate subsidiaries
+- [x] Update DHG_ECOSYSTEM.md with Fuel Bots division
+
+### Documentation (Confidential)
+- [x] Save Yovole partnership documentation to docs/YOVOLE_PARTNERSHIP.md
+- [x] Save Robot Dog specs to docs/ROBOT_DOG_SPECS.md
+- [x] Save Fuel Bots content to docs/FUEL_BOTS_CONTENT.md
+- [ ] Partnership with Yovole Networks (有孚网络) - IN PROGRESS (confidential)
+
+
+### ICC Partnership (Enterprise Hardware)
+- [x] Save ICC partnership documentation to docs/ICC_PARTNERSHIP.md
+- [x] Document $27.5M consolidated quote for Yovole project
+- [x] ICC = NVIDIA Elite Partner of the Year 2024
+- [x] 912 servers, 727 PB storage capacity documented
+

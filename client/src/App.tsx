@@ -39,6 +39,7 @@ import QuickLinksHub from "./pages/QuickLinksHub";
 import InvestorHub from "./pages/InvestorHub";
 import Team from "./pages/Team";
 import ProjectChecklist from "./pages/ProjectChecklist";
+import FuelBots from "./pages/FuelBots";
 import UnifiedNav from "./components/UnifiedNav";
 
 function Router() {
@@ -162,6 +163,9 @@ function Router() {
       
       {/* Corporate Pages */}
       <Route path={"/dhg"} component={DHGCorporate} />
+      <Route path={"/fuel-bots"} component={FuelBots} />
+      <Route path={"/ai-companions"} component={FuelBots} />
+      <Route path={"/fuelbots"} component={FuelBots} />
       <Route path={"/dozier-holdings"} component={DHGCorporate} />
       <Route path={"/softmor"} component={Softmor} />
       <Route path={"/softmor-inc"} component={Softmor} />
