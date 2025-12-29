@@ -34,6 +34,10 @@ import ProjectManagement from "./pages/ProjectManagement";
 import MediaShowcase from "./pages/MediaShowcase";
 import DHGCorporate from "./pages/DHGCorporate";
 import Softmor from "./pages/Softmor";
+import AthleteDashboard from "./pages/AthleteDashboard";
+import QuickLinksHub from "./pages/QuickLinksHub";
+import InvestorHub from "./pages/InvestorHub";
+import Team from "./pages/Team";
 import UnifiedNav from "./components/UnifiedNav";
 
 function Router() {
@@ -63,6 +67,8 @@ function Router() {
       
       {/* User Dashboard */}
       <Route path={"/dashboard"} component={Dashboard} />
+      <Route path={"/athlete-dashboard"} component={AthleteDashboard} />
+      <Route path={"/athlete"} component={AthleteDashboard} />
       
       {/* AI Bots */}
       <Route path={"/ai/training"} component={AITrainingBot} />
@@ -159,6 +165,20 @@ function Router() {
       <Route path={"/softmor"} component={Softmor} />
       <Route path={"/softmor-inc"} component={Softmor} />
       <Route path={"/dashboard/pm"} component={ProjectManagement} />
+      
+      {/* Quick Links Hub */}
+      <Route path={"/hub"} component={QuickLinksHub} />
+      <Route path={"/quick-links"} component={QuickLinksHub} />
+      <Route path={"/systems"} component={QuickLinksHub} />
+      
+      {/* Investor Hub */}
+      <Route path={"/investor-hub"} component={InvestorHub} />
+      <Route path={"/investors"} component={InvestorHub} />
+      <Route path={"/invest"} component={InvestorHub} />
+      
+      {/* Team Page */}
+      <Route path={"/team"} component={Team} />
+      <Route path={"/leadership"} component={Team} />
       
       {/* Legacy Coming Soon */}
       <Route path={"/messenger"} component={() => <ComingSoon title="Messenger" description="Real-time messaging platform for athletes, coaches, and brands. Connect, collaborate, and communicate seamlessly." icon="💬" />} />
