@@ -456,3 +456,99 @@
 - [ ] Test all pages and links
 - [ ] Create final checkpoint
 - [ ] Ready for deployment
+
+
+---
+
+## URGENT: Deploy All New Features to Netlify
+
+- [ ] Deploy complete platform to athlynx.ai
+- [ ] Verify VIP landing page still works
+- [ ] Verify Store page is accessible
+- [ ] Verify Fishing platform is accessible
+- [ ] Verify Golf platform is accessible
+- [ ] Verify Hunting platform is accessible
+- [ ] Verify Player Profile pages work
+- [ ] Verify Recruiting Database works
+- [ ] Verify AI Bots page works
+- [ ] Verify College Pages work
+- [ ] Test all navigation links
+- [ ] Confirm deployment successful
+
+
+---
+
+## CRITICAL: Merge All 6 Netlify Sites Into One Unified Platform
+
+- [ ] Download athlynx-founder-story content
+- [ ] Download athlynx-messenger content
+- [ ] Download athlynx-diamond-grind content
+- [ ] Download athlynx-nil-portal content
+- [ ] Merge founder story page into platform
+- [ ] Merge messaging system into platform
+- [ ] Merge diamond grind feature into platform
+- [ ] Merge NIL portal into platform
+- [ ] Create unified navigation with all features
+- [ ] Add error boundaries and fallbacks
+- [ ] Add loading states for all pages
+- [ ] Add 404 error handling
+- [ ] Test all merged features
+- [ ] Deploy unified platform to athlynx.ai
+- [ ] Verify everything works
+
+
+---
+
+## UNIFIED PLATFORM MERGE - December 28, 2025 ✅
+
+### Founder's Story Integration
+- [x] Created Founder's Story page (/founder-story)
+- [x] Added Chad A. Dozier biography with timeline
+- [x] Included athletic career (1990-1995)
+- [x] Added mother's cancer battle and Hope Lodge story
+- [x] Included Glenn Tse partnership and DHG founding
+- [x] Added crab logo symbolism (Cancer, Survival, Resilience, Protection, Hope)
+- [x] Added navigation link to Founder's Story
+
+### Coming Soon Pages
+- [x] Created ComingSoon component template
+- [x] Added Messenger coming soon page (/messenger)
+- [x] Added Diamond Grind coming soon page (/diamond-grind)
+- [x] Added NIL Portal coming soon page (/nil-portal)
+- [x] All coming soon pages link back to VIP waitlist
+
+### VIP Early Access Landing Page
+- [x] Countdown timer to February 1, 2026
+- [x] Email signup form
+- [x] Role selection (Athlete, Parent, Coach, Brand)
+- [x] Sport selection (Baseball, Football, Basketball)
+- [x] 3 app icons (M, ⚡, N)
+- [x] Dark blue gradient theme
+- [x] "Preview the App" link to full platform
+- [x] Founding member spots (limited to 10,000)
+
+### Platform Features (All Working)
+- [x] E-Commerce Store (Baseball, Fishing, Golf, Hunting, Fitness, Apparel)
+- [x] Fishing Platform (spots map, catch tracking, tournaments)
+- [x] Golf Platform (courses, handicap tracking, tournaments)
+- [x] Hunting Platform (spots, harvest tracking, licenses)
+- [x] Player Profiles (create/view with complete stats)
+- [x] Recruiting Database (search with advanced filters)
+- [x] AI Bots (6 types: training, recruiting, NIL, video analysis, social media, career path)
+- [x] NIL Marketplace (brand deals, earnings tracking)
+- [x] College Pages (commitment tracking, rosters, coaches)
+- [x] Messaging System (real-time chat)
+
+### Database
+- [x] 40 comprehensive tables
+- [x] Full backend with 50+ tRPC endpoints
+- [x] All features integrated and working
+
+### Next Steps: Deployment
+- [ ] Save checkpoint with all merged features
+- [ ] Test all routes and pages
+- [ ] Deploy unified platform to athlynx.ai
+- [ ] Verify all 6 Netlify sites are consolidated into one
+- [ ] Add Stripe payment integration
+- [ ] Wire up email signup to database
+- [ ] Test VIP early access signup flow

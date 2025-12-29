@@ -19,6 +19,8 @@ import PlayerProfile from "./pages/PlayerProfile";
 import RecruitingDatabase from "./pages/RecruitingDatabase";
 import AIBots from "./pages/AIBots";
 import CollegePage from "./pages/CollegePage";
+import FounderStory from "./pages/FounderStory";
+import ComingSoon from "./pages/ComingSoon";
 
 function Router() {
   return (
@@ -38,6 +40,10 @@ function Router() {
       <Route path={"/recruiting"} component={RecruitingDatabase} />
       <Route path={"/ai-bots"} component={AIBots} />
       <Route path={"/college/:id"} component={CollegePage} />
+      <Route path={"/founder-story"} component={FounderStory} />
+      <Route path={"/messenger"} component={() => <ComingSoon title="Messenger" description="Real-time messaging platform for athletes, coaches, and brands. Connect, collaborate, and communicate seamlessly." icon="💬" />} />
+      <Route path={"/diamond-grind"} component={() => <ComingSoon title="Diamond Grind" description="Elite baseball training platform with drills, analytics, and performance tracking. Grind your way to greatness." icon="💎" />} />
+      <Route path={"/nil-portal"} component={() => <ComingSoon title="NIL Portal" description="Complete NIL marketplace connecting athletes with brands for endorsement deals, sponsorships, and partnerships." icon="💰" />} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
