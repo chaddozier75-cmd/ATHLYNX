@@ -31,6 +31,7 @@ import TransferPortalIntelligence from "./pages/TransferPortalIntelligence";
 import Faith from "./pages/Faith";
 import MilitaryDivision from "./pages/MilitaryDivision";
 import ProjectManagement from "./pages/ProjectManagement";
+import MediaShowcase from "./pages/MediaShowcase";
 
 function Router() {
   return (
@@ -139,6 +140,11 @@ function Router() {
       
       <Route path={"/lacrosse-legends"} component={() => <ComingSoon title="Lacrosse Legends" description="Lacrosse recruiting, club connections, and showcase events. Write your legacy." icon="🥍" />} />
       <Route path={"/lacrosse"} component={() => <ComingSoon title="Lacrosse Legends" description="Lacrosse recruiting, club connections, and showcase events. Write your legacy." icon="🥍" />} />
+      
+      {/* Media Showcase */}
+      <Route path={"/media"} component={MediaShowcase} />
+      <Route path={"/videos"} component={MediaShowcase} />
+      <Route path={"/showcase"} component={MediaShowcase} />
       
       {/* Project Management */}
       <Route path={"/project-management"} component={ProjectManagement} />
