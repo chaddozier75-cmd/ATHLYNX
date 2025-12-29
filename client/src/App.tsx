@@ -32,6 +32,8 @@ import Faith from "./pages/Faith";
 import MilitaryDivision from "./pages/MilitaryDivision";
 import ProjectManagement from "./pages/ProjectManagement";
 import MediaShowcase from "./pages/MediaShowcase";
+import DHGCorporate from "./pages/DHGCorporate";
+import Softmor from "./pages/Softmor";
 import UnifiedNav from "./components/UnifiedNav";
 
 function Router() {
@@ -150,6 +152,12 @@ function Router() {
       {/* Project Management */}
       <Route path={"/project-management"} component={ProjectManagement} />
       <Route path={"/pm"} component={ProjectManagement} />
+      
+      {/* Corporate Pages */}
+      <Route path={"/dhg"} component={DHGCorporate} />
+      <Route path={"/dozier-holdings"} component={DHGCorporate} />
+      <Route path={"/softmor"} component={Softmor} />
+      <Route path={"/softmor-inc"} component={Softmor} />
       <Route path={"/dashboard/pm"} component={ProjectManagement} />
       
       {/* Legacy Coming Soon */}
