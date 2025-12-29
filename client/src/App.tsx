@@ -5,6 +5,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import EarlyAccess from "./pages/EarlyAccess";
 import AthletePlaybook from "./pages/AthletePlaybook";
 import TransferPortal from "./pages/TransferPortal";
 import NILMarketplace from "./pages/NILMarketplace";
@@ -15,7 +16,8 @@ import ComingSoon from "./pages/ComingSoon";
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
+      <Route path={"/"} component={EarlyAccess} />
+      <Route path={"/home"} component={Home} />
       <Route path={"/playbook"} component={AthletePlaybook} />
       <Route path={"/transfer-portal"} component={TransferPortal} />
       <Route path={"/nil-marketplace"} component={NILMarketplace} />

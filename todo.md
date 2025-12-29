@@ -234,3 +234,28 @@
 - [ ] Update typography to match original style
 - [ ] Keep party popper icon 🎉 and yellow VIP badge
 - [ ] Ensure all pages use consistent dark blue theme
+
+
+---
+
+## RECREATE EXACT VIP EARLY ACCESS PAGE - December 28, 2025
+
+### VIP Early Access Landing Page (from athlynx.ai)
+- [x] Create EarlyAccess.tsx page component
+- [x] Add 3 app icons at top (M, mountain/lightning, N)
+- [x] Add "THE FUTURE OF ATHLETE SUCCESS" in cyan
+- [x] Add "ATHLYNX" in large white text
+- [x] Add "THE ATHLETE'S PLAYBOOK" in cyan
+- [x] Add blue "🏆 VIP EARLY ACCESS 6 MONTHS FREE" badge
+- [x] Add countdown timer (DAYS, HRS, MIN, SEC) in cyan
+- [x] Add "FEBRUARY 1, 2026" text
+- [x] Add "🔥 FOUNDING MEMBER SPOTS LIMITED TO 10,000" section
+- [x] Add progress bar for spots
+- [x] Add email signup form with validation
+- [x] Add phone input (optional)
+- [x] Add role selection buttons (Athlete, Parent, Coach, Brand)
+- [x] Add sport selection buttons (Baseball, Football, Basketball)
+- [x] Add "🏆 CLAIM MY VIP SPOT" submit button
+- [x] Add "Preview the App →" link
+- [x] Set as root path (/) route
+- [x] Move current Home to /home route
