@@ -1,0 +1,8 @@
+{
+  "query": "INSERT INTO partners (name, company, email, access_code, is_active, created_at, updated_at) VALUES ('Yovole Networks', '有孚网络 (Yovole Networks)', 'partner@yovole.com', 'Yovole-DHG-2025', 1, NOW(), NOW());",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute INSERT INTO partners (name, company, email, access_code, is_active, created_at, updated_at) VALUES ('Yovole Networks', '有孚网络 (Yovole Networks)', 'partner@yovole.com', 'Yovole-DHG-2025', 1, NOW(), NOW());",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1062 (23000) at line 1: Duplicate entry '?' for key 'partners.access_code'"
+  ]
+}

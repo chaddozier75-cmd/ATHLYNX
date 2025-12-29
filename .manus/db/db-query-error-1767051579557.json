@@ -1,0 +1,8 @@
+{
+  "query": "INSERT INTO partner_documents (partner_id, title, description, file_url, file_type, created_at) VALUES (1, 'DHG Consolidated Quote - $27.5M', 'Complete hardware quote including Supermicro servers, NVIDIA networking, and storage solutions from ICC partnership', '/partner-docs/DHG_Consolidated_Quote_27M.pdf', 'pdf', NOW());",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute INSERT INTO partner_documents (partner_id, title, description, file_url, file_type, created_at) VALUES (1, 'DHG Consolidated Quote - $27.5M', 'Complete hardware quote including Supermicro servers, NVIDIA networking, and storage solutions from ICC partnership', '/partner-docs/DHG_Consolidated_Quote_27M.pdf', 'pdf', NOW());",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1054 (42S22) at line 1: Unknown column 'file_type' in 'field list'"
+  ]
+}

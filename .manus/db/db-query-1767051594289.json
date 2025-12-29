@@ -1,0 +1,50 @@
+{
+  "query": "SELECT COLUMN_NAME, DATA_TYPE, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'partner_documents';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute SELECT COLUMN_NAME, DATA_TYPE, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'partner_documents';",
+  "rows": [
+    {
+      "COLUMN_NAME": "id",
+      "DATA_TYPE": "int",
+      "COLUMN_TYPE": "int(11)"
+    },
+    {
+      "COLUMN_NAME": "partner_id",
+      "DATA_TYPE": "int",
+      "COLUMN_TYPE": "int(11)"
+    },
+    {
+      "COLUMN_NAME": "title",
+      "DATA_TYPE": "varchar",
+      "COLUMN_TYPE": "varchar(255)"
+    },
+    {
+      "COLUMN_NAME": "description",
+      "DATA_TYPE": "text",
+      "COLUMN_TYPE": "text"
+    },
+    {
+      "COLUMN_NAME": "file_url",
+      "DATA_TYPE": "varchar",
+      "COLUMN_TYPE": "varchar(500)"
+    },
+    {
+      "COLUMN_NAME": "category",
+      "DATA_TYPE": "enum",
+      "COLUMN_TYPE": "enum('quotes','proposals','technical','presentations','contracts','other')"
+    },
+    {
+      "COLUMN_NAME": "is_active",
+      "DATA_TYPE": "enum",
+      "COLUMN_TYPE": "enum('yes','no')"
+    },
+    {
+      "COLUMN_NAME": "created_at",
+      "DATA_TYPE": "datetime",
+      "COLUMN_TYPE": "datetime"
+    }
+  ],
+  "messages": [],
+  "stdout": "COLUMN_NAME\tDATA_TYPE\tCOLUMN_TYPE\nid\tint\tint(11)\npartner_id\tint\tint(11)\ntitle\tvarchar\tvarchar(255)\ndescription\ttext\ttext\nfile_url\tvarchar\tvarchar(500)\ncategory\tenum\tenum('quotes','proposals','technical','presentations','contracts','other')\nis_active\tenum\tenum('yes','no')\ncreated_at\tdatetime\tdatetime\n",
+  "stderr": "",
+  "execution_time_ms": 56
+}

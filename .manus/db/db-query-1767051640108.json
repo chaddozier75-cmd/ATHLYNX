@@ -1,0 +1,13 @@
+{
+  "query": "SELECT COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'partner_documents' AND COLUMN_NAME = 'category';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute SELECT COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'partner_documents' AND COLUMN_NAME = 'category';",
+  "rows": [
+    {
+      "COLUMN_TYPE": "enum('quotes','proposals','technical','presentations','contracts','other')"
+    }
+  ],
+  "messages": [],
+  "stdout": "COLUMN_TYPE\nenum('quotes','proposals','technical','presentations','contracts','other')\n",
+  "stderr": "",
+  "execution_time_ms": 60
+}

@@ -1,0 +1,35 @@
+{
+  "query": "SELECT id, title, category FROM partner_documents WHERE partner_id = 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute SELECT id, title, category FROM partner_documents WHERE partner_id = 1;",
+  "rows": [
+    {
+      "id": "1",
+      "title": "DHG Consolidated Quote - $27.5M",
+      "category": "quotes"
+    },
+    {
+      "id": "2",
+      "title": "ICC Sales Quote - NVIDIA Elite Partner",
+      "category": "quotes"
+    },
+    {
+      "id": "3",
+      "title": "Strategic Partnership - Softmor & Yovole",
+      "category": "proposals"
+    },
+    {
+      "id": "4",
+      "title": "AI Data Center Analysis - US Market",
+      "category": "technical"
+    },
+    {
+      "id": "5",
+      "title": "Enhanced Geothermal Systems - Clean Power",
+      "category": "technical"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tcategory\n1\tDHG Consolidated Quote - $27.5M\tquotes\n2\tICC Sales Quote - NVIDIA Elite Partner\tquotes\n3\tStrategic Partnership - Softmor & Yovole\tproposals\n4\tAI Data Center Analysis - US Market\ttechnical\n5\tEnhanced Geothermal Systems - Clean Power\ttechnical\n",
+  "stderr": "",
+  "execution_time_ms": 51
+}

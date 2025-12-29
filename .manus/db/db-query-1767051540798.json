@@ -1,0 +1,18 @@
+{
+  "query": "SELECT id, name FROM partners;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute SELECT id, name FROM partners;",
+  "rows": [
+    {
+      "id": "1",
+      "name": "General Fu (傅晓)"
+    },
+    {
+      "id": "2",
+      "name": "ICC Sales Team"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\n1\tGeneral Fu (傅晓)\n2\tICC Sales Team\n",
+  "stderr": "",
+  "execution_time_ms": 48
+}

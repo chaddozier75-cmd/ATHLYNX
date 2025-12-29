@@ -1839,3 +1839,17 @@
 - [x] Investment Ask / Contact section
 - [x] Add route to App.tsx
 - [x] Add to navigation (DHG Ecosystem section)
+
+
+---
+
+## PARTNER PORTAL DOCUMENTS - December 29, 2025
+
+### Upload Documents for Yovole
+- [x] Upload ICC consolidated quote ($27.5M) to storage
+- [x] Upload Strategic Partnership proposal to storage
+- [x] Upload Geothermal Power presentation to storage
+- [x] Upload Data Center analysis to storage
+- [x] Create database entries linking documents to Yovole partner (5 documents)
+- [x] Partner Portal already displays documents
+- [ ] Test document access with Yovole password (Yovole-DHG-2025)

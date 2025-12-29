@@ -1,0 +1,15 @@
+{
+  "query": "SELECT id, name, access_code FROM partners WHERE access_code = 'Yovole-DHG-2025';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute SELECT id, name, access_code FROM partners WHERE access_code = 'Yovole-DHG-2025';",
+  "rows": [
+    {
+      "id": "1",
+      "name": "General Fu (傅晓)",
+      "access_code": "Yovole-DHG-2025"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\taccess_code\n1\tGeneral Fu (傅晓)\tYovole-DHG-2025\n",
+  "stderr": "",
+  "execution_time_ms": 53
+}

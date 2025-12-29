@@ -1,0 +1,34 @@
+{
+  "query": "SELECT * FROM partners;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute SELECT * FROM partners;",
+  "rows": [
+    {
+      "id": "1",
+      "name": "General Fu (傅晓)",
+      "company": "Yovole Networks (有孚网络)",
+      "email": "chairman@yovole.com",
+      "access_code": "Yovole-DHG-2025",
+      "access_level": "executive",
+      "expires_at": "2026-12-31 23:59:59",
+      "is_active": "yes",
+      "created_at": "2025-12-29 22:42:52",
+      "updated_at": "2025-12-29 22:42:52"
+    },
+    {
+      "id": "2",
+      "name": "ICC Sales Team",
+      "company": "International Computer Concepts Inc.",
+      "email": "sales@iccusa.com",
+      "access_code": "ICC-DHG-2025",
+      "access_level": "premium",
+      "expires_at": "2026-12-31 23:59:59",
+      "is_active": "yes",
+      "created_at": "2025-12-29 22:42:52",
+      "updated_at": "2025-12-29 22:42:52"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tcompany\temail\taccess_code\taccess_level\texpires_at\tis_active\tcreated_at\tupdated_at\n1\tGeneral Fu (傅晓)\tYovole Networks (有孚网络)\tchairman@yovole.com\tYovole-DHG-2025\texecutive\t2026-12-31 23:59:59\tyes\t2025-12-29 22:42:52\t2025-12-29 22:42:52\n2\tICC Sales Team\tInternational Computer Concepts Inc.\tsales@iccusa.com\tICC-DHG-2025\tpremium\t2026-12-31 23:59:59\tyes\t2025-12-29 22:42:52\t2025-12-29 22:42:52\n",
+  "stderr": "",
+  "execution_time_ms": 162
+}
