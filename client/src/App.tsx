@@ -6,6 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import EarlyAccess from "./pages/EarlyAccess";
+import Success from "./pages/Success";
 import AthletePlaybook from "./pages/AthletePlaybook";
 import TransferPortal from "./pages/TransferPortal";
 import NILMarketplace from "./pages/NILMarketplace";
@@ -18,6 +19,7 @@ function Router() {
   return (
     <Switch>
       <Route path={"/"} component={EarlyAccess} />
+      <Route path={"/success"} component={Success} />
       <Route path={"/home"} component={Home} />
       <Route path={"/playbook"} component={AthletePlaybook} />
       <Route path={"/transfer-portal"} component={TransferPortal} />

@@ -55,3 +55,22 @@ export const earlyAccessSignups = mysqlTable("early_access_signups", {
 
 export type EarlyAccessSignup = typeof earlyAccessSignups.$inferSelect;
 export type InsertEarlyAccessSignup = typeof earlyAccessSignups.$inferInsert;
+
+/**
+ * VIP Members table for early access signups (pre-auth)
+ * Stores signup data before users create accounts
+ */
+export const vipMembers = mysqlTable("vip_members", {
+  id: int("id").autoincrement().primaryKey(),
+  email: varchar("email", { length: 320 }).notNull().unique(),
+  phone: varchar("phone", { length: 20 }),
+  role: varchar("role", { length: 50 }).notNull(), // Athlete, Parent, Coach, Brand
+  sport: varchar("sport", { length: 100 }).notNull(),
+  accessCode: varchar("accessCode", { length: 12 }).notNull().unique(),
+  status: mysqlEnum("status", ["pending", "approved", "active"]).default("pending").notNull(),
+  signupDate: timestamp("signupDate").defaultNow().notNull(),
+  approvedDate: timestamp("approvedDate"),
+});
+
+export type VipMember = typeof vipMembers.$inferSelect;
+export type InsertVipMember = typeof vipMembers.$inferInsert;

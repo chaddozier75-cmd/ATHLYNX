@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `vip_members` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`email` varchar(320) NOT NULL,\n\t`phone` varchar(20),\n\t`role` varchar(50) NOT NULL,\n\t`sport` varchar(100) NOT NULL,\n\t`accessCode` varchar(12) NOT NULL,\n\t`status` enum('pending','approved','active') NOT NULL DEFAULT 'pending',\n\t`signupDate` timestamp NOT NULL DEFAULT (now()),\n\t`approvedDate` timestamp,\n\tCONSTRAINT `vip_members_id` PRIMARY KEY(`id`),\n\tCONSTRAINT `vip_members_email_unique` UNIQUE(`email`),\n\tCONSTRAINT `vip_members_accessCode_unique` UNIQUE(`accessCode`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute CREATE TABLE IF NOT EXISTS `vip_members` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`email` varchar(320) NOT NULL,\n\t`phone` varchar(20),\n\t`role` varchar(50) NOT NULL,\n\t`sport` varchar(100) NOT NULL,\n\t`accessCode` varchar(12) NOT NULL,\n\t`status` enum('pending','approved','active') NOT NULL DEFAULT 'pending',\n\t`signupDate` timestamp NOT NULL DEFAULT (now()),\n\t`approvedDate` timestamp,\n\tCONSTRAINT `vip_members_id` PRIMARY KEY(`id`),\n\tCONSTRAINT `vip_members_email_unique` UNIQUE(`email`),\n\tCONSTRAINT `vip_members_accessCode_unique` UNIQUE(`accessCode`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 260
+}

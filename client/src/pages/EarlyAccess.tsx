@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { useLocation } from "wouter";
+import { trpc } from "../lib/trpc";
 
 export default function EarlyAccess() {
+  const [, setLocation] = useLocation();
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [role, setRole] = useState("");
@@ -11,6 +13,16 @@ export default function EarlyAccess() {
     hours: 0,
     minutes: 0,
     seconds: 0,
+  });
+
+  const signupMutation = trpc.vip.signup.useMutation({
+    onSuccess: (data) => {
+      // Redirect to success page with access code
+      setLocation(`/success?code=${data.accessCode}`);
+    },
+    onError: (error) => {
+      alert(`Error: ${error.message}`);
+    },
   });
 
   // Countdown timer to February 1, 2026
@@ -38,8 +50,22 @@ export default function EarlyAccess() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ email, phone, role, sport });
-    alert("Thank you! You're on the VIP list!");
+    
+    if (!role) {
+      alert("Please select your role");
+      return;
+    }
+    if (!sport) {
+      alert("Please select your sport");
+      return;
+    }
+
+    signupMutation.mutate({
+      email,
+      phone: phone || undefined,
+      role,
+      sport,
+    });
   };
 
   const roles = ["Athlete", "Parent", "Coach", "Brand"];
@@ -242,7 +268,8 @@ export default function EarlyAccess() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
-                className="w-full bg-black/70 border-2 border-gray-600 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/50 outline-none transition"
+                disabled={signupMutation.isPending}
+                className="w-full bg-black/70 border-2 border-gray-600 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/50 outline-none transition disabled:opacity-50"
               />
             </div>
 
@@ -256,7 +283,8 @@ export default function EarlyAccess() {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="Phone (Optional)"
-                className="w-full bg-black/70 border-2 border-gray-600 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/50 outline-none transition"
+                disabled={signupMutation.isPending}
+                className="w-full bg-black/70 border-2 border-gray-600 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/50 outline-none transition disabled:opacity-50"
               />
             </div>
 
@@ -271,7 +299,8 @@ export default function EarlyAccess() {
                     key={r}
                     type="button"
                     onClick={() => setRole(r)}
-                    className={`px-5 py-3 rounded-xl text-sm font-bold transition-all ${
+                    disabled={signupMutation.isPending}
+                    className={`px-5 py-3 rounded-xl text-sm font-bold transition-all disabled:opacity-50 ${
                       role === r
                         ? "bg-cyan-400 border-2 border-cyan-400 text-black shadow-lg scale-105"
                         : "bg-black/70 border-2 border-gray-600 text-gray-300 hover:border-cyan-400 hover:text-cyan-400"
@@ -294,7 +323,8 @@ export default function EarlyAccess() {
                     key={s}
                     type="button"
                     onClick={() => setSport(s)}
-                    className={`px-5 py-3 rounded-xl text-sm font-bold transition-all ${
+                    disabled={signupMutation.isPending}
+                    className={`px-5 py-3 rounded-xl text-sm font-bold transition-all disabled:opacity-50 ${
                       sport === s
                         ? "bg-cyan-400 border-2 border-cyan-400 text-black shadow-lg scale-105"
                         : "bg-black/70 border-2 border-gray-600 text-gray-300 hover:border-cyan-400 hover:text-cyan-400"
@@ -309,20 +339,12 @@ export default function EarlyAccess() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 text-black font-black text-xl uppercase tracking-wider py-5 rounded-xl shadow-2xl hover:shadow-yellow-500/50 hover:scale-105 transition-all transform"
+              disabled={signupMutation.isPending}
+              className="w-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 text-black font-black text-xl uppercase tracking-wider py-5 rounded-xl shadow-2xl hover:shadow-yellow-500/50 hover:scale-105 transition-all transform disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              🏆 CLAIM MY VIP SPOT
+              {signupMutation.isPending ? "PROCESSING..." : "🏆 CLAIM MY VIP SPOT"}
             </button>
           </form>
-
-          {/* Preview Link */}
-          <div className="text-center pt-2">
-            <Link href="/home">
-              <a className="inline-block text-cyan-400 hover:text-cyan-300 hover:underline text-sm font-bold">
-                Preview the App →
-              </a>
-            </Link>
-          </div>
         </div>
 
         {/* Feature Checkmarks */}
