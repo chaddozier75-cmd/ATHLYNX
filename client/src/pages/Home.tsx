@@ -85,9 +85,6 @@ export default function Home() {
             <Link href="/messages" className="text-sm font-medium hover:text-primary transition-colors">
               Messages
             </Link>
-            <Link href="/founder-story" className="text-sm font-medium hover:text-primary transition-colors">
-              Founder Story
-            </Link>
           </nav>
           <div className="flex items-center gap-4">
             <Button variant="ghost" size="sm">Log In</Button>
