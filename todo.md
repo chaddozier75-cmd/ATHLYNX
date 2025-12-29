@@ -1356,3 +1356,30 @@
 - [x] Add feature checkboxes (Social Network, NIL Deals, Messaging, Analytics, Compliance)
 - [x] Keep dark blue color theme
 - [x] Keep blue "CLAIM MY VIP SPOT" button
+
+
+---
+
+## MILITARY DIVISION / OPERATION WARRIOR PIPELINE - December 29, 2025
+
+### Military Division Page (Lee Crisp Playbook)
+- [x] Create MilitaryDivision.tsx page component
+- [x] Add Operation Warrior Pipeline hero section
+- [x] Add "The Problem We Solve" section (recruitment crisis + athletes need career paths)
+- [x] Add market stats ($1.4B+ DoD budget, 500K+ athletes, 19M veterans, 96% need career)
+- [x] Add "The Gap We Fill" section with 4 key points
+- [x] Add Three Pillars with tabbed navigation:
+  - [x] Pillar 1: Athlete to Military Pipeline (Military NIL Sponsorships, ROTC, Academy Support, Officer Candidate)
+  - [x] Pillar 2: Veteran Support Services (VA Benefits Navigator, Disability Claims, GI Bill, Healthcare, Mental Health, Career Transition, Business Support)
+  - [x] Pillar 3: Veteran Athlete Mentorship Network (Battle Buddy, Leadership, Life Skills, Career Guidance, Speaker Series)
+- [x] Add Partner Branches section (Army, Navy, Air Force, Marines, Coast Guard, Space Force)
+- [x] Add Defense Contractor Partnerships (Lockheed Martin, Raytheon, Boeing, Northrop Grumman, General Dynamics, BAE Systems, L3Harris)
+- [x] Add Mission Objectives timeline (4 phases)
+- [x] Add Warrior Lifecycle diagram
+- [x] Add military quotes (Navy SEALs, Marines, Army)
+- [x] Add CTA section "Where Athletes Become Legends"
+- [x] Add route /military-division to App.tsx
+- [x] Add route /operation-warrior-pipeline to App.tsx
+- [x] Add Military Division to quick links on EarlyAccess page
+- [x] Save military-division-content.md with full playbook content
+

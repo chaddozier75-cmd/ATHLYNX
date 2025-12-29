@@ -74,6 +74,7 @@ export default function EarlyAccess() {
     { icon: "✝️", label: "Faith", path: "/faith" },
     { icon: "🔄", label: "Transfer Portal", path: "/transfer-portal-intelligence" },
     { icon: "💰", label: "NIL Portal", path: "/nil-portal" },
+    { icon: "🎖️", label: "Military Division", path: "/military-division" },
     { icon: "🦀", label: "Our Story", path: "/founder-story" },
   ];
 
@@ -117,37 +118,29 @@ export default function EarlyAccess() {
           </div>
         </div>
 
-        {/* App Icons Row */}
+        {/* App Icons Row - NIL Portal, Diamond Grind, Messenger */}
         <div className="flex justify-center gap-3">
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gray-300 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+            <img 
+              src="/nil-portal-logo.jpeg" 
+              alt="NIL Portal" 
+              className="relative w-16 h-16 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform"
+            />
+          </div>
+          <div className="relative group">
+            <div className="absolute inset-0 bg-blue-400 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+            <img 
+              src="/diamond-grind-logo.png" 
+              alt="Diamond Grind" 
+              className="relative w-16 h-16 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform"
+            />
+          </div>
           <div className="relative group">
             <div className="absolute inset-0 bg-blue-500 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
             <img 
-              src="/messenger-n-blue.jpeg" 
-              alt="NIL Portal Blue" 
-              className="relative w-16 h-16 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform"
-            />
-          </div>
-          <div className="relative group">
-            <div className="absolute inset-0 bg-cyan-400 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
-            <img 
-              src="/athlynx-app-icon.png" 
-              alt="ATHLYNX Mountain" 
-              className="relative w-16 h-16 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform"
-            />
-          </div>
-          <div className="relative group">
-            <div className="absolute inset-0 bg-cyan-500 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
-            <img 
-              src="/athlynx-logo-icon.png" 
-              alt="ATHLYNX" 
-              className="relative w-16 h-16 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform bg-white/10"
-            />
-          </div>
-          <div className="relative group">
-            <div className="absolute inset-0 bg-gray-400 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
-            <img 
-              src="/nil-portal-n-white.jpeg" 
-              alt="NIL Portal White" 
+              src="/messenger-logo.jpeg" 
+              alt="Messenger" 
               className="relative w-16 h-16 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform"
             />
           </div>

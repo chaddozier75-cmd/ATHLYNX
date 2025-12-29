@@ -29,6 +29,7 @@ import AITrainingBot from "./pages/AITrainingBot";
 import SigningDay from "./pages/SigningDay";
 import TransferPortalIntelligence from "./pages/TransferPortalIntelligence";
 import Faith from "./pages/Faith";
+import MilitaryDivision from "./pages/MilitaryDivision";
 
 function Router() {
   return (
@@ -83,7 +84,8 @@ function Router() {
       
       {/* Veterans Support */}
       <Route path={"/veterans"} component={Veterans} />
-      <Route path={"/military"} component={Veterans} />
+      <Route path={"/military-division"} component={MilitaryDivision} />
+      <Route path={"/operation-warrior-pipeline"} component={MilitaryDivision} />
       
       {/* Music & Entertainment */}
       <Route path={"/music"} component={Music} />
