@@ -1213,3 +1213,171 @@ export const creatorPayouts = mysqlTable("creator_payouts", {
 
 export type CreatorPayout = typeof creatorPayouts.$inferSelect;
 export type InsertCreatorPayout = typeof creatorPayouts.$inferInsert;
+
+
+/**
+ * ============================================
+ * E-COMMERCE SYSTEM - FULL STACK
+ * ============================================
+ */
+
+/**
+ * Products table - All products from consumer sports gear to enterprise hardware
+ */
+export const products = mysqlTable("products", {
+  id: int("id").autoincrement().primaryKey(),
+  sku: varchar("sku", { length: 50 }).notNull().unique(),
+  name: varchar("name", { length: 255 }).notNull(),
+  description: text("description"),
+  category: varchar("category", { length: 50 }).notNull(), // enterprise, software, datacenter, support, fuelbots, baseball, etc.
+  price: decimal("price", { precision: 12, scale: 2 }).notNull(), // Supports up to $9,999,999,999.99
+  compareAtPrice: decimal("compareAtPrice", { precision: 12, scale: 2 }), // Original price for sales
+  image: varchar("image", { length: 10 }), // Emoji or image URL
+  imageUrl: text("imageUrl"), // Full image URL
+  rating: decimal("rating", { precision: 2, scale: 1 }).default("5.0"),
+  reviewCount: int("reviewCount").default(0),
+  inStock: mysqlEnum("inStock", ["yes", "no"]).default("yes").notNull(),
+  stockQuantity: int("stockQuantity").default(100),
+  requiresQuote: mysqlEnum("requiresQuote", ["yes", "no"]).default("no").notNull(), // For enterprise items
+  isActive: mysqlEnum("isActive", ["yes", "no"]).default("yes").notNull(),
+  metadata: json("metadata"), // Additional specs, features, etc.
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Product = typeof products.$inferSelect;
+export type InsertProduct = typeof products.$inferInsert;
+
+/**
+ * Shopping cart items - Persisted cart for logged-in users
+ */
+export const cartItems = mysqlTable("cart_items", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().references(() => users.id),
+  productId: int("productId").notNull().references(() => products.id),
+  quantity: int("quantity").notNull().default(1),
+  addedAt: timestamp("addedAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type CartItem = typeof cartItems.$inferSelect;
+export type InsertCartItem = typeof cartItems.$inferInsert;
+
+/**
+ * Orders - Track all purchases
+ */
+export const orders = mysqlTable("orders", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").references(() => users.id), // Can be null for guest checkout
+  orderNumber: varchar("orderNumber", { length: 20 }).notNull().unique(),
+  status: mysqlEnum("status", [
+    "pending",
+    "processing",
+    "paid",
+    "shipped",
+    "delivered",
+    "cancelled",
+    "refunded"
+  ]).default("pending").notNull(),
+  subtotal: decimal("subtotal", { precision: 12, scale: 2 }).notNull(),
+  shipping: decimal("shipping", { precision: 10, scale: 2 }).default("0.00"),
+  tax: decimal("tax", { precision: 10, scale: 2 }).default("0.00"),
+  total: decimal("total", { precision: 12, scale: 2 }).notNull(),
+  // Shipping info
+  shippingName: varchar("shippingName", { length: 255 }),
+  shippingEmail: varchar("shippingEmail", { length: 320 }),
+  shippingAddress: text("shippingAddress"),
+  shippingCity: varchar("shippingCity", { length: 100 }),
+  shippingState: varchar("shippingState", { length: 50 }),
+  shippingZip: varchar("shippingZip", { length: 20 }),
+  shippingCountry: varchar("shippingCountry", { length: 100 }).default("USA"),
+  // Payment info
+  stripePaymentIntentId: varchar("stripePaymentIntentId", { length: 255 }),
+  stripeCheckoutSessionId: varchar("stripeCheckoutSessionId", { length: 255 }),
+  paymentMethod: varchar("paymentMethod", { length: 50 }),
+  paidAt: timestamp("paidAt"),
+  // Tracking
+  trackingNumber: varchar("trackingNumber", { length: 100 }),
+  trackingCarrier: varchar("trackingCarrier", { length: 50 }),
+  shippedAt: timestamp("shippedAt"),
+  deliveredAt: timestamp("deliveredAt"),
+  notes: text("notes"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Order = typeof orders.$inferSelect;
+export type InsertOrder = typeof orders.$inferInsert;
+
+/**
+ * Order items - Individual items in an order
+ */
+export const orderItems = mysqlTable("order_items", {
+  id: int("id").autoincrement().primaryKey(),
+  orderId: int("orderId").notNull().references(() => orders.id),
+  productId: int("productId").references(() => products.id),
+  productName: varchar("productName", { length: 255 }).notNull(), // Snapshot at time of order
+  productSku: varchar("productSku", { length: 50 }),
+  quantity: int("quantity").notNull(),
+  unitPrice: decimal("unitPrice", { precision: 12, scale: 2 }).notNull(),
+  totalPrice: decimal("totalPrice", { precision: 12, scale: 2 }).notNull(),
+  metadata: json("metadata"), // Product specs at time of order
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type OrderItem = typeof orderItems.$inferSelect;
+export type InsertOrderItem = typeof orderItems.$inferInsert;
+
+/**
+ * Contact sales inquiries - For enterprise products requiring quotes
+ */
+export const salesInquiries = mysqlTable("sales_inquiries", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").references(() => users.id),
+  productId: int("productId").references(() => products.id),
+  // Contact info
+  name: varchar("name", { length: 255 }).notNull(),
+  email: varchar("email", { length: 320 }).notNull(),
+  phone: varchar("phone", { length: 30 }),
+  company: varchar("company", { length: 255 }),
+  jobTitle: varchar("jobTitle", { length: 100 }),
+  // Inquiry details
+  inquiryType: mysqlEnum("inquiryType", [
+    "enterprise_hardware",
+    "data_center",
+    "software_license",
+    "fuel_bots",
+    "support_contract",
+    "custom_solution",
+    "partnership",
+    "other"
+  ]).notNull(),
+  productInterest: varchar("productInterest", { length: 255 }), // Product name they're interested in
+  quantity: int("quantity"),
+  budget: varchar("budget", { length: 100 }), // Budget range
+  timeline: varchar("timeline", { length: 100 }), // When they need it
+  message: text("message"),
+  // Status tracking
+  status: mysqlEnum("status", [
+    "new",
+    "contacted",
+    "qualified",
+    "proposal_sent",
+    "negotiating",
+    "won",
+    "lost",
+    "archived"
+  ]).default("new").notNull(),
+  assignedTo: varchar("assignedTo", { length: 255 }), // Sales rep name
+  notes: text("notes"), // Internal notes
+  followUpDate: timestamp("followUpDate"),
+  quotedAmount: decimal("quotedAmount", { precision: 14, scale: 2 }),
+  // Tracking
+  source: varchar("source", { length: 100 }), // Where they came from
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type SalesInquiry = typeof salesInquiries.$inferSelect;
+export type InsertSalesInquiry = typeof salesInquiries.$inferInsert;
+

@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS products (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  sku VARCHAR(50) NOT NULL UNIQUE,\n  name VARCHAR(255) NOT NULL,\n  description TEXT,\n  category VARCHAR(50) NOT NULL,\n  price DECIMAL(12, 2) NOT NULL,\n  compareAtPrice DECIMAL(12, 2),\n  image VARCHAR(10),\n  imageUrl TEXT,\n  rating DECIMAL(2, 1) DEFAULT 5.0,\n  reviewCount INT DEFAULT 0,\n  inStock ENUM('yes', 'no') DEFAULT 'yes' NOT NULL,\n  stockQuantity INT DEFAULT 100,\n  requiresQuote ENUM('yes', 'no') DEFAULT 'no' NOT NULL,\n  isActive ENUM('yes', 'no') DEFAULT 'yes' NOT NULL,\n  metadata JSON,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute CREATE TABLE IF NOT EXISTS products (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  sku VARCHAR(50) NOT NULL UNIQUE,\n  name VARCHAR(255) NOT NULL,\n  description TEXT,\n  category VARCHAR(50) NOT NULL,\n  price DECIMAL(12, 2) NOT NULL,\n  compareAtPrice DECIMAL(12, 2),\n  image VARCHAR(10),\n  imageUrl TEXT,\n  rating DECIMAL(2, 1) DEFAULT 5.0,\n  reviewCount INT DEFAULT 0,\n  inStock ENUM('yes', 'no') DEFAULT 'yes' NOT NULL,\n  stockQuantity INT DEFAULT 100,\n  requiresQuote ENUM('yes', 'no') DEFAULT 'no' NOT NULL,\n  isActive ENUM('yes', 'no') DEFAULT 'yes' NOT NULL,\n  metadata JSON,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 270
+}

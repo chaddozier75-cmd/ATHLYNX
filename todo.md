@@ -1582,3 +1582,110 @@
 - [x] ICC = NVIDIA Elite Partner of the Year 2024
 - [x] 912 servers, 727 PB storage capacity documented
 
+
+---
+
+## PARTNER PORTAL - December 29, 2025
+
+### Partner Portal Page (/partner-portal)
+- [ ] Create Partner Portal landing page
+- [ ] Password protection system (partner-specific passwords)
+- [ ] Yovole section (Password: Yovole-DHG-2025)
+- [ ] ICC section (Password: ICC-DHG-2025)
+- [ ] General partners section
+
+### Partner Content Sections
+- [ ] Partnership proposals and presentations
+- [ ] Hardware quotes and specifications
+- [ ] Project timelines and milestones
+- [ ] Confidential documentation access
+- [ ] Contact information for Chad and Glenn
+
+### Security Features
+- [ ] Password-protected access
+- [ ] Session management
+- [ ] Partner-specific content visibility
+- [ ] Professional DHG branding
+
+
+---
+
+## E-COMMERCE EXPANSION - OWN THE ENTIRE MARKET - December 29, 2025
+
+### Enterprise Hardware Section
+- [ ] Supermicro server packages (from ICC partnership)
+- [ ] NVIDIA ConnectX networking equipment
+- [ ] Storage solutions (30TB enterprise drives)
+- [ ] Data center starter packages
+- [ ] Custom configuration requests
+
+### Software & Licensing Section
+- [ ] ATHLYNX platform subscriptions
+- [ ] AI Credit packs (100, 500, 1000, 5000)
+- [ ] White-label sport app licenses
+- [ ] Enterprise API access
+- [ ] Softmor AI solutions
+
+### Sports Hardware Section
+- [ ] Training equipment packages
+- [ ] Wearables and sensors
+- [ ] Team gear bundles
+- [ ] Fuel Bots leasing inquiries
+
+### E-Commerce Features
+- [ ] Category navigation (Consumer, Enterprise, Software)
+- [ ] Request quote functionality for enterprise
+- [ ] Bulk pricing display
+- [ ] Contact sales CTA for big deals
+
+
+
+---
+
+## E-COMMERCE FULL-STACK - December 29, 2025 ✅ COMPLETED
+
+### Database Schema ✅
+- [x] Products table (sku, name, description, category, price, image, requiresQuote)
+- [x] Cart items table (userId, productId, quantity)
+- [x] Orders table (orderNumber, status, totals, shipping info, Stripe IDs)
+- [x] Order items table (orderId, productId, quantity, prices)
+- [x] Sales inquiries table (contact info, inquiry type, product interest, budget, timeline)
+
+### Backend Routes (server/store.ts) ✅
+- [x] getProducts - Query products with category/search filters
+- [x] getProduct - Get single product by ID
+- [x] getCategories - Get distinct categories with counts
+- [x] getCart - Get user's cart items with product details
+- [x] addToCart - Add product to cart (blocks quote-required items)
+- [x] updateCartItem - Update quantity or remove
+- [x] removeFromCart - Remove item from cart
+- [x] clearCart - Clear all cart items
+- [x] getCartCount - Get total items in cart
+- [x] getOrders - Get user's order history
+- [x] getOrder - Get single order with items
+- [x] createCheckout - Create Stripe checkout session
+- [x] confirmPayment - Verify payment and update order status
+- [x] submitSalesInquiry - Submit enterprise inquiry with owner notification
+- [x] getSalesInquiries - Get inquiries (admin sees all, users see own)
+- [x] adminCreateProduct - Admin product creation
+- [x] getStats - Get store statistics
+
+### Frontend (Store.tsx) ✅
+- [x] Contact Sales modal for enterprise items
+- [x] Cart sidebar with quantity controls
+- [x] Checkout modal with shipping form
+- [x] Stripe integration (test mode)
+- [x] Smart pricing (Contact Sales for $0 / requiresQuote items)
+- [x] Category filtering
+- [x] Product cards with descriptions
+
+### Product Categories ✅
+- [x] Enterprise Hardware (Supermicro servers, NVIDIA networking, Intel, Seagate, Micron)
+- [x] Software & Licenses (ATHLYNX subscriptions, AI credits, white-label apps)
+- [x] Data Center Packages ($100K - $2.5M+)
+- [x] Support & Maintenance (warranties, 24/7 support, on-site service)
+- [x] AI Companions / Fuel Bots (all require quotes)
+- [x] Sports Equipment (baseball, football, basketball, fishing, golf, hunting, fitness, apparel, training)
+
+### Tests ✅
+- [x] store.test.ts - 22 tests covering all procedures and calculations

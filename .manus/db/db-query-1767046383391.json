@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS order_items (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  orderId INT NOT NULL,\n  productId INT,\n  productName VARCHAR(255) NOT NULL,\n  productSku VARCHAR(50),\n  quantity INT NOT NULL,\n  unitPrice DECIMAL(12, 2) NOT NULL,\n  totalPrice DECIMAL(12, 2) NOT NULL,\n  metadata JSON,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  FOREIGN KEY (orderId) REFERENCES orders(id),\n  FOREIGN KEY (productId) REFERENCES products(id)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute CREATE TABLE IF NOT EXISTS order_items (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  orderId INT NOT NULL,\n  productId INT,\n  productName VARCHAR(255) NOT NULL,\n  productSku VARCHAR(50),\n  quantity INT NOT NULL,\n  unitPrice DECIMAL(12, 2) NOT NULL,\n  totalPrice DECIMAL(12, 2) NOT NULL,\n  metadata JSON,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  FOREIGN KEY (orderId) REFERENCES orders(id),\n  FOREIGN KEY (productId) REFERENCES products(id)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 282
+}
