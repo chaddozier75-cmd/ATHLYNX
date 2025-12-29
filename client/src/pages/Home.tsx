@@ -4,82 +4,98 @@ export default function Home() {
   const apps = [
     {
       name: "NIL Portal",
-      icon: "/nil-portal-n-white.jpeg",
+      icon: "/nil-portal-app-icon.jpeg",
       description: "Manage deals, training data, and professional connections",
       link: "/nil-portal",
-      gradient: "from-blue-500 to-cyan-500",
-    },
-    {
-      name: "Messenger",
-      icon: "/messenger-n-blue.jpeg",
-      description: "Real-time communication with coaches, scouts, and teammates",
-      link: "/messenger",
-      gradient: "from-purple-500 to-pink-500",
     },
     {
       name: "Diamond Grind",
-      icon: "/diamond-grind-geometric.png",
+      icon: "/diamond-grind-app-icon.png",
       description: "Training programs, analytics, and performance tracking",
       link: "/diamond-grind",
-      gradient: "from-orange-500 to-yellow-500",
+    },
+    {
+      name: "NIL Messenger",
+      icon: "/nil-messenger-app-icon.jpeg",
+      description: "Real-time communication with coaches, scouts, and teammates",
+      link: "/messenger",
     },
   ];
 
   const features = [
-    { icon: "📱", title: "Social Feed", desc: "Share highlights, connect with fans" },
-    { icon: "💬", title: "Messaging", desc: "Direct communication platform" },
-    { icon: "💰", title: "NIL Deals", desc: "Brand partnerships & sponsorships" },
-    { icon: "💪", title: "Training", desc: "Personalized workout programs" },
-    { icon: "📊", title: "Analytics", desc: "Performance tracking & insights" },
-    { icon: "🏆", title: "15+ Sports", desc: "Multi-sport support" },
-    { icon: "🎓", title: "Recruiting", desc: "College connections & commitments" },
-    { icon: "🛒", title: "Store", desc: "Gear, apparel & equipment" },
+    { title: "Social Feed", desc: "Share highlights, connect with fans" },
+    { title: "Messaging", desc: "Direct communication platform" },
+    { title: "NIL Deals", desc: "Brand partnerships & sponsorships" },
+    { title: "Training", desc: "Personalized workout programs" },
+    { title: "Analytics", desc: "Performance tracking & insights" },
+    { title: "15+ Sports", desc: "Multi-sport support" },
+    { title: "Recruiting", desc: "College connections & commitments" },
+    { title: "Store", desc: "Gear, apparel & equipment" },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-400 via-orange-500 via-teal-400 to-blue-600 text-white">
-      <div className="w-full max-w-[1200px] mx-auto px-4 py-12 space-y-16">
+    <div className="min-h-screen relative text-white overflow-x-hidden">
+      {/* Dark Blue Gradient Background - Same as VIP page */}
+      <div className="absolute inset-0" 
+           style={{
+             background: 'linear-gradient(180deg, #0a1628 0%, #0d1f3c 25%, #0f2847 50%, #0a1e38 75%, #061424 100%)'
+           }}>
+      </div>
+
+      {/* Subtle blue glow overlay */}
+      <div className="absolute inset-0 opacity-40"
+           style={{
+             background: 'radial-gradient(ellipse at top center, rgba(59, 130, 246, 0.15) 0%, transparent 60%), radial-gradient(ellipse at bottom center, rgba(6, 182, 212, 0.1) 0%, transparent 60%)'
+           }}>
+      </div>
+
+      <div className="relative w-full max-w-[900px] mx-auto px-4 py-12 space-y-12">
         
         {/* Header with DHG Branding */}
         <div className="text-center space-y-6">
+          {/* DHG Crab Shield Logo */}
           <div className="flex justify-center">
-            <div className="inline-flex items-center gap-3 bg-black/40 backdrop-blur-sm border-2 border-yellow-400 rounded-full px-6 py-3">
-              <img src="/dhg-crab-shield.jpeg" alt="DHG" className="w-8 h-8 rounded-full" />
+            <div className="relative">
+              <div className="absolute inset-0 bg-cyan-400 blur-3xl opacity-30 animate-pulse"></div>
+              <img 
+                src="/dhg-crab-shield-logo.jpeg" 
+                alt="DHG Crab Shield" 
+                className="relative w-28 h-28 rounded-full shadow-2xl border-4 border-cyan-400/50"
+              />
+            </div>
+          </div>
+
+          {/* Parent Company Badge */}
+          <div className="flex justify-center">
+            <div className="inline-flex items-center gap-3 bg-slate-900/80 backdrop-blur-md border-2 border-cyan-500/50 rounded-full px-6 py-3 shadow-2xl">
               <div className="text-left">
-                <p className="text-gray-300 text-xs uppercase tracking-wide">PARENT COMPANY</p>
-                <p className="text-yellow-400 font-bold text-sm">Dozier Holdings Group</p>
+                <p className="text-gray-400 text-xs uppercase tracking-wide">PARENT COMPANY</p>
+                <p className="text-cyan-400 font-bold text-sm">Dozier Holdings Group</p>
               </div>
             </div>
           </div>
 
-          <div className="flex justify-center">
-            <img 
-              src="/dhg-crab-shield.jpeg" 
-              alt="Dozier Holdings Group" 
-              className="w-32 h-32 object-contain drop-shadow-2xl animate-pulse"
-            />
-          </div>
-
-          <h1 className="text-5xl md:text-7xl font-black leading-tight">
+          <h1 className="text-4xl md:text-5xl font-black leading-tight">
             <span className="text-white">THE #1 SPORTS PLATFORM</span>
           </h1>
-          <p className="text-xl text-gray-200 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Like Facebook, Instagram, TikTok, X & LinkedIn combined for athletes
           </p>
         </div>
 
         {/* Flagship Product Section */}
-        <div className="bg-black/40 backdrop-blur-md border-2 border-cyan-400 rounded-3xl p-8 space-y-6">
+        <div className="bg-slate-900/80 backdrop-blur-md border-2 border-cyan-500/50 rounded-3xl p-8 space-y-6 shadow-2xl">
           <div className="flex justify-center">
-            <div className="bg-cyan-400 text-black px-6 py-2 rounded-full font-bold uppercase text-sm">
+            <div className="bg-cyan-500 text-white px-6 py-2 rounded-full font-bold uppercase text-sm">
               FLAGSHIP PRODUCT
             </div>
           </div>
 
-          <div className="flex justify-center gap-6">
+          {/* App Icons */}
+          <div className="flex justify-center gap-4">
             {apps.map((app) => (
               <div key={app.name} className="relative group">
-                <div className="absolute inset-0 bg-white blur-xl opacity-0 group-hover:opacity-50 transition-opacity"></div>
+                <div className="absolute inset-0 bg-cyan-400 blur-xl opacity-0 group-hover:opacity-40 transition-opacity"></div>
                 <img 
                   src={app.icon} 
                   alt={app.name} 
@@ -89,45 +105,47 @@ export default function Home() {
             ))}
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-black text-center text-white">
+          <h2 className="text-5xl md:text-6xl font-black text-center text-white">
             ATHLYNX
           </h2>
-          <p className="text-2xl text-center text-cyan-300 font-bold">
+          <p className="text-2xl text-center text-cyan-400 font-bold uppercase tracking-wider">
             The Athlete's Playbook
           </p>
 
+          {/* App Cards */}
           <div className="grid md:grid-cols-3 gap-4">
             {apps.map((app) => (
               <Link key={app.name} href={app.link}>
-                <a className={`block bg-gradient-to-br ${app.gradient} bg-opacity-20 backdrop-blur-sm border-2 border-white/30 rounded-2xl p-6 hover:scale-105 transition-transform cursor-pointer`}>
+                <a className="block bg-slate-800/60 backdrop-blur-sm border-2 border-cyan-500/30 hover:border-cyan-400 rounded-2xl p-6 hover:scale-105 transition-all cursor-pointer">
                   <div className="flex items-center gap-4 mb-3">
                     <img src={app.icon} alt={app.name} className="w-12 h-12 rounded-xl" />
-                    <h3 className="text-xl font-bold text-white">{app.name}</h3>
+                    <h3 className="text-lg font-bold text-white">{app.name}</h3>
                   </div>
-                  <p className="text-gray-200 text-sm">{app.description}</p>
+                  <p className="text-gray-400 text-sm">{app.description}</p>
                 </a>
               </Link>
             ))}
           </div>
 
-          <p className="text-center text-gray-300 text-sm max-w-2xl mx-auto">
+          <p className="text-center text-gray-400 text-sm max-w-2xl mx-auto">
             Three powerful apps. One revolutionary platform. Social, messaging, NIL deals, training, analytics - all unified.
           </p>
 
-          <div className="flex justify-center gap-4">
+          {/* Action Buttons */}
+          <div className="flex justify-center gap-4 flex-wrap">
             <Link href="/nil-portal">
-              <a className="bg-black/60 border-2 border-cyan-400 text-cyan-400 px-6 py-3 rounded-xl font-bold hover:bg-cyan-400 hover:text-black transition">
-                📱 Social Feed
+              <a className="bg-slate-800/60 border-2 border-cyan-500/50 text-cyan-400 px-6 py-3 rounded-xl font-bold hover:bg-cyan-500 hover:text-white transition">
+                Social Feed
               </a>
             </Link>
             <Link href="/messenger">
-              <a className="bg-black/60 border-2 border-pink-400 text-pink-400 px-6 py-3 rounded-xl font-bold hover:bg-pink-400 hover:text-black transition">
-                💬 Messenger
+              <a className="bg-slate-800/60 border-2 border-cyan-500/50 text-cyan-400 px-6 py-3 rounded-xl font-bold hover:bg-cyan-500 hover:text-white transition">
+                Messenger
               </a>
             </Link>
             <Link href="/diamond-grind">
-              <a className="bg-black/60 border-2 border-orange-400 text-orange-400 px-6 py-3 rounded-xl font-bold hover:bg-orange-400 hover:text-black transition">
-                💪 Diamond Grind
+              <a className="bg-slate-800/60 border-2 border-cyan-500/50 text-cyan-400 px-6 py-3 rounded-xl font-bold hover:bg-cyan-500 hover:text-white transition">
+                Diamond Grind
               </a>
             </Link>
           </div>
@@ -142,11 +160,10 @@ export default function Home() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="bg-black/40 backdrop-blur-sm border-2 border-white/30 rounded-2xl p-6 text-center hover:scale-105 hover:border-cyan-400 transition-all cursor-pointer"
+                className="bg-slate-900/80 backdrop-blur-sm border-2 border-cyan-500/30 rounded-2xl p-6 text-center hover:scale-105 hover:border-cyan-400 transition-all cursor-pointer"
               >
-                <div className="text-5xl mb-3">{feature.icon}</div>
                 <h3 className="text-white font-bold text-lg mb-2">{feature.title}</h3>
-                <p className="text-gray-300 text-xs">{feature.desc}</p>
+                <p className="text-gray-400 text-xs">{feature.desc}</p>
               </div>
             ))}
           </div>
@@ -155,63 +172,81 @@ export default function Home() {
         {/* Quick Links */}
         <div className="grid md:grid-cols-3 gap-6">
           <Link href="/founder-story">
-            <a className="block bg-black/40 backdrop-blur-sm border-2 border-orange-400 rounded-2xl p-6 hover:scale-105 transition-transform">
-              <div className="text-4xl mb-3">🦀</div>
+            <a className="block bg-slate-900/80 backdrop-blur-sm border-2 border-cyan-500/30 hover:border-cyan-400 rounded-2xl p-6 hover:scale-105 transition-transform">
+              <img src="/dhg-crab-shield-logo.jpeg" alt="DHG" className="w-12 h-12 rounded-lg mb-3" />
               <h3 className="text-xl font-bold text-white mb-2">Founder's Story</h3>
-              <p className="text-gray-300 text-sm">Learn about Chad A. Dozier and the DHG mission</p>
+              <p className="text-gray-400 text-sm">Learn about Chad A. Dozier and the DHG mission</p>
             </a>
           </Link>
 
           <Link href="/store">
-            <a className="block bg-black/40 backdrop-blur-sm border-2 border-green-400 rounded-2xl p-6 hover:scale-105 transition-transform">
-              <div className="text-4xl mb-3">🛒</div>
+            <a className="block bg-slate-900/80 backdrop-blur-sm border-2 border-cyan-500/30 hover:border-cyan-400 rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div className="w-12 h-12 rounded-lg bg-cyan-500/20 border border-cyan-500/50 flex items-center justify-center mb-3">
+                <span className="text-cyan-400 font-bold">S</span>
+              </div>
               <h3 className="text-xl font-bold text-white mb-2">Store</h3>
-              <p className="text-gray-300 text-sm">Gear, apparel, equipment for all sports</p>
+              <p className="text-gray-400 text-sm">Gear, apparel, equipment for all sports</p>
             </a>
           </Link>
 
           <Link href="/recruiting">
-            <a className="block bg-black/40 backdrop-blur-sm border-2 border-purple-400 rounded-2xl p-6 hover:scale-105 transition-transform">
-              <div className="text-4xl mb-3">🎓</div>
+            <a className="block bg-slate-900/80 backdrop-blur-sm border-2 border-cyan-500/30 hover:border-cyan-400 rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div className="w-12 h-12 rounded-lg bg-cyan-500/20 border border-cyan-500/50 flex items-center justify-center mb-3">
+                <span className="text-cyan-400 font-bold">R</span>
+              </div>
               <h3 className="text-xl font-bold text-white mb-2">Recruiting</h3>
-              <p className="text-gray-300 text-sm">College connections and commitments</p>
+              <p className="text-gray-400 text-sm">College connections and commitments</p>
             </a>
           </Link>
 
           <Link href="/faith">
-            <a className="block bg-black/40 backdrop-blur-sm border-2 border-amber-400 rounded-2xl p-6 hover:scale-105 transition-transform">
-              <div className="text-4xl mb-3">✝️</div>
+            <a className="block bg-slate-900/80 backdrop-blur-sm border-2 border-cyan-500/30 hover:border-cyan-400 rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div className="w-12 h-12 rounded-lg bg-cyan-500/20 border border-cyan-500/50 flex items-center justify-center mb-3">
+                <span className="text-cyan-400 font-bold text-xl">✟</span>
+              </div>
               <h3 className="text-xl font-bold text-white mb-2">Faith & Athletes</h3>
-              <p className="text-gray-300 text-sm">Daily devotionals, prayer wall & community</p>
+              <p className="text-gray-400 text-sm">Daily devotionals, prayer wall & community</p>
             </a>
           </Link>
 
           <Link href="/transfer-portal-intelligence">
-            <a className="block bg-black/40 backdrop-blur-sm border-2 border-cyan-400 rounded-2xl p-6 hover:scale-105 transition-transform">
-              <div className="text-4xl mb-3">🔄</div>
+            <a className="block bg-slate-900/80 backdrop-blur-sm border-2 border-cyan-500/30 hover:border-cyan-400 rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div className="w-12 h-12 rounded-lg bg-cyan-500/20 border border-cyan-500/50 flex items-center justify-center mb-3">
+                <span className="text-cyan-400 font-bold">TP</span>
+              </div>
               <h3 className="text-xl font-bold text-white mb-2">Transfer Portal</h3>
-              <p className="text-gray-300 text-sm">Intelligence platform for schools & athletes</p>
+              <p className="text-gray-400 text-sm">Intelligence platform for schools & athletes</p>
+            </a>
+          </Link>
+
+          <Link href="/military-division">
+            <a className="block bg-slate-900/80 backdrop-blur-sm border-2 border-cyan-500/30 hover:border-cyan-400 rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div className="w-12 h-12 rounded-lg bg-cyan-500/20 border border-cyan-500/50 flex items-center justify-center mb-3">
+                <span className="text-cyan-400 font-bold">MIL</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Military Division</h3>
+              <p className="text-gray-400 text-sm">Operation Warrior Pipeline</p>
             </a>
           </Link>
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-3xl p-12 text-center space-y-6">
-          <h2 className="text-4xl md:text-5xl font-black text-black">
+        <div className="bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 rounded-3xl p-12 text-center space-y-6 shadow-2xl">
+          <h2 className="text-4xl md:text-5xl font-black text-white">
             JOIN THE REVOLUTION
           </h2>
-          <p className="text-xl text-black/80 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
             10,000 founding member spots. 6 months free VIP access. Launch February 1, 2026.
           </p>
           <Link href="/">
-            <a className="inline-block bg-black text-white px-8 py-4 rounded-xl font-black text-lg uppercase hover:scale-105 transition-transform">
-              🏆 Get VIP Access
+            <a className="inline-block bg-white text-blue-600 px-8 py-4 rounded-xl font-black text-lg uppercase hover:scale-105 transition-transform shadow-xl">
+              Get VIP Access
             </a>
           </Link>
         </div>
 
         {/* Footer */}
-        <div className="text-center text-gray-300 text-sm space-y-2">
+        <div className="text-center text-gray-400 text-sm space-y-2">
           <p>Powered by Dozier Holdings Group</p>
           <p>© 2025 Athlynx. All rights reserved.</p>
         </div>

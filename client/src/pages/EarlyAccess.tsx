@@ -71,11 +71,11 @@ export default function EarlyAccess() {
   const sports = ["Baseball", "Football", "Basketball", "Soccer", "Track & Field", "Volleyball"];
   
   const quickLinks = [
-    { icon: "✝️", label: "Faith", path: "/faith" },
-    { icon: "🔄", label: "Transfer Portal", path: "/transfer-portal-intelligence" },
-    { icon: "💰", label: "NIL Portal", path: "/nil-portal" },
-    { icon: "🎖️", label: "Military Division", path: "/military-division" },
-    { icon: "🦀", label: "Our Story", path: "/founder-story" },
+    { icon: "/faith-cross-icon.png", label: "Faith", path: "/faith", isImage: false, text: "✟" },
+    { icon: "/transfer-portal-icon.png", label: "Transfer Portal", path: "/transfer-portal-intelligence", isImage: false, text: "TP" },
+    { icon: "/nil-portal-app-icon.jpeg", label: "NIL Portal", path: "/nil-portal", isImage: true },
+    { icon: "/military-icon.png", label: "Military Division", path: "/military-division", isImage: false, text: "MIL" },
+    { icon: "/dhg-crab-shield-logo.jpeg", label: "Our Story", path: "/founder-story", isImage: true },
   ];
 
   return (
@@ -118,38 +118,30 @@ export default function EarlyAccess() {
           </div>
         </div>
 
-        {/* App Icons Row - NIL Portal, Diamond Grind, ATHLYNX, Messenger */}
-        <div className="flex justify-center gap-3">
+        {/* App Icons Row - NIL Portal, Diamond Grind, NIL Messenger */}
+        <div className="flex justify-center gap-4">
           <div className="relative group">
-            <div className="absolute inset-0 bg-gray-300 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+            <div className="absolute inset-0 bg-blue-500 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
             <img 
-              src="/nil-portal-logo.jpeg" 
+              src="/nil-portal-app-icon.jpeg" 
               alt="NIL Portal" 
-              className="relative w-16 h-16 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform"
+              className="relative w-20 h-20 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform"
             />
           </div>
           <div className="relative group">
             <div className="absolute inset-0 bg-blue-400 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
             <img 
-              src="/diamond-grind-logo.png" 
+              src="/diamond-grind-app-icon.png" 
               alt="Diamond Grind" 
-              className="relative w-16 h-16 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform"
+              className="relative w-20 h-20 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform"
             />
           </div>
           <div className="relative group">
-            <div className="absolute inset-0 bg-cyan-400 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+            <div className="absolute inset-0 bg-gray-300 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
             <img 
-              src="/athlynx-logo-icon.png" 
-              alt="ATHLYNX" 
-              className="relative w-16 h-16 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform bg-white"
-            />
-          </div>
-          <div className="relative group">
-            <div className="absolute inset-0 bg-blue-500 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
-            <img 
-              src="/messenger-logo.jpeg" 
-              alt="Messenger" 
-              className="relative w-16 h-16 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform"
+              src="/nil-messenger-app-icon.jpeg" 
+              alt="NIL Messenger" 
+              className="relative w-20 h-20 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform"
             />
           </div>
         </div>
@@ -169,24 +161,14 @@ export default function EarlyAccess() {
           <p className="text-cyan-400 text-2xl md:text-3xl font-black uppercase tracking-[0.2em] drop-shadow-lg">
             THE ATHLETE'S PLAYBOOK
           </p>
-          {/* ATHLYNX Logo */}
-          <div className="flex justify-center pt-4">
-            <div className="relative">
-              <div className="absolute inset-0 bg-cyan-400 blur-2xl opacity-30"></div>
-              <img 
-                src="/athlynx-logo-icon.png" 
-                alt="ATHLYNX Logo" 
-                className="relative w-28 h-28 rounded-2xl shadow-2xl"
-              />
-            </div>
-          </div>
+
         </div>
 
         {/* VIP Early Access Badge - Blue Theme */}
         <div className="flex justify-center">
           <div className="bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 rounded-full px-10 py-5 shadow-2xl transform hover:scale-105 transition-transform">
             <p className="text-white font-black text-center">
-              <span className="text-xl">🏆 VIP EARLY ACCESS</span><br/>
+              <span className="text-xl">VIP EARLY ACCESS</span><br/>
               <span className="text-3xl">6 MONTHS FREE</span>
             </p>
           </div>
@@ -216,7 +198,7 @@ export default function EarlyAccess() {
 
         {/* Founding Member Section */}
         <div className="bg-gradient-to-r from-red-900/60 to-orange-900/60 backdrop-blur-md border-2 border-red-500/50 rounded-3xl p-6 space-y-4 shadow-2xl">
-          <p className="text-white font-black text-center text-xl">🔥 FOUNDING MEMBER SPOTS</p>
+          <p className="text-white font-black text-center text-xl">FOUNDING MEMBER SPOTS</p>
           <p className="text-red-400 font-black text-3xl text-center drop-shadow-lg">LIMITED TO 10,000</p>
           <div className="w-full bg-slate-900/60 rounded-full h-4 overflow-hidden border border-red-500/50">
             <div className="bg-gradient-to-r from-cyan-500 via-blue-500 to-red-500 h-full w-[35%] animate-pulse shadow-lg"></div>
@@ -311,7 +293,7 @@ export default function EarlyAccess() {
               disabled={signupMutation.isPending}
               className="w-full bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 text-white font-black text-xl uppercase tracking-wider py-5 rounded-full shadow-2xl hover:shadow-cyan-500/50 hover:scale-105 transition-all transform disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {signupMutation.isPending ? "PROCESSING..." : "🏆 CLAIM MY VIP SPOT"}
+              {signupMutation.isPending ? "PROCESSING..." : "CLAIM MY VIP SPOT"}
             </button>
 
             {/* No credit card text */}
@@ -325,7 +307,7 @@ export default function EarlyAccess() {
         <div className="text-center space-y-3">
           <p className="text-gray-400 text-sm">Join athletes from 500+ schools already on the waitlist</p>
           <p className="text-cyan-400 font-bold">
-            🏈 SEC • ACC • Big Ten • Big 12 • Pac-12
+            SEC • ACC • Big Ten • Big 12 • Pac-12
           </p>
         </div>
 
@@ -347,7 +329,11 @@ export default function EarlyAccess() {
               onClick={() => setLocation(link.path)}
               className="bg-slate-800/60 backdrop-blur-sm border-2 border-cyan-500/40 hover:border-cyan-400 rounded-xl p-4 text-center transition-all hover:scale-105 group shadow-lg"
             >
-              <div className="text-3xl mb-2 group-hover:scale-110 transition-transform drop-shadow-lg">{link.icon}</div>
+              {link.isImage ? (
+                <img src={link.icon} alt={link.label} className="w-10 h-10 mx-auto mb-2 rounded-lg group-hover:scale-110 transition-transform" />
+              ) : (
+                <div className="w-10 h-10 mx-auto mb-2 rounded-lg bg-cyan-500/20 border border-cyan-500/50 flex items-center justify-center text-cyan-400 font-bold text-sm group-hover:scale-110 transition-transform">{link.text}</div>
+              )}
               <p className="text-white font-bold text-sm">{link.label}</p>
             </button>
           ))}
@@ -356,14 +342,14 @@ export default function EarlyAccess() {
         {/* Feature Checkmarks - Blue Theme */}
         <div className="flex flex-wrap justify-center gap-3 text-sm">
           {[
-            "✅ Social Network",
-            "✅ NIL Deals",
-            "✅ Messaging",
-            "✅ Analytics",
-            "✅ Compliance"
+            "Social Network",
+            "NIL Deals",
+            "Messaging",
+            "Analytics",
+            "Compliance"
           ].map((feature) => (
-            <div key={feature} className="text-white font-bold bg-slate-800/60 backdrop-blur-sm px-4 py-2 rounded-full border border-cyan-500/40 shadow-lg">
-              {feature}
+            <div key={feature} className="text-white font-bold bg-slate-800/60 backdrop-blur-sm px-4 py-2 rounded-full border border-cyan-500/40 shadow-lg flex items-center gap-2">
+              <span className="text-cyan-400">✓</span> {feature}
             </div>
           ))}
         </div>

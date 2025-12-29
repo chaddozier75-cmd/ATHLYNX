@@ -1,9 +1,13 @@
 export default function FounderStory() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white">
-      {/* Header with Logo */}
+      {/* Header with DHG Crab Shield Logo */}
       <div className="container pt-12 flex justify-center">
-        <div className="text-8xl">🦀</div>
+        <img 
+          src="/dhg-crab-shield-logo.jpeg" 
+          alt="DHG Crab Shield" 
+          className="w-32 h-32 object-contain"
+        />
       </div>
 
       {/* Title */}
@@ -20,7 +24,7 @@ export default function FounderStory() {
         {/* The Athlete (1990s) */}
         <div className="space-y-6">
           <div className="flex items-center gap-4">
-            <div className="text-5xl">🏈</div>
+            <img src="/diamond-grind-app-icon.png" alt="Sports" className="w-14 h-14 rounded-xl" />
             <div>
               <h2 className="text-3xl font-bold">The Athlete (1990s)</h2>
               <p className="text-yellow-400">1990-1993</p>
@@ -60,7 +64,9 @@ export default function FounderStory() {
         {/* The Vision (2020s) */}
         <div className="space-y-6">
           <div className="flex items-center gap-4">
-            <div className="text-5xl">💡</div>
+            <div className="w-14 h-14 rounded-xl bg-cyan-500/20 border border-cyan-500/50 flex items-center justify-center">
+              <span className="text-cyan-400 text-2xl font-bold">V</span>
+            </div>
             <div>
               <h2 className="text-3xl font-bold">The Vision (2020s)</h2>
             </div>
@@ -75,7 +81,9 @@ export default function FounderStory() {
         {/* The Call Home (2024) */}
         <div className="space-y-6">
           <div className="flex items-center gap-4">
-            <div className="text-5xl">💙</div>
+            <div className="w-14 h-14 rounded-xl bg-blue-500/20 border border-blue-500/50 flex items-center justify-center">
+              <span className="text-blue-400 text-2xl font-bold">H</span>
+            </div>
             <div>
               <h2 className="text-3xl font-bold">The Call Home (2024)</h2>
             </div>
@@ -104,7 +112,9 @@ export default function FounderStory() {
         {/* Hope Lodge, Houston (2024) */}
         <div className="space-y-6">
           <div className="flex items-center gap-4">
-            <div className="text-5xl">🏥</div>
+            <div className="w-14 h-14 rounded-xl bg-red-500/20 border border-red-500/50 flex items-center justify-center">
+              <span className="text-red-400 text-2xl font-bold">+</span>
+            </div>
             <div>
               <h2 className="text-3xl font-bold">Hope Lodge, Houston (2024)</h2>
             </div>
@@ -120,7 +130,7 @@ export default function FounderStory() {
         {/* The Birth of an Empire (November 2024) */}
         <div className="space-y-6">
           <div className="flex items-center gap-4">
-            <div className="text-5xl">🦀</div>
+            <img src="/dhg-crab-shield-logo.jpeg" alt="DHG" className="w-14 h-14 rounded-xl object-contain" />
             <div>
               <h2 className="text-3xl font-bold">The Birth of an Empire (November 2024)</h2>
             </div>
@@ -133,17 +143,20 @@ export default function FounderStory() {
             <p className="text-gray-300">Location: Houston, Texas</p>
             <p className="text-gray-300">From the halls of Hope Lodge, an empire was born. Chad and Glenn began building:</p>
             <ul className="list-disc list-inside space-y-2 text-gray-300 ml-4">
-              <li>🏢 Dozier Holdings Group</li>
-              <li>🏈 Athlynx Platform</li>
-              <li>💰 NIL Portal</li>
-              <li>💎 Diamond Grind</li>
-              <li>💬 Messenger</li>
-              <li>⚡ Warriors Playbook</li>
+              <li>Dozier Holdings Group</li>
+              <li>Athlynx Platform</li>
+              <li>NIL Portal</li>
+              <li>Diamond Grind</li>
+              <li>NIL Messenger</li>
+              <li>Warriors Playbook</li>
             </ul>
           </div>
 
           <div className="bg-slate-800/50 rounded-lg p-6 space-y-4">
-            <h3 className="text-xl font-bold text-cyan-400">The Symbol - The Crab 🦀</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img src="/dhg-crab-shield-logo.jpeg" alt="DHG Crab" className="w-10 h-10 rounded-lg object-contain" />
+              <h3 className="text-xl font-bold text-cyan-400">The Symbol - The Crab</h3>
+            </div>
             <p className="text-gray-300">The crab represents more than a logo. It represents:</p>
             <ul className="list-disc list-inside space-y-2 text-gray-300 ml-4">
               <li><strong>Cancer</strong>—the battle his mother fought</li>
@@ -158,7 +171,9 @@ export default function FounderStory() {
         {/* The Victory (2024-2025) */}
         <div className="space-y-6">
           <div className="flex items-center gap-4">
-            <div className="text-5xl">🙏</div>
+            <div className="w-14 h-14 rounded-xl bg-yellow-500/20 border border-yellow-500/50 flex items-center justify-center">
+              <span className="text-yellow-400 text-2xl font-bold">W</span>
+            </div>
             <div>
               <h2 className="text-3xl font-bold">The Victory (2024-2025)</h2>
             </div>
@@ -196,7 +211,7 @@ export default function FounderStory() {
         {/* Why Athlynx Exists */}
         <div className="space-y-6">
           <div className="flex items-center gap-4">
-            <div className="text-5xl">🎯</div>
+            <img src="/athlynx-logo-icon.png" alt="Athlynx" className="w-14 h-14 rounded-xl bg-white" />
             <div>
               <h2 className="text-3xl font-bold">Why Athlynx Exists</h2>
             </div>
