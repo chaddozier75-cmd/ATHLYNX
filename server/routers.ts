@@ -19,6 +19,7 @@ import { veteransRouter } from "./veterans";
 import { careersRouter } from "./careers";
 import { medicalRouter } from "./medical";
 import { baseballRouter } from "./baseball";
+import { partnersRouter } from "./partners";
 
 export const appRouter = router({
   // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -197,6 +198,7 @@ export const appRouter = router({
   careers: careersRouter,
   medical: medicalRouter,
   baseball: baseballRouter,
+  partners: partnersRouter,
 
   // AI Bots
   aiBots: router({

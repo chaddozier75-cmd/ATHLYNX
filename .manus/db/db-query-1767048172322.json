@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO partners (name, company, email, access_code, access_level, expires_at) VALUES \n('General Fu (傅晓)', 'Yovole Networks (有孚网络)', 'chairman@yovole.com', 'Yovole-DHG-2025', 'executive', '2026-12-31 23:59:59'),\n('ICC Sales Team', 'International Computer Concepts Inc.', 'sales@iccusa.com', 'ICC-DHG-2025', 'premium', '2026-12-31 23:59:59');",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute INSERT INTO partners (name, company, email, access_code, access_level, expires_at) VALUES \n('General Fu (傅晓)', 'Yovole Networks (有孚网络)', 'chairman@yovole.com', 'Yovole-DHG-2025', 'executive', '2026-12-31 23:59:59'),\n('ICC Sales Team', 'International Computer Concepts Inc.', 'sales@iccusa.com', 'ICC-DHG-2025', 'premium', '2026-12-31 23:59:59');",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 74
+}

@@ -40,7 +40,9 @@ import InvestorHub from "./pages/InvestorHub";
 import Team from "./pages/Team";
 import ProjectChecklist from "./pages/ProjectChecklist";
 import FuelBots from "./pages/FuelBots";
+import PartnerPortal from "./pages/PartnerPortal";
 import UnifiedNav from "./components/UnifiedNav";
+import { BrandingHeader } from "./components/BrandingHeader";
 
 function Router() {
   return (
@@ -186,6 +188,10 @@ function Router() {
       <Route path={"/checklist"} component={ProjectChecklist} />
       <Route path={"/leadership"} component={Team} />
       
+      {/* Partner Portal */}
+      <Route path={"/partner-portal"} component={PartnerPortal} />
+      <Route path={"/partners"} component={PartnerPortal} />
+      
       {/* Legacy Coming Soon */}
       <Route path={"/messenger"} component={() => <ComingSoon title="Messenger" description="Real-time messaging platform for athletes, coaches, and brands. Connect, collaborate, and communicate seamlessly." icon="💬" />} />
       
@@ -202,6 +208,7 @@ function App() {
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
+          <BrandingHeader />
           <UnifiedNav />
           <Router />
         </TooltipProvider>

@@ -1689,3 +1689,96 @@
 
 ### Tests ✅
 - [x] store.test.ts - 22 tests covering all procedures and calculations
+
+
+---
+
+## PARTNER PORTAL - December 29, 2025
+
+### Database Schema
+- [ ] Partners table (name, company, email, accessCode, accessLevel, expiresAt)
+- [ ] Partner documents table (partnerId, title, description, fileUrl, category)
+- [ ] Partner access logs table (partnerId, action, timestamp, ipAddress)
+
+### Partner Portal Page (/partner-portal)
+- [ ] Password/access code authentication
+- [ ] Professional landing page with DHG branding
+- [ ] Partner-specific dashboard after login
+- [ ] Document categories: Quotes, Proposals, Technical Specs, Presentations
+- [ ] Download tracking and access logs
+- [ ] Session management with expiration
+
+### Partner Sections
+- [ ] Yovole Networks (有孚网络) - Chairman Fu
+  - [ ] $27.5M Data Center Quote
+  - [ ] Strategic Partnership Proposal
+  - [ ] Robot Dog Introduction (Chinese/English)
+  - [ ] Geothermal Power Overview
+  - [ ] Hardware Export Compliance docs
+- [ ] ICC (International Computer Concepts)
+  - [ ] NVIDIA Elite Partner documentation
+  - [ ] Supermicro server specs
+  - [ ] Pricing and warranty terms
+
+### Security Features
+- [ ] Unique access codes per partner
+- [ ] Access expiration dates
+- [ ] Download logging for compliance
+- [ ] IP tracking for security
+- [ ] Owner notification on partner login
+
+### Navigation
+- [ ] Add Partner Portal to footer (not main nav - keep it discrete)
+- [ ] Direct URL access: /partner-portal
+
+
+---
+
+## GLOBAL BRANDING HEADER - December 29, 2025
+
+### BrandingHeader Component
+- [x] Create BrandingHeader.tsx component
+- [x] Left side: "THE FUTURE OF ATHLETE SUCCESS" in cyan
+- [x] Center: DHG Crab logo with "Parent Company: Dozier Holdings Group" badge
+- [x] Right side: "ATHLYNX - THE ATHLETE'S PLAYBOOK" 
+- [x] Dark blue background matching theme
+- [x] Fixed position at top of all pages
+- [x] Responsive design for mobile
+- [x] Add to global layout in App.tsx
+
+
+---
+
+## PARTNER PORTAL - December 29, 2025
+
+### Database Schema
+- [x] Create partners table (id, name, company, email, access_code, access_level, expires_at, is_active)
+- [x] Create partner_documents table (id, partner_id, title, description, file_url, category)
+- [x] Create partner_access_logs table (id, partner_id, action, document_id, created_at)
+- [x] Insert Yovole partner with access code: Yovole-DHG-2025
+
+### Backend Router (server/partners.ts)
+- [x] authenticate - Partner login with access code
+- [x] getDocuments - Get documents for authenticated partner
+- [x] logDownload - Track document downloads
+- [x] adminGetPartners - Admin view all partners
+- [x] adminCreatePartner - Admin create new partner
+- [x] adminAddDocument - Admin add document for partner
+- [x] adminGetAccessLogs - Admin view access logs
+- [x] Owner notifications on login and downloads
+
+### Frontend (client/src/pages/PartnerPortal.tsx)
+- [x] Password-protected login screen
+- [x] Partner dashboard with company branding
+- [x] Document categories (quotes, proposals, technical, presentations, contracts)
+- [x] Document download with tracking
+- [x] Access level badges (standard, premium, executive)
+- [x] Security notice and SSL encryption indicator
+- [x] Contact support section
+
+### Routes
+- [x] /partner-portal
+- [x] /partners
+
+### Tests
+- [x] partners.test.ts - 9 tests passing

@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS partners (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  name VARCHAR(255) NOT NULL,\n  company VARCHAR(255) NOT NULL,\n  email VARCHAR(255),\n  access_code VARCHAR(50) NOT NULL UNIQUE,\n  access_level ENUM('standard', 'premium', 'executive') DEFAULT 'standard',\n  expires_at DATETIME,\n  is_active ENUM('yes', 'no') DEFAULT 'yes',\n  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\n  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute CREATE TABLE IF NOT EXISTS partners (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  name VARCHAR(255) NOT NULL,\n  company VARCHAR(255) NOT NULL,\n  email VARCHAR(255),\n  access_code VARCHAR(50) NOT NULL UNIQUE,\n  access_level ENUM('standard', 'premium', 'executive') DEFAULT 'standard',\n  expires_at DATETIME,\n  is_active ENUM('yes', 'no') DEFAULT 'yes',\n  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,\n  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1737
+}
