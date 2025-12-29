@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `fca_devotionals` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `title` varchar(255) NOT NULL,\n  `content` text NOT NULL,\n  `scripture` text NOT NULL,\n  `scriptureReference` varchar(100) NOT NULL,\n  `prayer` text,\n  `author` varchar(255) NOT NULL DEFAULT 'Chad A. Dozier',\n  `publishDate` date NOT NULL,\n  `featured` enum('yes','no') NOT NULL DEFAULT 'no',\n  `category` varchar(100),\n  `views` int NOT NULL DEFAULT 0,\n  `likes` int NOT NULL DEFAULT 0,\n  `shares` int NOT NULL DEFAULT 0,\n  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `fca_devotionals_id` PRIMARY KEY(`id`)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute CREATE TABLE IF NOT EXISTS `fca_devotionals` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `title` varchar(255) NOT NULL,\n  `content` text NOT NULL,\n  `scripture` text NOT NULL,\n  `scriptureReference` varchar(100) NOT NULL,\n  `prayer` text,\n  `author` varchar(255) NOT NULL DEFAULT 'Chad A. Dozier',\n  `publishDate` date NOT NULL,\n  `featured` enum('yes','no') NOT NULL DEFAULT 'no',\n  `category` varchar(100),\n  `views` int NOT NULL DEFAULT 0,\n  `likes` int NOT NULL DEFAULT 0,\n  `shares` int NOT NULL DEFAULT 0,\n  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `fca_devotionals_id` PRIMARY KEY(`id`)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 194
+}

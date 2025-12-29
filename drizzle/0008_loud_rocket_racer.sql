@@ -1,0 +1,1 @@
+-- Transfer Portal tables migration
