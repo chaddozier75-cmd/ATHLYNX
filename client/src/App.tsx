@@ -38,6 +38,7 @@ import AthleteDashboard from "./pages/AthleteDashboard";
 import QuickLinksHub from "./pages/QuickLinksHub";
 import InvestorHub from "./pages/InvestorHub";
 import Team from "./pages/Team";
+import ProjectChecklist from "./pages/ProjectChecklist";
 import UnifiedNav from "./components/UnifiedNav";
 
 function Router() {
@@ -178,6 +179,7 @@ function Router() {
       
       {/* Team Page */}
       <Route path={"/team"} component={Team} />
+      <Route path={"/checklist"} component={ProjectChecklist} />
       <Route path={"/leadership"} component={Team} />
       
       {/* Legacy Coming Soon */}
