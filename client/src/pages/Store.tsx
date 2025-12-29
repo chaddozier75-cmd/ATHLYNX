@@ -87,6 +87,23 @@ const staticProducts = [
   { id: 20, sku: "BB-PITCH-MACH", name: "Pitching Machine", category: "baseball", price: 1299.99, image: "⚾", rating: 4.9, reviews: 34, description: "Variable speed pitching machine", requiresQuote: false },
 ];
 
+// Product type from database
+interface Product {
+  id: number;
+  sku: string;
+  name: string;
+  description: string | null;
+  category: string;
+  price: string;
+  imageUrl: string | null;
+  image: string | null;
+  rating: string | null;
+  reviewCount: number | null;
+  stockQuantity: number | null;
+  requiresQuote: string;
+  isActive: string;
+}
+
 export default function Store() {
   const { user } = useAuth();
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -94,7 +111,7 @@ export default function Store() {
   const [showCart, setShowCart] = useState(false);
   const [showCheckout, setShowCheckout] = useState(false);
   const [showContactSales, setShowContactSales] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState<typeof staticProducts[0] | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [checkoutEmail, setCheckoutEmail] = useState("");
   const [checkoutName, setCheckoutName] = useState("");
   const [checkoutAddress, setCheckoutAddress] = useState("");
@@ -120,6 +137,11 @@ export default function Store() {
     { id: "training", name: "Training", icon: "🏋️" },
   ];
 
+  // Fetch products from database
+  const { data: dbProducts, isLoading: productsLoading } = trpc.store.getProducts.useQuery(
+    selectedCategory === "all" ? {} : { category: selectedCategory }
+  );
+
   // Checkout mutation
   const createCheckout = trpc.store.createCheckout.useMutation({
     onSuccess: (data) => {
@@ -133,15 +155,29 @@ export default function Store() {
     },
   });
 
-  const filteredProducts = useMemo(() => {
-    return selectedCategory === "all" 
-      ? staticProducts 
-      : staticProducts.filter(p => p.category === selectedCategory);
-  }, [selectedCategory]);
+  // Use database products if available, fallback to static
+  const products: Product[] = dbProducts && dbProducts.length > 0 
+    ? dbProducts 
+    : staticProducts.map(p => ({
+        id: p.id,
+        sku: p.sku,
+        name: p.name,
+        description: p.description,
+        category: p.category,
+        price: String(p.price),
+        imageUrl: null,
+        image: p.image,
+        rating: String(p.rating),
+        reviewCount: p.reviews,
+        stockQuantity: 100,
+        requiresQuote: p.requiresQuote ? 'yes' : 'no',
+        isActive: 'yes'
+      }));
 
-  const addToCart = (product: typeof staticProducts[0]) => {
+  const addToCart = (product: Product) => {
+    const price = parseFloat(product.price);
     // Check if requires quote
-    if (product.requiresQuote || product.price === 0) {
+    if (product.requiresQuote === 'yes' || price === 0) {
       setSelectedProduct(product);
       setShowContactSales(true);
       return;
@@ -157,11 +193,11 @@ export default function Store() {
       return [...prev, { 
         id: product.id, 
         name: product.name, 
-        price: product.price, 
+        price: price, 
         qty: 1, 
-        image: product.image, 
+        image: product.image || '📦', 
         category: product.category,
-        description: product.description
+        description: product.description || ''
       }];
     });
     toast.success(`${product.name} added to cart`);
@@ -515,7 +551,7 @@ export default function Store() {
 
           {/* Products Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-10">
-            {filteredProducts.map((product) => (
+            {products.map((product: Product) => (
               <div
                 key={product.id}
                 className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 overflow-hidden hover:border-yellow-500/50 transition-all group"
@@ -530,21 +566,21 @@ export default function Store() {
                   )}
                   <div className="flex items-center gap-1 mb-2">
                     <span className="text-yellow-400 text-xs">★</span>
-                    <span className="text-gray-400 text-xs">{product.rating} ({product.reviews})</span>
+                    <span className="text-gray-400 text-xs">{product.rating} ({product.reviewCount || 0})</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className={`text-lg font-bold ${product.price === 0 ? 'text-cyan-400 text-sm' : 'text-white'}`}>
-                      {formatPrice(product.price)}
+                    <span className={`text-lg font-bold ${parseFloat(product.price) === 0 ? 'text-cyan-400 text-sm' : 'text-white'}`}>
+                      {formatPrice(parseFloat(product.price))}
                     </span>
                     <button
                       onClick={() => addToCart(product)}
                       className={`px-3 py-2 rounded-lg font-semibold text-sm transition-all ${
-                        product.requiresQuote || product.price === 0
+                        product.requiresQuote === 'yes' || parseFloat(product.price) === 0
                           ? "bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30"
                           : "bg-yellow-500 text-black hover:bg-yellow-400"
                       }`}
                     >
-                      {product.requiresQuote || product.price === 0 ? "Get Quote" : "+"}
+                      {product.requiresQuote === 'yes' || parseFloat(product.price) === 0 ? "Get Quote" : "+"}
                     </button>
                   </div>
                 </div>

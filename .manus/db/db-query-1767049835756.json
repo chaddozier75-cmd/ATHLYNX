@@ -1,0 +1,242 @@
+{
+  "query": "SELECT id, sku, name, category, price, requiresQuote FROM products ORDER BY category, id LIMIT 30",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute SELECT id, sku, name, category, price, requiresQuote FROM products ORDER BY category, id LIMIT 30",
+  "rows": [
+    {
+      "id": "21",
+      "sku": "FB-TRAINER",
+      "name": "Fuel Bot - Sports Trainer",
+      "category": "ai-companions",
+      "price": "0.00",
+      "requiresQuote": "yes"
+    },
+    {
+      "id": "22",
+      "sku": "FB-MEDICAL",
+      "name": "Fuel Bot - Medical Response",
+      "category": "ai-companions",
+      "price": "0.00",
+      "requiresQuote": "yes"
+    },
+    {
+      "id": "23",
+      "sku": "FB-STADIUM",
+      "name": "Fuel Bot - Stadium Operations",
+      "category": "ai-companions",
+      "price": "0.00",
+      "requiresQuote": "yes"
+    },
+    {
+      "id": "24",
+      "sku": "FB-DC",
+      "name": "Fuel Bot - Data Center",
+      "category": "ai-companions",
+      "price": "0.00",
+      "requiresQuote": "yes"
+    },
+    {
+      "id": "25",
+      "sku": "FB-ENERGY",
+      "name": "Fuel Bot - Energy & Industrial",
+      "category": "ai-companions",
+      "price": "0.00",
+      "requiresQuote": "yes"
+    },
+    {
+      "id": "13",
+      "sku": "DC-START",
+      "name": "Starter Data Center Package",
+      "category": "data-center",
+      "price": "0.00",
+      "requiresQuote": "yes"
+    },
+    {
+      "id": "14",
+      "sku": "DC-PRO",
+      "name": "Professional Data Center Package",
+      "category": "data-center",
+      "price": "0.00",
+      "requiresQuote": "yes"
+    },
+    {
+      "id": "15",
+      "sku": "DC-ENT",
+      "name": "Enterprise Data Center Package",
+      "category": "data-center",
+      "price": "0.00",
+      "requiresQuote": "yes"
+    },
+    {
+      "id": "16",
+      "sku": "DC-CUSTOM",
+      "name": "Custom Data Center Solution",
+      "category": "data-center",
+      "price": "0.00",
+      "requiresQuote": "yes"
+    },
+    {
+      "id": "1",
+      "sku": "SM-4U60-STG",
+      "name": "Supermicro 4U 60-Bay Storage Server",
+      "category": "enterprise-hardware",
+      "price": "38750.00",
+      "requiresQuote": "no"
+    },
+    {
+      "id": "2",
+      "sku": "SM-2U8-CMP",
+      "name": "Supermicro 2U 8-Bay Compute Server",
+      "category": "enterprise-hardware",
+      "price": "15312.00",
+      "requiresQuote": "no"
+    },
+    {
+      "id": "3",
+      "sku": "SM-2U-HPC",
+      "name": "Supermicro 2U High-Performance Compute",
+      "category": "enterprise-hardware",
+      "price": "22517.00",
+      "requiresQuote": "no"
+    },
+    {
+      "id": "4",
+      "sku": "NV-CX7-200",
+      "name": "NVIDIA ConnectX-7 VPI 200Gb/s",
+      "category": "enterprise-hardware",
+      "price": "1850.00",
+      "requiresQuote": "no"
+    },
+    {
+      "id": "5",
+      "sku": "SG-EXOS-30T",
+      "name": "Seagate Exos M 3+ 30TB HDD",
+      "category": "enterprise-hardware",
+      "price": "650.00",
+      "requiresQuote": "no"
+    },
+    {
+      "id": "6",
+      "sku": "MC-7450-4T",
+      "name": "Micron 7450 PRO 3.84TB NVMe SSD",
+      "category": "enterprise-hardware",
+      "price": "425.00",
+      "requiresQuote": "no"
+    },
+    {
+      "id": "7",
+      "sku": "ATH-PRO-MO",
+      "name": "ATHLYNX Pro Subscription",
+      "category": "software",
+      "price": "29.99",
+      "requiresQuote": "no"
+    },
+    {
+      "id": "8",
+      "sku": "ATH-ELT-MO",
+      "name": "ATHLYNX Elite Subscription",
+      "category": "software",
+      "price": "99.99",
+      "requiresQuote": "no"
+    },
+    {
+      "id": "9",
+      "sku": "AI-CRD-500",
+      "name": "AI Credits Pack - 500",
+      "category": "software",
+      "price": "49.99",
+      "requiresQuote": "no"
+    },
+    {
+      "id": "10",
+      "sku": "AI-CRD-2K",
+      "name": "AI Credits Pack - 2000",
+      "category": "software",
+      "price": "149.99",
+      "requiresQuote": "no"
+    },
+    {
+      "id": "11",
+      "sku": "WL-APP-LIC",
+      "name": "White-Label Sport App License",
+      "category": "software",
+      "price": "0.00",
+      "requiresQuote": "yes"
+    },
+    {
+      "id": "12",
+      "sku": "ENT-API-ACC",
+      "name": "Enterprise API Access",
+      "category": "software",
+      "price": "0.00",
+      "requiresQuote": "yes"
+    },
+    {
+      "id": "26",
+      "sku": "DG-KIT-01",
+      "name": "Diamond Grind Training Kit",
+      "category": "sports-equipment",
+      "price": "149.99",
+      "requiresQuote": "no"
+    },
+    {
+      "id": "27",
+      "sku": "ATH-SENS-3",
+      "name": "ATHLYNX Smart Sensor Pack",
+      "category": "sports-equipment",
+      "price": "299.99",
+      "requiresQuote": "no"
+    },
+    {
+      "id": "28",
+      "sku": "TRN-CONE-50",
+      "name": "Pro Training Cones (Set of 50)",
+      "category": "sports-equipment",
+      "price": "34.99",
+      "requiresQuote": "no"
+    },
+    {
+      "id": "29",
+      "sku": "TRN-BAND-5",
+      "name": "Resistance Band Set",
+      "category": "sports-equipment",
+      "price": "29.99",
+      "requiresQuote": "no"
+    },
+    {
+      "id": "17",
+      "sku": "WAR-3YR",
+      "name": "3-Year Extended Warranty",
+      "category": "support",
+      "price": "2500.00",
+      "requiresQuote": "no"
+    },
+    {
+      "id": "18",
+      "sku": "SUP-247",
+      "name": "24/7 Technical Support",
+      "category": "support",
+      "price": "5000.00",
+      "requiresQuote": "no"
+    },
+    {
+      "id": "19",
+      "sku": "SVC-ONSITE",
+      "name": "On-Site Service Contract",
+      "category": "support",
+      "price": "0.00",
+      "requiresQuote": "yes"
+    },
+    {
+      "id": "20",
+      "sku": "SVC-MANAGED",
+      "name": "Managed Services Package",
+      "category": "support",
+      "price": "0.00",
+      "requiresQuote": "yes"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tsku\tname\tcategory\tprice\trequiresQuote\n21\tFB-TRAINER\tFuel Bot - Sports Trainer\tai-companions\t0.00\tyes\n22\tFB-MEDICAL\tFuel Bot - Medical Response\tai-companions\t0.00\tyes\n23\tFB-STADIUM\tFuel Bot - Stadium Operations\tai-companions\t0.00\tyes\n24\tFB-DC\tFuel Bot - Data Center\tai-companions\t0.00\tyes\n25\tFB-ENERGY\tFuel Bot - Energy & Industrial\tai-companions\t0.00\tyes\n13\tDC-START\tStarter Data Center Package\tdata-center\t0.00\tyes\n14\tDC-PRO\tProfessional Data Center Package\tdata-center\t0.00\tyes\n15\tDC-ENT\tEnterprise Data Center Package\tdata-center\t0.00\tyes\n16\tDC-CUSTOM\tCustom Data Center Solution\tdata-center\t0.00\tyes\n1\tSM-4U60-STG\tSupermicro 4U 60-Bay Storage Server\tenterprise-hardware\t38750.00\tno\n2\tSM-2U8-CMP\tSupermicro 2U 8-Bay Compute Server\tenterprise-hardware\t15312.00\tno\n3\tSM-2U-HPC\tSupermicro 2U High-Performance Compute\tenterprise-hardware\t22517.00\tno\n4\tNV-CX7-200\tNVIDIA ConnectX-7 VPI 200Gb/s\tenterprise-hardware\t1850.00\tno\n5\tSG-EXOS-30T\tSeagate Exos M 3+ 30TB HDD\tenterprise-hardware\t650.00\tno\n6\tMC-7450-4T\tMicron 7450 PRO 3.84TB NVMe SSD\tenterprise-hardware\t425.00\tno\n7\tATH-PRO-MO\tATHLYNX Pro Subscription\tsoftware\t29.99\tno\n8\tATH-ELT-MO\tATHLYNX Elite Subscription\tsoftware\t99.99\tno\n9\tAI-CRD-500\tAI Credits Pack - 500\tsoftware\t49.99\tno\n10\tAI-CRD-2K\tAI Credits Pack - 2000\tsoftware\t149.99\tno\n11\tWL-APP-LIC\tWhite-Label Sport App License\tsoftware\t0.00\tyes\n12\tENT-API-ACC\tEnterprise API Access\tsoftware\t0.00\tyes\n26\tDG-KIT-01\tDiamond Grind Training Kit\tsports-equipment\t149.99\tno\n27\tATH-SENS-3\tATHLYNX Smart Sensor Pack\tsports-equipment\t299.99\tno\n28\tTRN-CONE-50\tPro Training Cones (Set of 50)\tsports-equipment\t34.99\tno\n29\tTRN-BAND-5\tResistance Band Set\tsports-equipment\t29.99\tno\n17\tWAR-3YR\t3-Year Extended Warranty\tsupport\t2500.00\tno\n18\tSUP-247\t24/7 Technical Support\tsupport\t5000.00\tno\n19\tSVC-ONSITE\tOn-Site Service Contract\tsupport\t0.00\tyes\n20\tSVC-MANAGED\tManaged Services Package\tsupport\t0.00\tyes\n",
+  "stderr": "",
+  "execution_time_ms": 51
+}
