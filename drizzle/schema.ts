@@ -697,3 +697,240 @@ export const transferPortalAnalytics = mysqlTable("transfer_portal_analytics", {
 
 export type TransferPortalAnalytics = typeof transferPortalAnalytics.$inferSelect;
 export type InsertTransferPortalAnalytics = typeof transferPortalAnalytics.$inferInsert;
+
+/**
+ * Fellowship of Christian Athletes (FCA) - Daily Devotionals
+ */
+export const fcaDevotionals = mysqlTable("fca_devotionals", {
+  id: int("id").autoincrement().primaryKey(),
+  
+  // Content
+  title: varchar("title", { length: 255 }).notNull(),
+  content: text("content").notNull(), // Main devotional text
+  scripture: text("scripture").notNull(), // Bible verse(s)
+  scriptureReference: varchar("scriptureReference", { length: 100 }).notNull(), // e.g. "John 3:16"
+  prayer: text("prayer"), // Closing prayer
+  
+  // Metadata
+  author: varchar("author", { length: 255 }).default("Chad A. Dozier").notNull(),
+  publishDate: date("publishDate").notNull(),
+  featured: mysqlEnum("featured", ["yes", "no"]).default("no").notNull(),
+  category: varchar("category", { length: 100 }), // e.g. "Perseverance", "Faith", "Victory"
+  
+  // Engagement
+  views: int("views").default(0).notNull(),
+  likes: int("likes").default(0).notNull(),
+  shares: int("shares").default(0).notNull(),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type FcaDevotional = typeof fcaDevotionals.$inferSelect;
+export type InsertFcaDevotional = typeof fcaDevotionals.$inferInsert;
+
+/**
+ * FCA Podcasts - "Faith & The Field" with Chad A. Dozier
+ */
+export const fcaPodcasts = mysqlTable("fca_podcasts", {
+  id: int("id").autoincrement().primaryKey(),
+  
+  // Content
+  title: varchar("title", { length: 255 }).notNull(),
+  description: text("description").notNull(),
+  audioUrl: text("audioUrl").notNull(), // S3 URL to audio file
+  duration: int("duration").notNull(), // Duration in seconds
+  episodeNumber: int("episodeNumber").notNull(),
+  season: int("season").default(1).notNull(),
+  
+  // Metadata
+  host: varchar("host", { length: 255 }).default("Chad A. Dozier").notNull(),
+  guest: varchar("guest", { length: 255 }), // Guest athlete/coach
+  publishDate: date("publishDate").notNull(),
+  featured: mysqlEnum("featured", ["yes", "no"]).default("no").notNull(),
+  category: varchar("category", { length: 100 }), // e.g. "Testimony", "Interview", "Teaching"
+  
+  // Engagement
+  plays: int("plays").default(0).notNull(),
+  likes: int("likes").default(0).notNull(),
+  downloads: int("downloads").default(0).notNull(),
+  
+  // SEO
+  thumbnailUrl: text("thumbnailUrl"),
+  keywords: text("keywords"),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type FcaPodcast = typeof fcaPodcasts.$inferSelect;
+export type InsertFcaPodcast = typeof fcaPodcasts.$inferInsert;
+
+/**
+ * FCA Blog Posts - Faith-based sports stories
+ */
+export const fcaBlogPosts = mysqlTable("fca_blog_posts", {
+  id: int("id").autoincrement().primaryKey(),
+  
+  // Content
+  title: varchar("title", { length: 255 }).notNull(),
+  slug: varchar("slug", { length: 255 }).notNull().unique(),
+  content: text("content").notNull(), // Full blog post (markdown)
+  excerpt: text("excerpt").notNull(), // Short summary
+  
+  // Metadata
+  author: varchar("author", { length: 255 }).default("Chad A. Dozier").notNull(),
+  publishDate: date("publishDate").notNull(),
+  featured: mysqlEnum("featured", ["yes", "no"]).default("no").notNull(),
+  category: varchar("category", { length: 100 }), // e.g. "Testimony", "Faith & Sports", "Leadership"
+  tags: json("tags"), // Array of tags
+  
+  // Media
+  featuredImageUrl: text("featuredImageUrl"),
+  
+  // Engagement
+  views: int("views").default(0).notNull(),
+  likes: int("likes").default(0).notNull(),
+  shares: int("shares").default(0).notNull(),
+  
+  // SEO
+  metaTitle: varchar("metaTitle", { length: 255 }),
+  metaDescription: text("metaDescription"),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type FcaBlogPost = typeof fcaBlogPosts.$inferSelect;
+export type InsertFcaBlogPost = typeof fcaBlogPosts.$inferInsert;
+
+/**
+ * FCA Prayer Requests - Prayer Wall
+ */
+export const fcaPrayerRequests = mysqlTable("fca_prayer_requests", {
+  id: int("id").autoincrement().primaryKey(),
+  
+  // User
+  userId: int("userId").notNull().references(() => users.id),
+  userName: varchar("userName", { length: 255 }).notNull(),
+  isAnonymous: mysqlEnum("isAnonymous", ["yes", "no"]).default("no").notNull(),
+  
+  // Content
+  title: varchar("title", { length: 255 }).notNull(),
+  request: text("request").notNull(),
+  category: varchar("category", { length: 100 }), // e.g. "Injury", "Competition", "Personal", "Family"
+  
+  // Status
+  status: mysqlEnum("status", ["active", "answered", "archived"]).default("active").notNull(),
+  answeredDate: date("answeredDate"),
+  testimony: text("testimony"), // How prayer was answered
+  
+  // Engagement
+  prayerCount: int("prayerCount").default(0).notNull(), // How many people prayed
+  
+  // Moderation
+  approved: mysqlEnum("approved", ["yes", "no", "pending"]).default("pending").notNull(),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type FcaPrayerRequest = typeof fcaPrayerRequests.$inferSelect;
+export type InsertFcaPrayerRequest = typeof fcaPrayerRequests.$inferInsert;
+
+/**
+ * FCA Testimonies - Athlete faith stories
+ */
+export const fcaTestimonies = mysqlTable("fca_testimonies", {
+  id: int("id").autoincrement().primaryKey(),
+  
+  // User
+  userId: int("userId").notNull().references(() => users.id),
+  athleteName: varchar("athleteName", { length: 255 }).notNull(),
+  sport: varchar("sport", { length: 100 }).notNull(),
+  school: varchar("school", { length: 255 }),
+  
+  // Content
+  title: varchar("title", { length: 255 }).notNull(),
+  testimony: text("testimony").notNull(), // Full testimony
+  scripture: text("scripture"), // Favorite verse
+  
+  // Media
+  photoUrl: text("photoUrl"),
+  videoUrl: text("videoUrl"),
+  
+  // Metadata
+  featured: mysqlEnum("featured", ["yes", "no"]).default("no").notNull(),
+  publishDate: date("publishDate").notNull(),
+  
+  // Engagement
+  views: int("views").default(0).notNull(),
+  likes: int("likes").default(0).notNull(),
+  shares: int("shares").default(0).notNull(),
+  
+  // Moderation
+  approved: mysqlEnum("approved", ["yes", "no", "pending"]).default("pending").notNull(),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type FcaTestimony = typeof fcaTestimonies.$inferSelect;
+export type InsertFcaTestimony = typeof fcaTestimonies.$inferInsert;
+
+/**
+ * FCA Comments - Community engagement on devotionals, podcasts, blogs
+ */
+export const fcaComments = mysqlTable("fca_comments", {
+  id: int("id").autoincrement().primaryKey(),
+  
+  // User
+  userId: int("userId").notNull().references(() => users.id),
+  userName: varchar("userName", { length: 255 }).notNull(),
+  
+  // Content
+  comment: text("comment").notNull(),
+  
+  // Reference (what they're commenting on)
+  contentType: mysqlEnum("contentType", ["devotional", "podcast", "blog", "prayer", "testimony"]).notNull(),
+  contentId: int("contentId").notNull(), // ID of the devotional/podcast/blog/etc
+  
+  // Threading
+  parentCommentId: int("parentCommentId"), // For replies
+  
+  // Engagement
+  likes: int("likes").default(0).notNull(),
+  
+  // Moderation
+  approved: mysqlEnum("approved", ["yes", "no", "pending"]).default("pending").notNull(),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type FcaComment = typeof fcaComments.$inferSelect;
+export type InsertFcaComment = typeof fcaComments.$inferInsert;
+
+/**
+ * FCA Daily Verses - Verse of the Day rotation
+ */
+export const fcaDailyVerses = mysqlTable("fca_daily_verses", {
+  id: int("id").autoincrement().primaryKey(),
+  
+  // Content
+  verse: text("verse").notNull(), // Full verse text
+  reference: varchar("reference", { length: 100 }).notNull(), // e.g. "Philippians 4:13"
+  translation: varchar("translation", { length: 50 }).default("NIV").notNull(),
+  
+  // Scheduling
+  displayDate: date("displayDate").notNull().unique(), // Date to display this verse
+  
+  // Engagement
+  views: int("views").default(0).notNull(),
+  shares: int("shares").default(0).notNull(),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type FcaDailyVerse = typeof fcaDailyVerses.$inferSelect;
+export type InsertFcaDailyVerse = typeof fcaDailyVerses.$inferInsert;

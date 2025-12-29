@@ -1196,3 +1196,58 @@
 - [x] Create platform Terms of Service outline
 - [x] Document risk mitigation strategies
 
+
+
+---
+
+## FELLOWSHIP OF CHRISTIAN ATHLETES (FCA) - December 29, 2024
+
+### Inspired by Joel Osteen's Lakewood Church Model
+
+### Database Schema
+- [ ] Create fca_devotionals table (daily devotionals)
+- [ ] Create fca_podcasts table (podcast episodes)
+- [ ] Create fca_blog_posts table (faith + sports blog)
+- [ ] Create fca_prayer_requests table (prayer wall)
+- [ ] Create fca_testimonies table (athlete faith stories)
+- [ ] Create fca_comments table (community engagement)
+- [ ] Create fca_verses table (daily scripture)
+
+### FCA Page Features
+- [ ] Daily Devotional section (morning inspiration)
+- [ ] Podcast player ("Faith & The Field" with Chad A. Dozier)
+- [ ] Blog section (faith-based sports stories)
+- [ ] Prayer Wall (athletes post prayer requests)
+- [ ] Community comments (engage with Founder Chad)
+- [ ] Verse of the Day (scripture for athletes)
+- [ ] Testimony section (athletes share faith stories)
+- [ ] Subscribe to daily devotionals (email/push)
+
+### FCA Backend API
+- [ ] Create tRPC procedures for devotionals CRUD
+- [ ] Create tRPC procedures for podcasts CRUD
+- [ ] Create tRPC procedures for blog posts CRUD
+- [ ] Create tRPC procedures for prayer requests CRUD
+- [ ] Create tRPC procedures for testimonies CRUD
+- [ ] Create tRPC procedures for comments CRUD
+- [ ] Implement daily devotional email system
+- [ ] Implement prayer request notifications
+
+### Content Strategy
+- [ ] Write 30 days of devotionals (launch content)
+- [ ] Record 5 podcast episodes (launch content)
+- [ ] Write 10 blog posts (launch content)
+- [ ] Create verse of the day rotation (365 verses)
+- [ ] Prepare Chad A. Dozier bio and photo
+- [ ] Create FCA branding and imagery
+
+### Joel Osteen Model Features
+- [ ] Inspirational homepage hero (like Lakewood)
+- [ ] Video player for sermons/messages
+- [ ] "Today's Message" featured content
+- [ ] Email subscription for daily inspiration
+- [ ] Social sharing for devotionals
+- [ ] Mobile-optimized reading experience
+- [ ] Audio player for podcast episodes
+- [ ] Community prayer chain feature
+
