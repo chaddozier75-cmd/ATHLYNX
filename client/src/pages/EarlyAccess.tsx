@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { trpc } from "../lib/trpc";
+import UnifiedFooter from "@/components/UnifiedFooter";
 
 export default function EarlyAccess() {
   const [, setLocation] = useLocation();
@@ -332,9 +333,10 @@ export default function EarlyAccess() {
           ))}
         </div>
 
-        {/* Bottom Spacing */}
-        <div className="h-8"></div>
       </div>
+      
+      {/* Unified Footer */}
+      <UnifiedFooter />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import UnifiedFooter from "@/components/UnifiedFooter";
 
 export default function Home() {
   const apps = [
@@ -230,6 +231,38 @@ export default function Home() {
           </Link>
         </div>
 
+        {/* Corporate & Investor Links */}
+        <div className="grid md:grid-cols-4 gap-4">
+          <Link href="/dhg">
+            <a className="block bg-slate-900/80 backdrop-blur-sm border-2 border-amber-500/30 hover:border-amber-400 rounded-2xl p-5 hover:scale-105 transition-transform text-center">
+              <img src="/images/dhg-logo.png" alt="DHG" className="w-10 h-10 rounded-lg mx-auto mb-2" />
+              <h3 className="text-white font-bold">DHG Corporate</h3>
+            </a>
+          </Link>
+          <Link href="/softmor">
+            <a className="block bg-slate-900/80 backdrop-blur-sm border-2 border-amber-500/30 hover:border-amber-400 rounded-2xl p-5 hover:scale-105 transition-transform text-center">
+              <img src="/images/hub-logo.png" alt="Softmor" className="w-10 h-10 rounded-lg mx-auto mb-2" />
+              <h3 className="text-white font-bold">Softmor Inc</h3>
+            </a>
+          </Link>
+          <Link href="/investor-hub">
+            <a className="block bg-slate-900/80 backdrop-blur-sm border-2 border-amber-500/30 hover:border-amber-400 rounded-2xl p-5 hover:scale-105 transition-transform text-center">
+              <div className="w-10 h-10 rounded-lg bg-amber-500/20 border border-amber-500/50 flex items-center justify-center mx-auto mb-2">
+                <span className="text-amber-400 font-bold">$</span>
+              </div>
+              <h3 className="text-white font-bold">Investor Hub</h3>
+            </a>
+          </Link>
+          <Link href="/hub">
+            <a className="block bg-slate-900/80 backdrop-blur-sm border-2 border-amber-500/30 hover:border-amber-400 rounded-2xl p-5 hover:scale-105 transition-transform text-center">
+              <div className="w-10 h-10 rounded-lg bg-amber-500/20 border border-amber-500/50 flex items-center justify-center mx-auto mb-2">
+                <span className="text-amber-400 font-bold">14</span>
+              </div>
+              <h3 className="text-white font-bold">Quick Links Hub</h3>
+            </a>
+          </Link>
+        </div>
+
         {/* CTA Section */}
         <div className="bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 rounded-3xl p-12 text-center space-y-6 shadow-2xl">
           <h2 className="text-4xl md:text-5xl font-black text-white">
@@ -245,12 +278,10 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* Footer */}
-        <div className="text-center text-gray-400 text-sm space-y-2">
-          <p>Powered by Dozier Holdings Group</p>
-          <p>© 2025 Athlynx. All rights reserved.</p>
-        </div>
       </div>
+      
+      {/* Unified Footer */}
+      <UnifiedFooter />
     </div>
   );
 }
