@@ -1,14 +1,57 @@
 /**
  * Stripe Checkout Service
  * Handles creating checkout sessions for subscriptions and one-time purchases
+ * 
+ * GRACEFUL DEGRADATION: If STRIPE_SECRET_KEY is not set, payment features
+ * are disabled but the server continues to run normally.
  */
 
 import Stripe from "stripe";
 import { SUBSCRIPTION_TIERS, AI_CREDIT_PACKS, SubscriptionTier, AICreditPack } from "./products";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
-  apiVersion: "2025-12-15.clover",
-});
+// Lazy initialization with graceful degradation
+let stripeInstance: Stripe | null = null;
+let stripeConfigured = false;
+let stripeInitAttempted = false;
+
+function initStripe(): void {
+  if (stripeInitAttempted) return;
+  stripeInitAttempted = true;
+  
+  const apiKey = process.env.STRIPE_SECRET_KEY;
+  if (!apiKey || apiKey.trim() === "") {
+    console.warn("[Stripe] STRIPE_SECRET_KEY not configured - payment features disabled");
+    stripeConfigured = false;
+    return;
+  }
+  
+  try {
+    stripeInstance = new Stripe(apiKey, {
+      apiVersion: "2025-12-15.clover",
+    });
+    stripeConfigured = true;
+    console.log("[Stripe] Payment system initialized successfully");
+  } catch (error) {
+    console.error("[Stripe] Failed to initialize:", error);
+    stripeConfigured = false;
+  }
+}
+
+function getStripe(): Stripe {
+  initStripe();
+  if (!stripeInstance) {
+    throw new Error("Payment system is not configured. Please contact support.");
+  }
+  return stripeInstance;
+}
+
+/**
+ * Check if Stripe is properly configured and ready
+ */
+export function isStripeConfigured(): boolean {
+  initStripe();
+  return stripeConfigured;
+}
 
 interface CreateSubscriptionCheckoutParams {
   tier: SubscriptionTier;
@@ -38,6 +81,11 @@ export async function createSubscriptionCheckout({
   userName,
   origin,
 }: CreateSubscriptionCheckoutParams): Promise<{ url: string }> {
+  if (!isStripeConfigured()) {
+    throw new Error("Payment system is not available. Please try again later.");
+  }
+  
+  const stripe = getStripe();
   const tierConfig = SUBSCRIPTION_TIERS[tier];
   
   if (tier === "free") {
@@ -98,6 +146,11 @@ export async function createCreditCheckout({
   userName,
   origin,
 }: CreateCreditCheckoutParams): Promise<{ url: string }> {
+  if (!isStripeConfigured()) {
+    throw new Error("Payment system is not available. Please try again later.");
+  }
+  
+  const stripe = getStripe();
   const packConfig = AI_CREDIT_PACKS[pack];
 
   const totalCredits = packConfig.credits + packConfig.bonusCredits;
@@ -147,7 +200,11 @@ export async function createCreditCheckout({
  * Retrieve checkout session details
  */
 export async function getCheckoutSession(sessionId: string) {
+  if (!isStripeConfigured()) {
+    throw new Error("Payment system is not available");
+  }
+  const stripe = getStripe();
   return stripe.checkout.sessions.retrieve(sessionId);
 }
 
-export { stripe };
+export { getStripe };

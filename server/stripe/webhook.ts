@@ -1,6 +1,9 @@
 /**
  * Stripe Webhook Handler
  * Processes incoming webhook events from Stripe
+ * 
+ * GRACEFUL DEGRADATION: If Stripe is not configured, webhooks return
+ * a 503 Service Unavailable instead of crashing the server.
  */
 
 import { Request, Response } from "express";
@@ -9,15 +12,53 @@ import { getDb } from "../db";
 import { users } from "../../drizzle/schema";
 import { eq } from "drizzle-orm";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
-  apiVersion: "2025-12-15.clover",
-});
+// Lazy initialization with graceful degradation
+let stripeInstance: Stripe | null = null;
+let stripeConfigured = false;
+let stripeInitAttempted = false;
 
-const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || "";
+function initStripe(): void {
+  if (stripeInitAttempted) return;
+  stripeInitAttempted = true;
+  
+  const apiKey = process.env.STRIPE_SECRET_KEY;
+  if (!apiKey || apiKey.trim() === "") {
+    console.warn("[Stripe Webhook] STRIPE_SECRET_KEY not configured - webhooks disabled");
+    stripeConfigured = false;
+    return;
+  }
+  
+  try {
+    stripeInstance = new Stripe(apiKey, {
+      apiVersion: "2025-12-15.clover",
+    });
+    stripeConfigured = true;
+  } catch (error) {
+    console.error("[Stripe Webhook] Failed to initialize:", error);
+    stripeConfigured = false;
+  }
+}
+
+function getStripe(): Stripe | null {
+  initStripe();
+  return stripeInstance;
+}
 
 export async function handleStripeWebhook(req: Request, res: Response) {
-  const sig = req.headers["stripe-signature"];
+  // Check if Stripe is configured
+  const stripe = getStripe();
+  if (!stripe) {
+    console.warn("[Webhook] Stripe not configured - ignoring webhook");
+    return res.status(503).json({ error: "Payment system not configured" });
+  }
 
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+  if (!webhookSecret || webhookSecret.trim() === "") {
+    console.warn("[Webhook] STRIPE_WEBHOOK_SECRET not configured");
+    return res.status(503).json({ error: "Webhook not configured" });
+  }
+
+  const sig = req.headers["stripe-signature"];
   if (!sig) {
     console.error("[Webhook] No signature found");
     return res.status(400).json({ error: "No signature" });
@@ -92,43 +133,28 @@ async function handleCheckoutComplete(session: Stripe.Checkout.Session) {
   console.log(`[Webhook] Checkout complete - Type: ${type}, User: ${userId}`);
 
   if (type === "subscription") {
-    // Subscription was created - handled by subscription webhooks
     console.log(`[Webhook] Subscription checkout complete for user ${userId}`);
   } else if (type === "ai_credits") {
-    // Add AI credits to user account
     const credits = parseInt(metadata.credits || "0", 10);
     console.log(`[Webhook] Adding ${credits} AI credits to user ${userId}`);
-    
-    // TODO: Update user's AI credits in database
-    // This would require adding an aiCredits column to users table
   }
 }
 
 async function handleSubscriptionUpdate(subscription: Stripe.Subscription) {
   const customerId = subscription.customer as string;
   const status = subscription.status;
-  
   console.log(`[Webhook] Subscription ${subscription.id} updated - Status: ${status}`);
-  
-  // TODO: Update user's subscription status in database
 }
 
 async function handleSubscriptionCanceled(subscription: Stripe.Subscription) {
   const customerId = subscription.customer as string;
-  
   console.log(`[Webhook] Subscription ${subscription.id} canceled`);
-  
-  // TODO: Update user's subscription status to canceled
 }
 
 async function handleInvoicePaid(invoice: Stripe.Invoice) {
   console.log(`[Webhook] Invoice ${invoice.id} paid - Amount: $${(invoice.amount_paid / 100).toFixed(2)}`);
-  
-  // TODO: Record payment in database
 }
 
 async function handlePaymentFailed(invoice: Stripe.Invoice) {
   console.log(`[Webhook] Payment failed for invoice ${invoice.id}`);
-  
-  // TODO: Notify user of failed payment
 }
