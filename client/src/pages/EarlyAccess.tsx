@@ -69,6 +69,14 @@ export default function EarlyAccess() {
   };
 
   const roles = ["Athlete", "Parent", "Coach", "Brand"];
+  
+  // Quick navigation links
+  const quickLinks = [
+    { icon: "✝️", label: "Faith", path: "/faith" },
+    { icon: "🔄", label: "Transfer Portal", path: "/transfer-portal-intelligence" },
+    { icon: "💰", label: "NIL Portal", path: "/nil-portal" },
+    { icon: "🦀", label: "Our Story", path: "/founder-story" },
+  ];
   const sports = ["Baseball", "Football", "Basketball", "Soccer", "Track & Field", "Volleyball"];
 
   return (
@@ -345,6 +353,20 @@ export default function EarlyAccess() {
               {signupMutation.isPending ? "PROCESSING..." : "🏆 CLAIM MY VIP SPOT"}
             </button>
           </form>
+        </div>
+
+        {/* Quick Navigation Links */}
+        <div className="grid grid-cols-2 gap-3">
+          {quickLinks.map((link) => (
+            <button
+              key={link.label}
+              onClick={() => setLocation(link.path)}
+              className="bg-gradient-to-br from-amber-600/40 to-orange-600/40 backdrop-blur-sm border-2 border-amber-400/60 hover:border-amber-400 rounded-xl p-4 text-center transition-all hover:scale-105 group shadow-lg"
+            >
+              <div className="text-3xl mb-2 group-hover:scale-110 transition-transform drop-shadow-lg">{link.icon}</div>
+              <p className="text-white font-bold text-sm">{link.label}</p>
+            </button>
+          ))}
         </div>
 
         {/* Feature Checkmarks */}

@@ -177,6 +177,22 @@ export default function Home() {
               <p className="text-gray-300 text-sm">College connections and commitments</p>
             </a>
           </Link>
+
+          <Link href="/faith">
+            <a className="block bg-black/40 backdrop-blur-sm border-2 border-amber-400 rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div className="text-4xl mb-3">✝️</div>
+              <h3 className="text-xl font-bold text-white mb-2">Faith & Athletes</h3>
+              <p className="text-gray-300 text-sm">Daily devotionals, prayer wall & community</p>
+            </a>
+          </Link>
+
+          <Link href="/transfer-portal-intelligence">
+            <a className="block bg-black/40 backdrop-blur-sm border-2 border-cyan-400 rounded-2xl p-6 hover:scale-105 transition-transform">
+              <div className="text-4xl mb-3">🔄</div>
+              <h3 className="text-xl font-bold text-white mb-2">Transfer Portal</h3>
+              <p className="text-gray-300 text-sm">Intelligence platform for schools & athletes</p>
+            </a>
+          </Link>
         </div>
 
         {/* CTA Section */}
