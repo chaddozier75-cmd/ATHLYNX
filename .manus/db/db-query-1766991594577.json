@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS playlist_tracks (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  playlistId INT NOT NULL,\n  trackId INT NOT NULL,\n  position INT NOT NULL,\n  addedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n  UNIQUE KEY unique_playlist_track (playlistId, trackId)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute CREATE TABLE IF NOT EXISTS playlist_tracks (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  playlistId INT NOT NULL,\n  trackId INT NOT NULL,\n  position INT NOT NULL,\n  addedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n  UNIQUE KEY unique_playlist_track (playlistId, trackId)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 197
+}

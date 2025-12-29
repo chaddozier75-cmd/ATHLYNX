@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS fca_prayer_requests (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  userId INT,\n  userName VARCHAR(255),\n  isAnonymous ENUM('yes', 'no') DEFAULT 'no' NOT NULL,\n  title VARCHAR(255) NOT NULL,\n  request TEXT NOT NULL,\n  category VARCHAR(100),\n  status ENUM('active', 'answered', 'closed') DEFAULT 'active' NOT NULL,\n  prayerCount INT DEFAULT 0 NOT NULL,\n  approved ENUM('yes', 'no', 'pending') DEFAULT 'pending' NOT NULL,\n  answeredDate DATE,\n  answeredTestimony TEXT,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute CREATE TABLE IF NOT EXISTS fca_prayer_requests (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  userId INT,\n  userName VARCHAR(255),\n  isAnonymous ENUM('yes', 'no') DEFAULT 'no' NOT NULL,\n  title VARCHAR(255) NOT NULL,\n  request TEXT NOT NULL,\n  category VARCHAR(100),\n  status ENUM('active', 'answered', 'closed') DEFAULT 'active' NOT NULL,\n  prayerCount INT DEFAULT 0 NOT NULL,\n  approved ENUM('yes', 'no', 'pending') DEFAULT 'pending' NOT NULL,\n  answeredDate DATE,\n  answeredTestimony TEXT,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 192
+}

@@ -11,6 +11,13 @@ import { SUBSCRIPTION_TIERS, AI_CREDIT_PACKS } from "./stripe/products";
 import { getUserCredits, getCreditTransactions, getCreditUsageHistory, generateTrainingPlan, CREDIT_COSTS } from "./ai-credits";
 import { transferPortalRouter } from "./transfer-portal";
 import { fcaRouter } from "./fca";
+import { storeRouter } from "./store";
+import { trainingRouter } from "./training";
+import { musicRouter } from "./music";
+import { veteransRouter } from "./veterans";
+import { careersRouter } from "./careers";
+import { medicalRouter } from "./medical";
+import { baseballRouter } from "./baseball";
 
 export const appRouter = router({
   // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -180,6 +187,13 @@ export const appRouter = router({
   // Transfer Portal Intelligence Platform
   transferPortal: transferPortalRouter,
   fca: fcaRouter,
+  store: storeRouter,
+  training: trainingRouter,
+  music: musicRouter,
+  veterans: veteransRouter,
+  careers: careersRouter,
+  medical: medicalRouter,
+  baseball: baseballRouter,
 
   // AI Bots
   aiBots: router({

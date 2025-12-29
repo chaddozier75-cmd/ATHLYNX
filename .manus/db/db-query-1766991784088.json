@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS medical_providers (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  name VARCHAR(255) NOT NULL,\n  slug VARCHAR(255) NOT NULL UNIQUE,\n  specialty VARCHAR(100) NOT NULL,\n  credentials VARCHAR(255),\n  bio TEXT,\n  address VARCHAR(500),\n  city VARCHAR(100),\n  state VARCHAR(50),\n  zipCode VARCHAR(20),\n  phone VARCHAR(20),\n  email VARCHAR(255),\n  website VARCHAR(500),\n  acceptsInsurance TEXT,\n  sportsFocus TEXT,\n  rating DECIMAL(2,1) DEFAULT 0,\n  reviewCount INT DEFAULT 0,\n  featured ENUM('yes', 'no') DEFAULT 'no',\n  verified ENUM('yes', 'no') DEFAULT 'no',\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute CREATE TABLE IF NOT EXISTS medical_providers (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  name VARCHAR(255) NOT NULL,\n  slug VARCHAR(255) NOT NULL UNIQUE,\n  specialty VARCHAR(100) NOT NULL,\n  credentials VARCHAR(255),\n  bio TEXT,\n  address VARCHAR(500),\n  city VARCHAR(100),\n  state VARCHAR(50),\n  zipCode VARCHAR(20),\n  phone VARCHAR(20),\n  email VARCHAR(255),\n  website VARCHAR(500),\n  acceptsInsurance TEXT,\n  sportsFocus TEXT,\n  rating DECIMAL(2,1) DEFAULT 0,\n  reviewCount INT DEFAULT 0,\n  featured ENUM('yes', 'no') DEFAULT 'no',\n  verified ENUM('yes', 'no') DEFAULT 'no',\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 225
+}

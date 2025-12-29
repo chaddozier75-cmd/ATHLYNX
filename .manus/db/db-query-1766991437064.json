@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS workouts (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  title VARCHAR(255) NOT NULL,\n  slug VARCHAR(255) NOT NULL UNIQUE,\n  description TEXT,\n  category VARCHAR(100) NOT NULL,\n  difficulty ENUM('beginner', 'intermediate', 'advanced', 'elite') DEFAULT 'intermediate',\n  duration INT NOT NULL,\n  sport VARCHAR(100),\n  targetMuscles TEXT,\n  equipment TEXT,\n  videoUrl VARCHAR(500),\n  thumbnailUrl VARCHAR(500),\n  instructions TEXT,\n  tips TEXT,\n  caloriesBurned INT,\n  featured ENUM('yes', 'no') DEFAULT 'no',\n  createdBy INT,\n  viewCount INT DEFAULT 0,\n  likeCount INT DEFAULT 0,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute CREATE TABLE IF NOT EXISTS workouts (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  title VARCHAR(255) NOT NULL,\n  slug VARCHAR(255) NOT NULL UNIQUE,\n  description TEXT,\n  category VARCHAR(100) NOT NULL,\n  difficulty ENUM('beginner', 'intermediate', 'advanced', 'elite') DEFAULT 'intermediate',\n  duration INT NOT NULL,\n  sport VARCHAR(100),\n  targetMuscles TEXT,\n  equipment TEXT,\n  videoUrl VARCHAR(500),\n  thumbnailUrl VARCHAR(500),\n  instructions TEXT,\n  tips TEXT,\n  caloriesBurned INT,\n  featured ENUM('yes', 'no') DEFAULT 'no',\n  createdBy INT,\n  viewCount INT DEFAULT 0,\n  likeCount INT DEFAULT 0,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 211
+}

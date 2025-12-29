@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS fca_testimonies (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  userId INT,\n  athleteName VARCHAR(255) NOT NULL,\n  sport VARCHAR(100) NOT NULL,\n  school VARCHAR(255),\n  title VARCHAR(255) NOT NULL,\n  testimony TEXT NOT NULL,\n  scripture TEXT,\n  featured ENUM('yes', 'no') DEFAULT 'no' NOT NULL,\n  publishDate DATE NOT NULL,\n  views INT DEFAULT 0 NOT NULL,\n  likes INT DEFAULT 0 NOT NULL,\n  shares INT DEFAULT 0 NOT NULL,\n  approved ENUM('yes', 'no', 'pending') DEFAULT 'pending' NOT NULL,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute CREATE TABLE IF NOT EXISTS fca_testimonies (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  userId INT,\n  athleteName VARCHAR(255) NOT NULL,\n  sport VARCHAR(100) NOT NULL,\n  school VARCHAR(255),\n  title VARCHAR(255) NOT NULL,\n  testimony TEXT NOT NULL,\n  scripture TEXT,\n  featured ENUM('yes', 'no') DEFAULT 'no' NOT NULL,\n  publishDate DATE NOT NULL,\n  views INT DEFAULT 0 NOT NULL,\n  likes INT DEFAULT 0 NOT NULL,\n  shares INT DEFAULT 0 NOT NULL,\n  approved ENUM('yes', 'no', 'pending') DEFAULT 'pending' NOT NULL,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 217
+}

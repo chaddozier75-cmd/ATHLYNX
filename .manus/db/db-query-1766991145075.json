@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS orders (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  userId INT NOT NULL,\n  orderNumber VARCHAR(50) NOT NULL UNIQUE,\n  status ENUM('pending', 'processing', 'shipped', 'delivered', 'cancelled', 'refunded') DEFAULT 'pending' NOT NULL,\n  subtotal DECIMAL(10,2) NOT NULL,\n  tax DECIMAL(10,2) DEFAULT 0,\n  shipping DECIMAL(10,2) DEFAULT 0,\n  total DECIMAL(10,2) NOT NULL,\n  shippingAddress TEXT,\n  billingAddress TEXT,\n  paymentMethod VARCHAR(50),\n  stripePaymentId VARCHAR(255),\n  stripeSessionId VARCHAR(255),\n  notes TEXT,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute CREATE TABLE IF NOT EXISTS orders (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  userId INT NOT NULL,\n  orderNumber VARCHAR(50) NOT NULL UNIQUE,\n  status ENUM('pending', 'processing', 'shipped', 'delivered', 'cancelled', 'refunded') DEFAULT 'pending' NOT NULL,\n  subtotal DECIMAL(10,2) NOT NULL,\n  tax DECIMAL(10,2) DEFAULT 0,\n  shipping DECIMAL(10,2) DEFAULT 0,\n  total DECIMAL(10,2) NOT NULL,\n  shippingAddress TEXT,\n  billingAddress TEXT,\n  paymentMethod VARCHAR(50),\n  stripePaymentId VARCHAR(255),\n  stripeSessionId VARCHAR(255),\n  notes TEXT,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 208
+}
