@@ -1,14 +1,16 @@
 import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
-import { publicProcedure, router } from "./_core/trpc";
+import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import { vipMembers } from "../drizzle/schema";
 import { getDb } from "./db";
 import { notifyOwner } from "./_core/notification";
+import { createSubscriptionCheckout, createCreditCheckout, getCheckoutSession } from "./stripe/checkout";
+import { SUBSCRIPTION_TIERS, AI_CREDIT_PACKS } from "./stripe/products";
 
 export const appRouter = router({
-    // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
+  // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
   system: systemRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
@@ -60,6 +62,84 @@ export const appRouter = router({
         return {
           success: true,
           accessCode,
+        };
+      }),
+  }),
+
+  // Stripe Payment Routes
+  stripe: router({
+    // Get subscription tiers info
+    getTiers: publicProcedure.query(() => {
+      return SUBSCRIPTION_TIERS;
+    }),
+
+    // Get AI credit packs info
+    getCreditPacks: publicProcedure.query(() => {
+      return AI_CREDIT_PACKS;
+    }),
+
+    // Create subscription checkout session
+    createSubscriptionCheckout: publicProcedure
+      .input(
+        z.object({
+          tier: z.enum(["pro", "elite", "enterprise"]),
+          billingPeriod: z.enum(["monthly", "annual"]),
+          email: z.string().email(),
+          name: z.string().optional(),
+        })
+      )
+      .mutation(async ({ input, ctx }) => {
+        const userId = ctx.user?.id?.toString() || `guest_${Date.now()}`;
+        const origin = ctx.req.headers.origin || "http://localhost:3000";
+
+        const { url } = await createSubscriptionCheckout({
+          tier: input.tier,
+          billingPeriod: input.billingPeriod,
+          userId,
+          userEmail: input.email,
+          userName: input.name,
+          origin,
+        });
+
+        return { url };
+      }),
+
+    // Create AI credits checkout session
+    createCreditsCheckout: publicProcedure
+      .input(
+        z.object({
+          pack: z.enum(["pack100", "pack500", "pack1000", "pack5000"]),
+          email: z.string().email(),
+          name: z.string().optional(),
+        })
+      )
+      .mutation(async ({ input, ctx }) => {
+        const userId = ctx.user?.id?.toString() || `guest_${Date.now()}`;
+        const origin = ctx.req.headers.origin || "http://localhost:3000";
+
+        const { url } = await createCreditCheckout({
+          pack: input.pack,
+          userId,
+          userEmail: input.email,
+          userName: input.name,
+          origin,
+        });
+
+        return { url };
+      }),
+
+    // Get checkout session details (for success page)
+    getSession: publicProcedure
+      .input(z.object({ sessionId: z.string() }))
+      .query(async ({ input }) => {
+        const session = await getCheckoutSession(input.sessionId);
+        return {
+          id: session.id,
+          status: session.status,
+          paymentStatus: session.payment_status,
+          customerEmail: session.customer_email,
+          amountTotal: session.amount_total,
+          metadata: session.metadata,
         };
       }),
   }),

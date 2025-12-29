@@ -24,6 +24,7 @@ import Veterans from "./pages/Veterans";
 import Music from "./pages/Music";
 import DiamondGrind from "./pages/DiamondGrind";
 import Apps from "./pages/Apps";
+import Dashboard from "./pages/Dashboard";
 
 function Router() {
   return (
@@ -44,6 +45,11 @@ function Router() {
       {/* Empire Features - Tiered Services */}
       <Route path={"/pricing"} component={Pricing} />
       <Route path={"/ai-credits"} component={Pricing} />
+      
+      {/* User Dashboard */}
+      <Route path={"/dashboard"} component={Dashboard} />
+      <Route path={"/account"} component={Dashboard} />
+      <Route path={"/profile"} component={Dashboard} />
       
       {/* E-Commerce - Amazon Model */}
       <Route path={"/store"} component={Store} />

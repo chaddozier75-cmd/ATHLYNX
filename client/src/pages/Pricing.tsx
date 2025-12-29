@@ -1,11 +1,74 @@
 import { useState } from "react";
 import { Link } from "wouter";
+import { trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 
 export default function Pricing() {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly");
+  const [email, setEmail] = useState("");
+  const [showEmailModal, setShowEmailModal] = useState(false);
+  const [selectedTier, setSelectedTier] = useState<"pro" | "elite" | "enterprise" | null>(null);
+  const [selectedPack, setSelectedPack] = useState<"pack100" | "pack500" | "pack1000" | "pack5000" | null>(null);
+
+  const subscriptionMutation = trpc.stripe.createSubscriptionCheckout.useMutation({
+    onSuccess: (data) => {
+      toast.success("Redirecting to checkout...");
+      window.open(data.url, "_blank");
+      setShowEmailModal(false);
+      setEmail("");
+    },
+    onError: (error) => {
+      toast.error(error.message || "Failed to create checkout session");
+    },
+  });
+
+  const creditsMutation = trpc.stripe.createCreditsCheckout.useMutation({
+    onSuccess: (data) => {
+      toast.success("Redirecting to checkout...");
+      window.open(data.url, "_blank");
+      setShowEmailModal(false);
+      setEmail("");
+    },
+    onError: (error) => {
+      toast.error(error.message || "Failed to create checkout session");
+    },
+  });
+
+  const handleSubscribe = (tier: "pro" | "elite" | "enterprise") => {
+    setSelectedTier(tier);
+    setSelectedPack(null);
+    setShowEmailModal(true);
+  };
+
+  const handleBuyCredits = (pack: "pack100" | "pack500" | "pack1000" | "pack5000") => {
+    setSelectedPack(pack);
+    setSelectedTier(null);
+    setShowEmailModal(true);
+  };
+
+  const handleCheckout = () => {
+    if (!email) {
+      toast.error("Please enter your email");
+      return;
+    }
+
+    if (selectedTier) {
+      subscriptionMutation.mutate({
+        tier: selectedTier,
+        billingPeriod: billingCycle,
+        email,
+      });
+    } else if (selectedPack) {
+      creditsMutation.mutate({
+        pack: selectedPack,
+        email,
+      });
+    }
+  };
 
   const tiers = [
     {
+      id: "free" as const,
       name: "Free",
       price: { monthly: 0, annual: 0 },
       description: "Get started with basic features",
@@ -21,6 +84,7 @@ export default function Pricing() {
       color: "from-gray-600 to-gray-700",
     },
     {
+      id: "pro" as const,
       name: "Pro",
       price: { monthly: 9.99, annual: 99 },
       description: "For serious athletes",
@@ -38,6 +102,7 @@ export default function Pricing() {
       color: "from-blue-600 to-blue-700",
     },
     {
+      id: "elite" as const,
       name: "Elite",
       price: { monthly: 29.99, annual: 299 },
       description: "Maximum exposure & tools",
@@ -57,6 +122,7 @@ export default function Pricing() {
       color: "from-yellow-500 to-orange-500",
     },
     {
+      id: "enterprise" as const,
       name: "Enterprise",
       price: { monthly: 99.99, annual: 999 },
       description: "For teams & organizations",
@@ -79,14 +145,55 @@ export default function Pricing() {
   ];
 
   const creditPacks = [
-    { credits: 100, price: 9.99, bonus: 0 },
-    { credits: 500, price: 39.99, bonus: 50 },
-    { credits: 1000, price: 69.99, bonus: 150 },
-    { credits: 5000, price: 299.99, bonus: 1000 },
+    { id: "pack100" as const, credits: 100, price: 9.99, bonus: 0 },
+    { id: "pack500" as const, credits: 500, price: 39.99, bonus: 50 },
+    { id: "pack1000" as const, credits: 1000, price: 69.99, bonus: 150 },
+    { id: "pack5000" as const, credits: 5000, price: 299.99, bonus: 1000 },
   ];
+
+  const isLoading = subscriptionMutation.isPending || creditsMutation.isPending;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460]">
+      {/* Email Modal */}
+      {showEmailModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm">
+          <div className="bg-[#1a1a2e] border border-white/20 rounded-2xl p-8 max-w-md w-full mx-4">
+            <h3 className="text-2xl font-bold text-white mb-2">
+              {selectedTier ? `Subscribe to ${selectedTier.charAt(0).toUpperCase() + selectedTier.slice(1)}` : "Buy AI Credits"}
+            </h3>
+            <p className="text-gray-400 mb-6">
+              Enter your email to continue to secure checkout
+            </p>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="your@email.com"
+              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-yellow-500 mb-4"
+            />
+            <div className="flex gap-3">
+              <button
+                onClick={() => setShowEmailModal(false)}
+                className="flex-1 py-3 bg-white/10 text-white rounded-xl font-semibold hover:bg-white/20 transition-all"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleCheckout}
+                disabled={isLoading}
+                className="flex-1 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-black rounded-xl font-bold hover:opacity-90 transition-all disabled:opacity-50"
+              >
+                {isLoading ? "Loading..." : "Continue to Checkout"}
+              </button>
+            </div>
+            <p className="text-gray-500 text-xs text-center mt-4">
+              🔒 Secure checkout powered by Stripe
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/10">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
@@ -183,6 +290,13 @@ export default function Pricing() {
                   ))}
                 </ul>
                 <button
+                  onClick={() => {
+                    if (tier.id === "free") {
+                      toast.success("Free tier - no payment required! Sign up to get started.");
+                    } else {
+                      handleSubscribe(tier.id as "pro" | "elite" | "enterprise");
+                    }
+                  }}
                   className={`w-full py-3 rounded-xl font-bold transition-all ${
                     tier.popular
                       ? "bg-gradient-to-r from-yellow-500 to-orange-500 text-black hover:opacity-90"
@@ -224,7 +338,10 @@ export default function Pricing() {
                     <p className="text-green-400 text-xs mb-2">+{pack.bonus} bonus!</p>
                   )}
                   <p className="text-xl font-bold text-white mb-3">${pack.price}</p>
-                  <button className="w-full py-2 bg-cyan-500/20 text-cyan-400 rounded-lg text-sm font-semibold hover:bg-cyan-500/30 transition-all">
+                  <button
+                    onClick={() => handleBuyCredits(pack.id)}
+                    className="w-full py-2 bg-cyan-500/20 text-cyan-400 rounded-lg text-sm font-semibold hover:bg-cyan-500/30 transition-all"
+                  >
                     Buy Now
                   </button>
                 </div>
@@ -256,6 +373,14 @@ export default function Pricing() {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Test Card Info */}
+          <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-6 mb-10 text-center">
+            <p className="text-green-400 font-semibold mb-2">🧪 Test Mode Active</p>
+            <p className="text-gray-400 text-sm">
+              Use test card: <span className="text-white font-mono">4242 4242 4242 4242</span> with any future date and CVC
+            </p>
           </div>
 
           {/* FAQ */}
