@@ -30,6 +30,7 @@ import SigningDay from "./pages/SigningDay";
 import TransferPortalIntelligence from "./pages/TransferPortalIntelligence";
 import Faith from "./pages/Faith";
 import MilitaryDivision from "./pages/MilitaryDivision";
+import ProjectManagement from "./pages/ProjectManagement";
 
 function Router() {
   return (
@@ -138,6 +139,11 @@ function Router() {
       
       <Route path={"/lacrosse-legends"} component={() => <ComingSoon title="Lacrosse Legends" description="Lacrosse recruiting, club connections, and showcase events. Write your legacy." icon="🥍" />} />
       <Route path={"/lacrosse"} component={() => <ComingSoon title="Lacrosse Legends" description="Lacrosse recruiting, club connections, and showcase events. Write your legacy." icon="🥍" />} />
+      
+      {/* Project Management */}
+      <Route path={"/project-management"} component={ProjectManagement} />
+      <Route path={"/pm"} component={ProjectManagement} />
+      <Route path={"/dashboard/pm"} component={ProjectManagement} />
       
       {/* Legacy Coming Soon */}
       <Route path={"/messenger"} component={() => <ComingSoon title="Messenger" description="Real-time messaging platform for athletes, coaches, and brands. Connect, collaborate, and communicate seamlessly." icon="💬" />} />
