@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS fca_daily_verses (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  verse TEXT NOT NULL,\n  reference VARCHAR(100) NOT NULL,\n  translation VARCHAR(50) DEFAULT 'NIV' NOT NULL,\n  displayDate DATE NOT NULL UNIQUE,\n  views INT DEFAULT 0 NOT NULL,\n  shares INT DEFAULT 0 NOT NULL,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute CREATE TABLE IF NOT EXISTS fca_daily_verses (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  verse TEXT NOT NULL,\n  reference VARCHAR(100) NOT NULL,\n  translation VARCHAR(50) DEFAULT 'NIV' NOT NULL,\n  displayDate DATE NOT NULL UNIQUE,\n  views INT DEFAULT 0 NOT NULL,\n  shares INT DEFAULT 0 NOT NULL,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 226
+}

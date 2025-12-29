@@ -1263,3 +1263,12 @@
 - [x] Add Our Story link to main navigation
 - [x] Add quick navigation buttons to EarlyAccess page
 - [x] Add quick links section to Home page
+
+
+## FCA CONTENT SEEDING - December 29, 2024
+
+- [x] Seed 5 devotionals with full content
+- [x] Seed 3 daily verses
+- [x] Seed 2 podcast episodes
+- [x] Create fca_daily_verses table
+- [x] Create fca_podcasts table

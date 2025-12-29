@@ -1,0 +1,13 @@
+{
+  "query": "SHOW TABLES LIKE 'fca%'",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute SHOW TABLES LIKE 'fca%'",
+  "rows": [
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib (fca%)": "fca_devotionals"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_AbuVKiqaa4gzZYPXheEZib (fca%)\nfca_devotionals\n",
+  "stderr": "",
+  "execution_time_ms": 49
+}

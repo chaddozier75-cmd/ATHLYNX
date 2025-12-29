@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO fca_daily_verses (verse, reference, translation, displayDate, views, shares)\nVALUES \n(\n  'I can do all things through Christ who strengthens me.',\n  'Philippians 4:13',\n  'NKJV',\n  CURDATE(),\n  0, 0\n),\n(\n  'But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.',\n  'Isaiah 40:31',\n  'NIV',\n  DATE_ADD(CURDATE(), INTERVAL 1 DAY),\n  0, 0\n),\n(\n  'Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.',\n  'Joshua 1:9',\n  'NIV',\n  DATE_ADD(CURDATE(), INTERVAL 2 DAY),\n  0, 0\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute INSERT INTO fca_daily_verses (verse, reference, translation, displayDate, views, shares)\nVALUES \n(\n  'I can do all things through Christ who strengthens me.',\n  'Philippians 4:13',\n  'NKJV',\n  CURDATE(),\n  0, 0\n),\n(\n  'But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.',\n  'Isaiah 40:31',\n  'NIV',\n  DATE_ADD(CURDATE(), INTERVAL 1 DAY),\n  0, 0\n),\n(\n  'Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.',\n  'Joshua 1:9',\n  'NIV',\n  DATE_ADD(CURDATE(), INTERVAL 2 DAY),\n  0, 0\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 80
+}

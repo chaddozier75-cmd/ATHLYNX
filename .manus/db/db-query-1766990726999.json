@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS fca_podcasts (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  title VARCHAR(255) NOT NULL,\n  description TEXT NOT NULL,\n  audioUrl TEXT,\n  thumbnailUrl TEXT,\n  duration INT DEFAULT 0 NOT NULL,\n  episodeNumber INT NOT NULL,\n  season INT DEFAULT 1 NOT NULL,\n  host VARCHAR(255) DEFAULT 'Chad A. Dozier' NOT NULL,\n  guest VARCHAR(255),\n  publishDate DATE NOT NULL,\n  featured ENUM('yes', 'no') DEFAULT 'no' NOT NULL,\n  transcript TEXT,\n  plays INT DEFAULT 0 NOT NULL,\n  likes INT DEFAULT 0 NOT NULL,\n  downloads INT DEFAULT 0 NOT NULL,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute CREATE TABLE IF NOT EXISTS fca_podcasts (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  title VARCHAR(255) NOT NULL,\n  description TEXT NOT NULL,\n  audioUrl TEXT,\n  thumbnailUrl TEXT,\n  duration INT DEFAULT 0 NOT NULL,\n  episodeNumber INT NOT NULL,\n  season INT DEFAULT 1 NOT NULL,\n  host VARCHAR(255) DEFAULT 'Chad A. Dozier' NOT NULL,\n  guest VARCHAR(255),\n  publishDate DATE NOT NULL,\n  featured ENUM('yes', 'no') DEFAULT 'no' NOT NULL,\n  transcript TEXT,\n  plays INT DEFAULT 0 NOT NULL,\n  likes INT DEFAULT 0 NOT NULL,\n  downloads INT DEFAULT 0 NOT NULL,\n  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 189
+}
