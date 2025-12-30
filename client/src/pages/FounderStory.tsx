@@ -267,15 +267,35 @@ export default function FounderStory() {
               </div>
             </div>
 
+            {/* All-Star Photo */}
+            <div className="flex flex-col md:flex-row gap-8 mb-8">
+              <img 
+                src="/images/chad-allstar-baseball-1993.jpeg" 
+                alt="Chad Dozier - MS All-Star Baseball 1993" 
+                className="w-full md:w-1/3 rounded-xl shadow-2xl border-2 border-amber-500/30"
+              />
+              <img 
+                src="/images/mississippi-state-bulldogs.jpeg" 
+                alt="Mississippi State Bulldogs" 
+                className="w-full md:w-1/3 rounded-xl shadow-2xl border-2 border-maroon-500/30"
+              />
+            </div>
+
             <div className="space-y-6 text-lg text-white/80 leading-relaxed">
               <p>
-                Before all of this, I was an athlete. A real one.
+                Before all of this, I was an athlete. A real one. <span className="text-amber-400 font-bold">WARRIOR MENTALITY. ALPHA MINDSET.</span>
               </p>
               <p>
                 <span className="text-white font-semibold">RH Watkins High School, Laurel, Mississippi.</span> Quarterback in football. Third base, first base, pitcher in baseball. I was recruited by colleges across the nation.
               </p>
               <p>
-                <span className="text-yellow-400 font-semibold">1993:</span> Selected to play in the Mississippi High School All-Star Baseball Game in Oxford, MS.
+                <span className="text-yellow-400 font-semibold">Summer 1993:</span> Selected to play in the <span className="text-white font-bold">Mississippi High School All-Star Baseball Game (4A-5A)</span> at historic <span className="text-cyan-400">Swayze Field in Oxford, MS</span>.
+              </p>
+              <p className="bg-amber-500/10 rounded-xl p-4 border-l-4 border-amber-500">
+                <span className="text-white font-semibold">North vs. South.</span> I played for the North. First Baseman and Pitcher. My roommate was <span className="text-white">Chris Wright from West Jones High School (Catcher)</span>. <span className="text-green-400 font-bold">We won 4 or 5 to nothing.</span> I remember it vividly.
+              </p>
+              <p className="text-white/70 italic text-sm">
+                Years later, Josh "The Guru" Nichols wrote about this in the Laurel Leader-Call - "A Walk Down Memory Lane" - remembering games at Smokey Herrington Park. I was honored that The Guru thought that much of me. He was a teammate and a friend.
               </p>
               <p>
                 <span className="text-yellow-400 font-semibold">1994:</span> Jones County Junior College. Continued excellence.

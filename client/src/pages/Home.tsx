@@ -1,7 +1,10 @@
 import { Link } from "wouter";
 import UnifiedFooter from "@/components/UnifiedFooter";
+import { useAuth } from "@/_core/hooks/useAuth";
+import { getLoginUrl } from "@/const";
 
 export default function Home() {
+  const { user, loading } = useAuth();
   const apps = [
     {
       name: "NIL Portal",
@@ -50,7 +53,44 @@ export default function Home() {
            }}>
       </div>
 
-      <div className="relative w-full max-w-[900px] mx-auto px-4 py-12 space-y-12">
+      {/* FIXED NAVIGATION HEADER */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a1628]/95 backdrop-blur-md border-b border-cyan-500/30">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <span className="text-cyan-400 font-bold text-xs tracking-widest">THE FUTURE OF ATHLETE SUCCESS</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="hidden md:flex items-center gap-2 mr-4">
+              <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-xs font-bold text-cyan-400 border border-cyan-500/50">DHG</div>
+              <div className="text-left">
+                <p className="text-gray-400 text-[10px] uppercase">PARENT COMPANY</p>
+                <p className="text-cyan-400 font-semibold text-xs">Dozier Holdings Group</p>
+              </div>
+            </div>
+            <div className="text-right mr-4">
+              <p className="text-white font-bold text-sm">ATHLYNX</p>
+              <p className="text-cyan-400 text-[10px] tracking-wider">THE ATHLETE'S PLAYBOOK</p>
+            </div>
+            {loading ? (
+              <div className="w-24 h-10 bg-slate-700 animate-pulse rounded-lg"></div>
+            ) : user ? (
+              <Link href="/dashboard">
+                <button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold px-6 py-2 rounded-lg shadow-lg shadow-cyan-500/30 transition-all">
+                  Dashboard
+                </button>
+              </Link>
+            ) : (
+              <a href={getLoginUrl()}>
+                <button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold px-6 py-2 rounded-lg shadow-lg shadow-cyan-500/30 transition-all">
+                  🔐 LOGIN
+                </button>
+              </a>
+            )}
+          </div>
+        </div>
+      </nav>
+
+      <div className="relative w-full max-w-[900px] mx-auto px-4 pt-24 pb-12 space-y-12">
         
         {/* Header with DHG Branding */}
         <div className="text-center space-y-6">

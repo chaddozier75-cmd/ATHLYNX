@@ -143,12 +143,17 @@ export default function AthletePlaybook() {
       {/* Hero Section */}
       <section className="container py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center space-y-6">
+          {/* Logos Row */}
+          <div className="flex justify-center items-center gap-8 mb-8">
+            <img src="/images/handshake-logo.png" alt="Partnership" className="h-20 w-20 rounded-xl shadow-lg" />
+            <img src="/images/athlete-running-logo.png" alt="Athlete Success" className="h-24 w-24 rounded-xl shadow-lg" />
+          </div>
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
             <Star className="h-4 w-4" />
-            Your Complete Guide to Athletic Success
+            WARRIOR MENTALITY • ALPHA MINDSET • CHAMPION RESULTS
           </div>
           <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
-            The Athlete <span className="text-primary">Playbook</span>
+            The Warrior's <span className="text-primary">Playbook</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Master the strategies that top recruits use to boost their recruiting presence, 
