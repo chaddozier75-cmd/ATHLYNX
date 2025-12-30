@@ -650,7 +650,62 @@ export default function Faith() {
               )}
             </div>
 
-            {/* Submit Testimony CTA */}
+            {/* Founder's Testimony - Chad A. Dozier */}
+            <Card className="bg-gradient-to-br from-red-500/20 via-amber-500/20 to-yellow-500/20 border-2 border-amber-500/50 mt-8 mb-8">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-2 mb-4">
+                  <Star className="w-5 h-5 text-amber-400" />
+                  <Badge className="bg-amber-500 text-white">Founder's Testimony</Badge>
+                </div>
+                <div className="flex flex-col md:flex-row gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-amber-400 to-red-600 flex items-center justify-center text-3xl font-bold text-white border-4 border-amber-400/50">
+                      CD
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-white mb-1">Chad A. Dozier</h3>
+                    <p className="text-amber-400 text-sm mb-4">Baseball • Mississippi State University • Founder & CEO, ATHLYNX</p>
+                    
+                    <h4 className="text-xl font-bold text-white mb-3">"Why I'm Doing This"</h4>
+                    
+                    <div className="space-y-4 text-white/80">
+                      <p>
+                        I was a promising baseball player at Mississippi State when a bad injury cut my career short. But the injury wasn't the end of my story—it was what followed that nearly destroyed me.
+                      </p>
+                      <p>
+                        <strong className="text-red-400">Poor choices.</strong> Decisions that followed me for many more years after. The kind of mistakes that happen when a young athlete loses their identity, their purpose, their direction.
+                      </p>
+                      <p>
+                        <strong className="text-amber-400">That's why I'm doing this.</strong> Not for the money. Not for the fame. I'm building ATHLYNX so that one child who had a childhood like mine would never make the same mistakes I made.
+                      </p>
+                      <p className="text-cyan-400 font-semibold">
+                        If my testimony helps that ONE person—just one—then I've done my job.
+                      </p>
+                      <p>
+                        And you know what? I'm having the time of my life. I feel like I'm living my childhood dream through this platform and the apps that go along with it. <strong className="text-yellow-400">I'm honored.</strong>
+                      </p>
+                    </div>
+                    
+                    <div className="bg-white/10 rounded-lg p-4 mt-6">
+                      <Quote className="w-5 h-5 text-amber-400 mb-2" />
+                      <p className="text-amber-200 italic">"And we know that in all things God works for the good of those who love him, who have been called according to his purpose."</p>
+                      <p className="text-amber-400 mt-2 font-semibold">Romans 8:28</p>
+                    </div>
+                    
+                    <div className="mt-6">
+                      <Link href="/founder-story">
+                        <Button className="bg-amber-500 hover:bg-amber-600 text-white">
+                          Read My Full Story <ChevronRight className="w-4 h-4 ml-1" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+          {/* Submit Testimony CTA */}
             <div className="mt-8 text-center">
               <Card className="bg-gradient-to-r from-amber-500/20 to-purple-500/20 border-amber-500/30 inline-block">
                 <CardContent className="p-8">

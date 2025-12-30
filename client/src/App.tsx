@@ -42,6 +42,7 @@ import ProjectChecklist from "./pages/ProjectChecklist";
 import FuelBots from "./pages/FuelBots";
 import PartnerPortal from "./pages/PartnerPortal";
 import InvestorDeck from "./pages/InvestorDeck";
+import Contact from "./pages/Contact";
 import AdminDashboard from "./pages/AdminDashboard";
 import UnifiedNav from "./components/UnifiedNav";
 import { BrandingHeader } from "./components/BrandingHeader";
@@ -197,6 +198,10 @@ function Router() {
       {/* Investor Deck */}
       <Route path={"/investor-deck"} component={InvestorDeck} />
       <Route path={"/pitch-deck"} component={InvestorDeck} />
+      
+      {/* Contact */}
+      <Route path={"/contact"} component={Contact} />
+      <Route path={"/contact-us"} component={Contact} />
       
       {/* Admin Dashboard */}
       <Route path={"/admin"} component={AdminDashboard} />
