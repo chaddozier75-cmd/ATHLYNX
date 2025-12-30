@@ -158,32 +158,50 @@ export default function EarlyAccess() {
           </div>
         </div>
 
-        {/* App Icons Row - NIL Portal, Messenger, Diamond Grind */}
-        <div className="flex justify-center gap-4">
-          <div className="relative group">
-            <div className="absolute inset-0 bg-blue-500 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
-            <img 
-              src="/images/nil-portal-icon.jpeg" 
-              alt="NIL Portal" 
-              className="relative w-20 h-20 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform"
-            />
-          </div>
-          <div className="relative group">
-            <div className="absolute inset-0 bg-blue-400 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
-            <img 
-              src="/images/messenger-icon.jpeg" 
-              alt="NIL Messenger" 
-              className="relative w-20 h-20 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform"
-            />
-          </div>
-          <div className="relative group">
-            <div className="absolute inset-0 bg-cyan-400 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
-            <img 
-              src="/images/diamond-grind-icon.png" 
-              alt="Diamond Grind" 
-              className="relative w-20 h-20 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform"
-            />
-          </div>
+        {/* App Icons Row - NIL Portal, Warriors Playbook, Messenger, Diamond Grind */}
+        <div className="flex justify-center gap-3 flex-wrap">
+          <Link href="/nil-portal">
+            <div className="relative group cursor-pointer">
+              <div className="absolute inset-0 bg-blue-500 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+              <img 
+                src="/images/nil-portal-icon.jpeg" 
+                alt="NIL Portal" 
+                className="relative w-16 h-16 md:w-20 md:h-20 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform"
+              />
+              <p className="text-[10px] text-center text-gray-400 mt-1 group-hover:text-cyan-400">NIL Portal</p>
+            </div>
+          </Link>
+          <Link href="/warriors-playbook">
+            <div className="relative group cursor-pointer">
+              <div className="absolute inset-0 bg-yellow-500 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+              <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform bg-gradient-to-br from-yellow-500 via-orange-500 to-red-500 flex items-center justify-center">
+                <span className="text-3xl md:text-4xl">⚔️</span>
+              </div>
+              <p className="text-[10px] text-center text-gray-400 mt-1 group-hover:text-yellow-400">Warrior's Playbook</p>
+            </div>
+          </Link>
+          <Link href="/messages">
+            <div className="relative group cursor-pointer">
+              <div className="absolute inset-0 bg-blue-400 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+              <img 
+                src="/images/messenger-icon.jpeg" 
+                alt="NIL Messenger" 
+                className="relative w-16 h-16 md:w-20 md:h-20 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform"
+              />
+              <p className="text-[10px] text-center text-gray-400 mt-1 group-hover:text-cyan-400">Messenger</p>
+            </div>
+          </Link>
+          <Link href="/diamond-grind">
+            <div className="relative group cursor-pointer">
+              <div className="absolute inset-0 bg-cyan-400 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+              <img 
+                src="/images/diamond-grind-icon.png" 
+                alt="Diamond Grind" 
+                className="relative w-16 h-16 md:w-20 md:h-20 rounded-2xl shadow-2xl transform group-hover:scale-110 transition-transform"
+              />
+              <p className="text-[10px] text-center text-gray-400 mt-1 group-hover:text-cyan-400">Diamond Grind</p>
+            </div>
+          </Link>
         </div>
 
         {/* THE FUTURE OF ATHLETE SUCCESS */}

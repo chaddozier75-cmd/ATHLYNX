@@ -65,6 +65,7 @@ import Mindset from "./pages/Mindset";
 import Studio from "./pages/Studio";
 import LeadershipPrinciples from "./pages/LeadershipPrinciples";
 import Journey from "./pages/Journey";
+import WarriorsPlaybook from "./pages/WarriorsPlaybook";
 // Components
 import UnifiedNav from "./components/UnifiedNav";
 import { BrandingHeader } from "./components/BrandingHeader";
@@ -148,6 +149,11 @@ function Router() {
       {/* ============================================ */}
       {/* WHITE-LABEL SPORT PLATFORMS - FULL BUILDS */}
       {/* ============================================ */}
+      
+      {/* The Warrior's Playbook - Chad's Legacy (FULL) */}
+      <Route path={"/warriors-playbook"} component={WarriorsPlaybook} />
+      <Route path={"/warrior"} component={WarriorsPlaybook} />
+      <Route path={"/playbook"} component={WarriorsPlaybook} />
       
       {/* Diamond Grind - Baseball (FULL) */}
       <Route path={"/diamond-grind"} component={DiamondGrind} />
