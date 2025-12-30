@@ -1,0 +1,166 @@
+{
+  "query": "SHOW TABLES;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute SHOW TABLES;",
+  "rows": [
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "__drizzle_migrations"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "access_control"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "ai_match_recommendations"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "athlete_commitments"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "athlete_views"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "audit_logs"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "bot_categories"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "bot_creators"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "bot_favorites"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "bot_purchases"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "bot_reviews"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "bot_tag_mappings"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "bot_tags"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "bot_usage_sessions"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "bots"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "cart_items"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "college_database"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "consent_records"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "creator_payouts"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "credit_transactions"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "credit_usage"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "early_access_signups"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "employee_access_logs"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "fca_blog_posts"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "fca_comments"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "fca_daily_verses"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "fca_devotionals"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "fca_podcasts"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "fca_prayer_requests"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "fca_testimonies"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "medical_records"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "ncaa_compliance"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "nil_contracts"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "order_items"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "orders"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "partner_access_logs"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "partner_documents"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "partners"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "products"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "sales_inquiries"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "school_subscriptions"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "security_incidents"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "signing_day_events"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "signing_day_streams"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "sports"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "stream_chat"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "transfer_portal_alerts"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "transfer_portal_analytics"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "transfer_portal_athletes"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "users"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "verification_codes"
+    },
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib": "vip_members"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_AbuVKiqaa4gzZYPXheEZib\n__drizzle_migrations\naccess_control\nai_match_recommendations\nathlete_commitments\nathlete_views\naudit_logs\nbot_categories\nbot_creators\nbot_favorites\nbot_purchases\nbot_reviews\nbot_tag_mappings\nbot_tags\nbot_usage_sessions\nbots\ncart_items\ncollege_database\nconsent_records\ncreator_payouts\ncredit_transactions\ncredit_usage\nearly_access_signups\nemployee_access_logs\nfca_blog_posts\nfca_comments\nfca_daily_verses\nfca_devotionals\nfca_podcasts\nfca_prayer_requests\nfca_testimonies\nmedical_records\nncaa_compliance\nnil_contracts\norder_items\norders\npartner_access_logs\npartner_documents\npartners\nproducts\nsales_inquiries\nschool_subscriptions\nsecurity_incidents\nsigning_day_events\nsigning_day_streams\nsports\nstream_chat\ntransfer_portal_alerts\ntransfer_portal_analytics\ntransfer_portal_athletes\nusers\nverification_codes\nvip_members\n",
+  "stderr": "",
+  "execution_time_ms": 56
+}

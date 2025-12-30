@@ -1,0 +1,13 @@
+{
+  "query": "SHOW TABLES LIKE '%user%';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute SHOW TABLES LIKE '%user%';",
+  "rows": [
+    {
+      "Tables_in_AbuVKiqaa4gzZYPXheEZib (%user%)": "users"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_AbuVKiqaa4gzZYPXheEZib (%user%)\nusers\n",
+  "stderr": "",
+  "execution_time_ms": 153
+}

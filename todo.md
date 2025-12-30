@@ -1872,3 +1872,16 @@
 - [x] Restrict access to admin role only
 - [x] Add to navigation (MANAGEMENT section)
 - [x] Add routes (/admin, /admin-dashboard)
+
+
+---
+
+## E-CARDS FOR LEADERSHIP - December 29, 2025
+
+### Update Team Page with E-Cards
+- [x] Replace initials with professional E-Card style cards
+- [x] Chad A. Dozier - CEO E-Card with full contact info
+- [x] Glenn Tse - CFO & COO E-Card with full contact info
+- [x] Include DHG branding, logos, and professional styling
+- [x] Add contact details (email, phone, LinkedIn)
+- [x] Make cards downloadable/shareable
