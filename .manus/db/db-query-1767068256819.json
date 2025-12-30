@@ -1,0 +1,120 @@
+{
+  "query": "SELECT * FROM vip_members LIMIT 10;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute SELECT * FROM vip_members LIMIT 10;",
+  "rows": [
+    {
+      "id": "1",
+      "email": "test-1766972784915@athlynx.test",
+      "phone": "+1234567890",
+      "role": "Athlete",
+      "sport": "Baseball",
+      "accessCode": "3MGBENAU7BB",
+      "status": "pending",
+      "signupDate": "2025-12-29 06:46:25",
+      "approvedDate": "NULL"
+    },
+    {
+      "id": "3",
+      "email": "test-nophone-1766972786713@athlynx.test",
+      "phone": "NULL",
+      "role": "Brand",
+      "sport": "Soccer",
+      "accessCode": "1M84ZSUGLYX",
+      "status": "pending",
+      "signupDate": "2025-12-29 06:46:26",
+      "approvedDate": "NULL"
+    },
+    {
+      "id": "4",
+      "email": "test-1766972800992@athlynx.test",
+      "phone": "+1234567890",
+      "role": "Athlete",
+      "sport": "Baseball",
+      "accessCode": "3Z9U0IHX2P5",
+      "status": "pending",
+      "signupDate": "2025-12-29 06:46:41",
+      "approvedDate": "NULL"
+    },
+    {
+      "id": "6",
+      "email": "test-nophone-1766972802306@athlynx.test",
+      "phone": "NULL",
+      "role": "Brand",
+      "sport": "Soccer",
+      "accessCode": "37D9XB2ZIV4",
+      "status": "pending",
+      "signupDate": "2025-12-29 06:46:42",
+      "approvedDate": "NULL"
+    },
+    {
+      "id": "30001",
+      "email": "test-1766989267556@athlynx.test",
+      "phone": "+1234567890",
+      "role": "Athlete",
+      "sport": "Baseball",
+      "accessCode": "F8622GVRJQ",
+      "status": "pending",
+      "signupDate": "2025-12-29 11:21:07",
+      "approvedDate": "NULL"
+    },
+    {
+      "id": "30003",
+      "email": "test-nophone-1766989267969@athlynx.test",
+      "phone": "NULL",
+      "role": "Brand",
+      "sport": "Soccer",
+      "accessCode": "UCQ6GSY7CJF",
+      "status": "pending",
+      "signupDate": "2025-12-29 11:21:07",
+      "approvedDate": "NULL"
+    },
+    {
+      "id": "60001",
+      "email": "test-1766990230097@athlynx.test",
+      "phone": "+1234567890",
+      "role": "Athlete",
+      "sport": "Baseball",
+      "accessCode": "K71NC61NZ5E",
+      "status": "pending",
+      "signupDate": "2025-12-29 11:37:10",
+      "approvedDate": "NULL"
+    },
+    {
+      "id": "60003",
+      "email": "test-nophone-1766990230382@athlynx.test",
+      "phone": "NULL",
+      "role": "Brand",
+      "sport": "Soccer",
+      "accessCode": "JNX2LBBK9UA",
+      "status": "pending",
+      "signupDate": "2025-12-29 11:37:10",
+      "approvedDate": "NULL"
+    },
+    {
+      "id": "90001",
+      "email": "test@example.com",
+      "phone": "NULL",
+      "role": "athlete",
+      "sport": "baseball",
+      "accessCode": "V27I3P3PJ7A",
+      "status": "pending",
+      "signupDate": "2025-12-29 14:44:12",
+      "approvedDate": "NULL"
+    },
+    {
+      "id": "90002",
+      "email": "test-1767001460922@athlynx.test",
+      "phone": "+1234567890",
+      "role": "Athlete",
+      "sport": "Baseball",
+      "accessCode": "XOU4VHQSJCA",
+      "status": "pending",
+      "signupDate": "2025-12-29 14:44:21",
+      "approvedDate": "NULL"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\temail\tphone\trole\tsport\taccessCode\tstatus\tsignupDate\tapprovedDate\n1\ttest-1766972784915@athlynx.test\t+1234567890\tAthlete\tBaseball\t3MGBENAU7BB\tpending\t2025-12-29 06:46:25\tNULL\n3\ttest-nophone-1766972786713@athlynx.test\tNULL\tBrand\tSoccer\t1M84ZSUGLYX\tpending\t2025-12-29 06:46:26\tNULL\n4\ttest-1766972800992@athlynx.test\t+1234567890\tAthlete\tBaseball\t3Z9U0IHX2P5\tpending\t2025-12-29 06:46:41\tNULL\n6\ttest-nophone-1766972802306@athlynx.test\tNULL\tBrand\tSoccer\t37D9XB2ZIV4\tpending\t2025-12-29 06:46:42\tNULL\n30001\ttest-1766989267556@athlynx.test\t+1234567890\tAthlete\tBaseball\tF8622GVRJQ\tpending\t2025-12-29 11:21:07\tNULL\n30003\ttest-nophone-1766989267969@athlynx.test\tNULL\tBrand\tSoccer\tUCQ6GSY7CJF\tpending\t2025-12-29 11:21:07\tNULL\n60001\ttest-1766990230097@athlynx.test\t+1234567890\tAthlete\tBaseball\tK71NC61NZ5E\tpending\t2025-12-29 11:37:10\tNULL\n60003\ttest-nophone-1766990230382@athlynx.test\tNULL\tBrand\tSoccer\tJNX2LBBK9UA\tpending\t2025-12-29 11:37:10\tNULL\n90001\ttest@example.com\tNULL\tathlete\tbaseball\tV27I3P3PJ7A\tpending\t2025-12-29 14:44:12\tNULL\n90002\ttest-1767001460922@athlynx.test\t+1234567890\tAthlete\tBaseball\tXOU4VHQSJCA\tpending\t2025-12-29 14:44:21\tNULL\n",
+  "stderr": "",
+  "execution_time_ms": 48
+}

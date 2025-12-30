@@ -1,0 +1,18 @@
+{
+  "query": "SELECT id, openId, name, email, role, createdAt FROM users ORDER BY createdAt ASC LIMIT 20;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute SELECT id, openId, name, email, role, createdAt FROM users ORDER BY createdAt ASC LIMIT 20;",
+  "rows": [
+    {
+      "id": "1",
+      "openId": "founder-chad-dozier-001",
+      "name": "Chad A. Dozier",
+      "email": "cdozier14@athlynx.ai",
+      "role": "admin",
+      "createdAt": "2025-12-30 02:47:39"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\topenId\tname\temail\trole\tcreatedAt\n1\tfounder-chad-dozier-001\tChad A. Dozier\tcdozier14@athlynx.ai\tadmin\t2025-12-30 02:47:39\n",
+  "stderr": "",
+  "execution_time_ms": 83
+}

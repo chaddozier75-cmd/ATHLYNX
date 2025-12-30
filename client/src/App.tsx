@@ -61,6 +61,10 @@ import AppStoreSubmission from "./pages/AppStoreSubmission";
 import BitcoinMining from "./pages/BitcoinMining";
 import WellnessPortal from "./pages/WellnessPortal";
 import FounderDedication from "./pages/FounderDedication";
+import Mindset from "./pages/Mindset";
+import Studio from "./pages/Studio";
+import LeadershipPrinciples from "./pages/LeadershipPrinciples";
+import Journey from "./pages/Journey";
 // Components
 import UnifiedNav from "./components/UnifiedNav";
 import { BrandingHeader } from "./components/BrandingHeader";
@@ -263,6 +267,19 @@ function Router() {
       <Route path={"/founder-dedication"} component={FounderDedication} />
       <Route path={"/dedication"} component={FounderDedication} />
       <Route path={"/user-1"} component={FounderDedication} />
+      
+      {/* Mindset & Studio */}
+      <Route path={"/mindset"} component={Mindset} />
+      <Route path={"/motivation"} component={Mindset} />
+      <Route path={"/in-the-zone"} component={Mindset} />
+      <Route path={"/studio"} component={Studio} />
+      <Route path={"/podcast"} component={Studio} />
+      <Route path={"/streaming"} component={Studio} />
+      <Route path={"/leadership-principles"} component={LeadershipPrinciples} />
+      <Route path={"/principles"} component={LeadershipPrinciples} />
+      <Route path={"/journey"} component={Journey} />
+      <Route path={"/stakeholders"} component={Journey} />
+      <Route path={"/ecosystem"} component={Journey} />
       
       {/* Admin Dashboard */}
       <Route path={"/admin"} component={AdminDashboard} />

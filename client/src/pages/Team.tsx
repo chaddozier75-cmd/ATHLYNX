@@ -3,8 +3,8 @@ import { Mail, Phone, Linkedin, Globe, MapPin, Building2, Download, Camera } fro
 
 const leadership = [
   {
-    name: "Chad A. Dozier",
-    title: "Chief Executive Officer",
+    name: "Chad Allen Dozier Sr.",
+    title: "Founder/CEO/Chief Imagineer",
     company: "Dozier Holdings Group",
     responsibilities: "Vision, Strategy, Investor Relations",
     bio: "Founder and visionary leader driving the ATHLYNX platform from concept to market. Former collegiate athlete at Mississippi State University. Building the future of athlete success through technology and NIL opportunities.",
@@ -27,7 +27,7 @@ const leadership = [
   },
   {
     name: "Glenn Tse",
-    title: "CFO & COO",
+    title: "CFO & COO/Chief Imagineer",
     company: "Dozier Holdings Group",
     responsibilities: "Finance, Operations, Legal Coordination",
     bio: "Oversees all financial operations, legal entity formation, and day-to-day business operations. Based in Hong Kong with extensive experience in international business development and cross-border partnerships.",
@@ -70,8 +70,8 @@ const executives = [
 
 const advisors = [
   {
-    name: "David Ford Sr.",
-    title: "Strategic Advisor",
+    name: "David R. Ford Sr.",
+    title: "Trusted Advisor (Uncle)",
     expertise: "Business Development & Operations",
     initials: "DF",
   },
@@ -84,8 +84,8 @@ const advisors = [
 ];
 
 const boardStructure = [
-  { seat: "Seat 1", holder: "Chad A. Dozier", role: "Founder/CEO - Chairman" },
-  { seat: "Seat 2", holder: "Glenn Tse", role: "CFO/COO - Board Member" },
+  { seat: "Seat 1", holder: "Chad Allen Dozier Sr.", role: "Founder/CEO/Chief Imagineer - Chairman" },
+  { seat: "Seat 2", holder: "Glenn Tse", role: "CFO & COO/Chief Imagineer - Board Member" },
   { seat: "Seat 3", holder: "TBD", role: "Independent Director (Industry Expert)" },
   { seat: "Seat 4", holder: "TBD", role: "Investor Representative - Post Series A" },
   { seat: "Seat 5", holder: "TBD", role: "Independent Director (Finance/Governance)" },

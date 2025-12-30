@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO vip_members (email, phone, role, sport, accessCode, status, approvedDate) \nVALUES ('cdozier14@athlynx.ai', '+1 (601) 498-5282', 'Parent', 'All Sports', 'FOUNDER001', 'active', NOW())\nON DUPLICATE KEY UPDATE role = 'Parent', status = 'active', approvedDate = NOW();",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute INSERT INTO vip_members (email, phone, role, sport, accessCode, status, approvedDate) \nVALUES ('cdozier14@athlynx.ai', '+1 (601) 498-5282', 'Parent', 'All Sports', 'FOUNDER001', 'active', NOW())\nON DUPLICATE KEY UPDATE role = 'Parent', status = 'active', approvedDate = NOW();",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 57
+}

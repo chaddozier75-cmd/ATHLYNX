@@ -1381,3 +1381,188 @@ export const salesInquiries = mysqlTable("sales_inquiries", {
 export type SalesInquiry = typeof salesInquiries.$inferSelect;
 export type InsertSalesInquiry = typeof salesInquiries.$inferInsert;
 
+
+/**
+ * ============================================
+ * ANALYTICS & USER BEHAVIOR TRACKING
+ * ============================================
+ */
+
+/**
+ * Page Views - Track all page visits
+ */
+export const pageViews = mysqlTable("page_views", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").references(() => users.id), // null for anonymous
+  sessionId: varchar("sessionId", { length: 64 }).notNull(),
+  pagePath: varchar("pagePath", { length: 500 }).notNull(),
+  pageTitle: varchar("pageTitle", { length: 255 }),
+  referrer: varchar("referrer", { length: 500 }),
+  userAgent: text("userAgent"),
+  ipAddress: varchar("ipAddress", { length: 45 }),
+  deviceType: mysqlEnum("deviceType", ["desktop", "tablet", "mobile"]),
+  browser: varchar("browser", { length: 50 }),
+  os: varchar("os", { length: 50 }),
+  country: varchar("country", { length: 100 }),
+  city: varchar("city", { length: 100 }),
+  duration: int("duration"), // Time on page in seconds
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type PageView = typeof pageViews.$inferSelect;
+export type InsertPageView = typeof pageViews.$inferInsert;
+
+/**
+ * User Events - Track clicks, interactions, and custom events
+ */
+export const userEvents = mysqlTable("user_events", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").references(() => users.id),
+  sessionId: varchar("sessionId", { length: 64 }).notNull(),
+  eventType: varchar("eventType", { length: 100 }).notNull(), // click, scroll, form_submit, video_play, etc.
+  eventCategory: varchar("eventCategory", { length: 100 }), // navigation, engagement, conversion, etc.
+  eventAction: varchar("eventAction", { length: 255 }), // button_click, link_click, etc.
+  eventLabel: varchar("eventLabel", { length: 255 }), // Specific element or context
+  eventValue: int("eventValue"), // Numeric value if applicable
+  pagePath: varchar("pagePath", { length: 500 }),
+  elementId: varchar("elementId", { length: 100 }),
+  elementClass: varchar("elementClass", { length: 255 }),
+  metadata: json("metadata"), // Additional context
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type UserEvent = typeof userEvents.$inferSelect;
+export type InsertUserEvent = typeof userEvents.$inferInsert;
+
+/**
+ * User Sessions - Track session data for engagement analysis
+ */
+export const userSessions = mysqlTable("user_sessions", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").references(() => users.id),
+  sessionId: varchar("sessionId", { length: 64 }).notNull().unique(),
+  startTime: timestamp("startTime").defaultNow().notNull(),
+  endTime: timestamp("endTime"),
+  pageCount: int("pageCount").default(0).notNull(),
+  eventCount: int("eventCount").default(0).notNull(),
+  totalDuration: int("totalDuration"), // Total session duration in seconds
+  entryPage: varchar("entryPage", { length: 500 }),
+  exitPage: varchar("exitPage", { length: 500 }),
+  referrerSource: varchar("referrerSource", { length: 255 }), // google, facebook, direct, etc.
+  referrerMedium: varchar("referrerMedium", { length: 100 }), // organic, cpc, social, etc.
+  referrerCampaign: varchar("referrerCampaign", { length: 255 }), // UTM campaign
+  deviceType: mysqlEnum("deviceType", ["desktop", "tablet", "mobile"]),
+  isConverted: mysqlEnum("isConverted", ["yes", "no"]).default("no").notNull(),
+  conversionType: varchar("conversionType", { length: 100 }), // signup, purchase, etc.
+});
+
+export type UserSession = typeof userSessions.$inferSelect;
+export type InsertUserSession = typeof userSessions.$inferInsert;
+
+/**
+ * Social Media Referrals - Track social media traffic and engagement
+ */
+export const socialMediaReferrals = mysqlTable("social_media_referrals", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").references(() => users.id),
+  platform: mysqlEnum("platform", [
+    "facebook", "instagram", "twitter", "tiktok", "youtube", 
+    "linkedin", "snapchat", "threads", "whatsapp", "wechat", "other"
+  ]).notNull(),
+  referralUrl: varchar("referralUrl", { length: 500 }),
+  campaignId: varchar("campaignId", { length: 100 }),
+  postId: varchar("postId", { length: 255 }),
+  clickCount: int("clickCount").default(1).notNull(),
+  signupCount: int("signupCount").default(0).notNull(),
+  conversionCount: int("conversionCount").default(0).notNull(),
+  lastClickAt: timestamp("lastClickAt").defaultNow().notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type SocialMediaReferral = typeof socialMediaReferrals.$inferSelect;
+export type InsertSocialMediaReferral = typeof socialMediaReferrals.$inferInsert;
+
+/**
+ * User Referrals - Track word-of-mouth and user referral program
+ */
+export const userReferrals = mysqlTable("user_referrals", {
+  id: int("id").autoincrement().primaryKey(),
+  referrerId: int("referrerId").notNull().references(() => users.id),
+  referredUserId: int("referredUserId").references(() => users.id),
+  referralCode: varchar("referralCode", { length: 20 }).notNull(),
+  status: mysqlEnum("status", ["pending", "clicked", "signed_up", "converted", "rewarded"]).default("pending").notNull(),
+  rewardType: varchar("rewardType", { length: 50 }), // credits, discount, etc.
+  rewardAmount: int("rewardAmount"),
+  rewardedAt: timestamp("rewardedAt"),
+  clickedAt: timestamp("clickedAt"),
+  signedUpAt: timestamp("signedUpAt"),
+  convertedAt: timestamp("convertedAt"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type UserReferral = typeof userReferrals.$inferSelect;
+export type InsertUserReferral = typeof userReferrals.$inferInsert;
+
+/**
+ * Feature Usage - Track which features users engage with most
+ */
+export const featureUsage = mysqlTable("feature_usage", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().references(() => users.id),
+  featureName: varchar("featureName", { length: 100 }).notNull(), // dashboard, nil_marketplace, transfer_portal, etc.
+  featureCategory: varchar("featureCategory", { length: 100 }), // core, premium, beta
+  usageCount: int("usageCount").default(1).notNull(),
+  totalDuration: int("totalDuration").default(0).notNull(), // Total time spent in seconds
+  lastUsedAt: timestamp("lastUsedAt").defaultNow().notNull(),
+  firstUsedAt: timestamp("firstUsedAt").defaultNow().notNull(),
+});
+
+export type FeatureUsage = typeof featureUsage.$inferSelect;
+export type InsertFeatureUsage = typeof featureUsage.$inferInsert;
+
+/**
+ * Algorithm Recommendations - Track recommendation performance
+ */
+export const algorithmRecommendations = mysqlTable("algorithm_recommendations", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().references(() => users.id),
+  recommendationType: varchar("recommendationType", { length: 100 }).notNull(), // content, athlete, brand, opportunity
+  recommendedItemId: int("recommendedItemId"),
+  recommendedItemType: varchar("recommendedItemType", { length: 100 }),
+  score: decimal("score", { precision: 5, scale: 4 }), // Algorithm confidence score
+  wasViewed: mysqlEnum("wasViewed", ["yes", "no"]).default("no").notNull(),
+  wasClicked: mysqlEnum("wasClicked", ["yes", "no"]).default("no").notNull(),
+  wasConverted: mysqlEnum("wasConverted", ["yes", "no"]).default("no").notNull(),
+  viewedAt: timestamp("viewedAt"),
+  clickedAt: timestamp("clickedAt"),
+  convertedAt: timestamp("convertedAt"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type AlgorithmRecommendation = typeof algorithmRecommendations.$inferSelect;
+export type InsertAlgorithmRecommendation = typeof algorithmRecommendations.$inferInsert;
+
+/**
+ * Daily Analytics Summary - Aggregated daily metrics for dashboards
+ */
+export const dailyAnalyticsSummary = mysqlTable("daily_analytics_summary", {
+  id: int("id").autoincrement().primaryKey(),
+  date: date("date").notNull(),
+  totalUsers: int("totalUsers").default(0).notNull(),
+  newUsers: int("newUsers").default(0).notNull(),
+  activeUsers: int("activeUsers").default(0).notNull(),
+  totalSessions: int("totalSessions").default(0).notNull(),
+  totalPageViews: int("totalPageViews").default(0).notNull(),
+  avgSessionDuration: int("avgSessionDuration").default(0).notNull(),
+  bounceRate: decimal("bounceRate", { precision: 5, scale: 2 }),
+  conversionRate: decimal("conversionRate", { precision: 5, scale: 2 }),
+  topPages: json("topPages"), // Array of top pages
+  topReferrers: json("topReferrers"), // Array of top referrers
+  deviceBreakdown: json("deviceBreakdown"), // Desktop/mobile/tablet percentages
+  socialMediaBreakdown: json("socialMediaBreakdown"), // Traffic by social platform
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type DailyAnalyticsSummary = typeof dailyAnalyticsSummary.$inferSelect;
+export type InsertDailyAnalyticsSummary = typeof dailyAnalyticsSummary.$inferInsert;
+

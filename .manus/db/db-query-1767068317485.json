@@ -1,0 +1,21 @@
+{
+  "query": "SELECT * FROM vip_members WHERE email = 'cdozier14@athlynx.ai';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 234BC8KwFc7Qees.1586b1157813 --database AbuVKiqaa4gzZYPXheEZib --execute SELECT * FROM vip_members WHERE email = 'cdozier14@athlynx.ai';",
+  "rows": [
+    {
+      "id": "510006",
+      "email": "cdozier14@athlynx.ai",
+      "phone": "+1 (601) 498-5282",
+      "role": "Parent",
+      "sport": "All Sports",
+      "accessCode": "FOUNDER001",
+      "status": "active",
+      "signupDate": "2025-12-30 04:18:33",
+      "approvedDate": "2025-12-30 04:18:33"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\temail\tphone\trole\tsport\taccessCode\tstatus\tsignupDate\tapprovedDate\n510006\tcdozier14@athlynx.ai\t+1 (601) 498-5282\tParent\tAll Sports\tFOUNDER001\tactive\t2025-12-30 04:18:33\t2025-12-30 04:18:33\n",
+  "stderr": "",
+  "execution_time_ms": 65
+}
