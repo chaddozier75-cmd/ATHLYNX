@@ -23,7 +23,7 @@ const leadership = [
     initials: "CD",
     gradient: "from-cyan-500 to-blue-600",
     role: "founder",
-    photo: "", // Add photo URL here when available
+    photo: "/images/chad-dozier-ceo.png",
   },
   {
     name: "Glenn Tse",
@@ -40,7 +40,8 @@ const leadership = [
     initials: "GT",
     gradient: "from-amber-500 to-orange-600",
     role: "executive",
-    photo: "", // Add photo URL here when available
+    photo: "/images/glenn-tse-cfo.png",
+    chineseName: "謝文傑",
   },
 ];
 
