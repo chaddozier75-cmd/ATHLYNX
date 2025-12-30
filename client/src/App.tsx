@@ -43,6 +43,7 @@ import FuelBots from "./pages/FuelBots";
 import PartnerPortal from "./pages/PartnerPortal";
 import InvestorDeck from "./pages/InvestorDeck";
 import Contact from "./pages/Contact";
+import EmpireVision from "./pages/EmpireVision";
 import AdminDashboard from "./pages/AdminDashboard";
 import UnifiedNav from "./components/UnifiedNav";
 import { BrandingHeader } from "./components/BrandingHeader";
@@ -202,6 +203,11 @@ function Router() {
       {/* Contact */}
       <Route path={"/contact"} component={Contact} />
       <Route path={"/contact-us"} component={Contact} />
+      
+      {/* Empire Vision */}
+      <Route path={"/empire"} component={EmpireVision} />
+      <Route path={"/vision"} component={EmpireVision} />
+      <Route path={"/empire-vision"} component={EmpireVision} />
       
       {/* Admin Dashboard */}
       <Route path={"/admin"} component={AdminDashboard} />
