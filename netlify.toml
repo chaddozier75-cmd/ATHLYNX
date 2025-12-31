@@ -1,14 +1,23 @@
 [build]
-  command = "pnpm run build"
+  command = "pnpm install && pnpm run build"
   publish = "dist/client"
+  functions = "netlify/functions"
 
+[build.environment]
+  NODE_VERSION = "18"
+
+# API routes handled by Netlify Functions
 [[redirects]]
   from = "/api/*"
-  to = "https://athlynx-backend-production.up.railway.app/api/:splat"
+  to = "/.netlify/functions/api/:splat"
   status = 200
-  force = true
 
+# SPA fallback
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[functions]
+  node_bundler = "esbuild"
+  directory = "netlify/functions"
