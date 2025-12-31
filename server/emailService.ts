@@ -1,6 +1,7 @@
 import { invokeLLM } from "./_core/llm";
 import { getSportById } from "./earlyAccess";
 import type { User, Sport } from "../drizzle/schema";
+import { sendEmailViaTwilio } from "./twilioEmail";
 
 /**
  * Email service for sending automated confirmation emails with AI-generated content
@@ -171,15 +172,19 @@ export async function sendEarlyAccessConfirmationEmail(user: User, sportId?: num
       textBody: text,
     };
 
-    // Log email for now (in production, this would send via email service)
-    console.log("[Email Service] Sending confirmation email:");
+    // Send email via Twilio SendGrid
+    console.log("[Email Service] Sending confirmation email via Twilio:");
     console.log("To:", emailData.to);
     console.log("Subject:", emailData.subject);
-    console.log("HTML Body:", emailData.htmlBody);
-    console.log("Text Body:", emailData.textBody);
 
-    // TODO: Integrate with actual email service (SendGrid, AWS SES, etc.)
-    // For now, we'll simulate success
+    const emailSent = await sendEmailViaTwilio(emailData);
+    
+    if (!emailSent) {
+      console.error("[Email Service] Failed to send email via Twilio");
+      return false;
+    }
+
+    console.log("[Email Service] ✅ Email sent successfully via Twilio!");
     return true;
   } catch (error) {
     console.error("[Email Service] Failed to send confirmation email:", error);
@@ -215,17 +220,19 @@ export async function sendConfirmationToMultipleEmails(
       textBody: text,
     };
 
-    // Log email for now
-    console.log("[Email Service] Sending confirmation email to multiple addresses:");
+    // Send email via Twilio SendGrid
+    console.log("[Email Service] Sending confirmation email to multiple addresses via Twilio:");
     console.log("To:", emailData.to);
     console.log("Subject:", emailData.subject);
-    console.log("HTML Body:", emailData.htmlBody);
 
-    // Send to each email address
-    for (const email of allEmails) {
-      console.log(`[Email Service] Sent to: ${email}`);
+    const emailSent = await sendEmailViaTwilio(emailData);
+    
+    if (!emailSent) {
+      console.error("[Email Service] Failed to send emails via Twilio");
+      return false;
     }
 
+    console.log("[Email Service] ✅ Emails sent successfully via Twilio to all recipients!");
     return true;
   } catch (error) {
     console.error("[Email Service] Failed to send confirmation emails:", error);
