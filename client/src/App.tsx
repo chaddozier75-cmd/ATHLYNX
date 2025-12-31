@@ -17,6 +17,7 @@ import NILPortal from "./pages/NILPortal";
 // Empire Pages
 import Pricing from "./pages/Pricing";
 import Store from "./pages/Store";
+import Platform from "./pages/Platform";
 import Careers from "./pages/Careers";
 import Medical from "./pages/Medical";
 import Training from "./pages/Training";
@@ -75,6 +76,7 @@ function Router() {
     <Switch>
       {/* Main Landing */}
       <Route path={"/"} component={EarlyAccess} />
+      <Route path={"/platform"} component={Platform} />
       <Route path={"/success"} component={Success} />
       <Route path={"/home"} component={Home} />
       
